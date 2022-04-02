@@ -1,0 +1,77 @@
+---
+import PageLayout from '../layouts/page-layout.astro'
+import { Markdown } from 'astro/components'
+
+import { TextLink } from "../blocks/TextLink"
+// import website from "../../config/website"
+
+import logo from "../images/logo.png"
+import contactMe from "../images/consulting/undraw_contact_us_15o2.svg"
+
+import { config } from "../data/config";
+---
+
+<PageLayout title="Consulting Services" activePage="consulting">
+  <div class="my-prose w-full max-w-[1000px] p-10 pt-0 ml-auto mr-auto mt-0 mb-0">
+    <div class="flex justify-between mb-6 flex-col-reverse sm:flex-row items-center">
+      <div class="mt-3 sm:mt-0">
+        <h1 class="mt-0 mb-0">Working with me</h1>
+      </div>  
+      <div>
+        <img
+          class="block mb-1 rounded-md max-w-[300px]"
+          alt="AGYNAMIX"
+          src={logo}
+        />
+      </div>
+    </div>
+  
+<Markdown>
+I'm a full stack software developer with more than 20 years of experience in numerous fields and with numerous languages.
+
+I have developed software for all of my professional life and even [before](/about), and I didn't really want to do anything else.
+Languages change, developer roles change, but the desire to create something useful always stays strong.
+
+I love learning new things and meeting new people. 
+Over the years I have worked with a plethora of different programming languages.
+I worked with Cobol, C++, Java, Groovy, Ruby and Perl.
+
+Since 2009 I have transitioned into using Scala, Javascript, Clojure and Typescript, with a sprinkle of GO.
+
+I worked with numerous web frameworks including Lift, AngularJS, MarkoJS and my favorite, ReactJS.
+
+I use to keep my application's data in SQL databases like PostgreSQL and NoSQL stores, mostly MongoDB.
+
+I developed and sold several applications, some of them are available now on my [github account](https://github.com/tuhlmann).
+
+Over the years I have worked with a large number of [clients](/clients), including:
+
+- German Telekom
+- the german bank 1822 Sparkasse
+- the social network sgrouples, now mewe.com
+- Underscore Consulting
+- Ascendant, Inc.
+</Markdown>
+
+  <div class="flex justify-between mb-6 mt-5">
+    <div>
+      <div class="h-full flex flex-col justify-between">
+        <p class="justify-self-start">
+          If you think I could be great fit for your team I'd like to <TextLink to={`mailto:${config.email}`}><strong>hear from you</strong></TextLink>!
+        </p>
+        <h4 class="justify-self-end">Torsten.</h4>
+      </div>
+    </div>  
+    <div class="ml-5">
+      <a href={`mailto:${config.email}`}>
+        <img
+          alt="Call me!"
+          class="max-h-[300px] block mb-1 rounded-md"
+          src={contactMe}
+        />
+      </a>
+    </div>
+  </div>
+
+  </div>
+</PageLayout>  

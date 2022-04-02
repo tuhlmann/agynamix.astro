@@ -1,0 +1,58 @@
+---
+import RoundLink from "../components/RoundLink.astro";
+import { LandingInteractiveImage } from "../components/LandingInteractiveImage";
+import resumeImg from "../images/resume.svg"
+import skillsImg from "../images/skills.svg"
+import clientImg from "../images/client.svg"
+import PageLayout from '../layouts/page-layout.astro';
+---
+
+<PageLayout activePage="index">
+	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-around">
+		<div class="flex justify-between flex-col sm:flex-row">
+			<LandingInteractiveImage client:visible />						
+			<div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
+				<!-- Replace with your content -->
+				<div class="px-4 py-8 sm:px-0">
+					<div>
+						<h1>Hello, my name is Torsten.</h1>
+						<p>
+							I'm a Full Stack software developer working with Scala, Java, Clojure and Typescript, 
+							amongst others.
+						</p>
+						<p>
+							I love developing new things and working with great teams; 
+							I taught courses, spoke at conferences and wrote a book.
+						</p>
+						<h1>More about me:</h1>
+						<div class="flex justify-between flex-col sm:flex-row sm:items-center lg:pr-8 lg:pl-8">
+							<RoundLink
+								background={`linear-gradient(45deg, rgba(219, 87, 86, 0.75), rgba(219, 87, 86, 1)), url(${resumeImg})`}
+								link="/resume"
+								text="My Resume"
+							/>
+							<RoundLink
+								background={`linear-gradient(45deg, rgba(6, 19, 36, 0.75), rgba(6, 19, 36, 1)), url(${skillsImg})`}
+								link="/consulting"
+								text="Consulting"
+							/>
+							<RoundLink
+								background={`linear-gradient(45deg, rgba(73, 115, 140, 0.75), rgba(73, 115, 140, 1)), url(${clientImg})`}
+								link="/clients"
+								text="My Clients"
+							/>
+						</div>
+					<div>
+						<p>
+							If you're looking for an accomplished software engineer you've come to the right place, 
+							let's get in touch!
+						</p>
+					</div>
+
+					</div>
+				</div>
+				<!-- /End replace -->
+			</div>
+		</div>
+	</div>			
+</PageLayout>

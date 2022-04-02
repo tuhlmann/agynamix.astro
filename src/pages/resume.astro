@@ -1,0 +1,109 @@
+---
+import PageLayout from '../layouts/page-layout.astro';
+import {Markdown} from "astro/components"
+import story from "../data/story"
+import StoryRenderer from "../components/StoryRenderer.tsx"
+import { AllowedCategories } from "../utils/prepare-story-data"
+import photo from '../images/torsten_square.jpg'
+---
+
+<PageLayout activePage="resume" title="Resume">
+  <div class="my-prose w-full max-w-[1000px] p-10 ml-auto mr-auto mt-0 mb-0">
+
+<div class="flex justify-between mb-4 flex-col-reverse sm:flex-row items-center sm:items-start">
+  <div class="text-center sm:text-inherit">
+    <h1 class="mt-3 sm:mt-0">Resume of Torsten Uhlmann</h1>
+    <p class="text-left leading-7">
+      Torsten Uhlmann<br/>
+      Buchenweg 5<br/>
+      09380 Thalheim<br/>
+      Germany
+    </p>
+  </div>  
+  <div>
+    <img
+      alt="Torsten's photo"
+      class="max-h-[200px] w-auto block mb-1 rounded-md"      
+      src={photo}
+    />
+  </div>
+</div>
+
+<Markdown>
+## Summary 
+<div class="bg-white rounded-lg p-10 mb-5">
+My name is Torsten Uhlmann, I'm a german software developer with a passion to create 
+great and useful software.
+
+I'm an experienced Java consultant with more than 25 years experience and successful 
+projects in C++, Java, Ruby, Groovy, Scala and GO. My main focus is on enterprise 
+software development and full stack web application development with technologies 
+like Scala and Lift, Clojure or Typescript.
+
+I authored the Lift Web Applications How-to: http://www.packtpub.com/lift-web-applications/book  
+On my Github page you'll find numerous projects I've worked on over the last 
+decade: https://github.com/tuhlmann
+
+I enjoy meeting new people and facing new challenges.
+I'm particularly good at integrating into teams and getting myself involved in the subject.
+If you are looking for an accomplished software developer I'd love hearing from you.
+
+Technologies have changed over time. One thing that steadily remained is my curiosity for new languages and methodologies.
+I particularly enjoyed transitioning from being an imperative programmer with C++ and Java into using a more functional approach with Scala, Clojure and Typescript.
+
+Current technologies:  
+- DB: PostgreSQL, MongoDB  
+- languages: Scala, Clojure, Clojurescript, Javascript, Typescript  
+- web frameworks: Liftweb, AngularJS, MarkoJS, ReactJS
+
+</div>
+
+## Education
+<StoryRenderer 
+  client:visible
+  story={story} 
+  withDescription
+  categories={[AllowedCategories.Education]} 
+/>
+
+## <a name="skills"></a>Skills
+<div class="bg-white rounded-lg p-10 mb-5">
+Some recent skills I aquired over the last year and I'm still practicing regularly are:
+- Scala, Java, GO, Clojure, Clojurescript, Javascript, Typescript, AngularJS, ReactJS, MongoDB
+
+Some things I worked with for many years in the past (that I'm not afraid to mention):
+- C++, Java, Oracle, PostgreSQL, MySQL, Eclipse RCP, Docbook
+
+Things I have used for a short period:
+- Groovy, Ruby, Perl
+
+</div>
+
+
+## <a name="training"></a>Training & Publications
+
+<StoryRenderer
+  client:visible
+  story={story} 
+  withDescription
+  categories={[AllowedCategories.Training, AllowedCategories.Publication]} 
+/>
+
+<hr class="mt-0 mb-0"/>
+
+## My Story
+
+<StoryRenderer 
+  client:visible
+  story={story} 
+  withDescription
+  withImages={false}
+  categories={[AllowedCategories.Resume]}
+  yearsBack={10}
+  more="Wait, there's more..."
+  less="Come on, hide that old crap"
+/>
+
+</Markdown>
+</div>
+</PageLayout>  

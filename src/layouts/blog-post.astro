@@ -1,0 +1,78 @@
+---
+import Header from "../components/Header.tsx";
+import Footer from "../components/Footer.astro";
+import { Markdown } from 'astro/components'
+import { Tags } from "../blocks/Tags"
+import { formatDate } from "../utils/prepare-story-data"
+
+export interface Props {
+	activePage: string
+	title?: string
+}
+
+const { activePage, content } = Astro.props
+const canonicalURL = Astro.request.canonicalURL;
+
+// console.log("cononicalURL", canonicalURL);
+
+let bannerImg = "" 
+// try {
+//   bannerImg = (await import(`../pages${canonicalURL.pathname}/${content.banner}`)).default
+// } catch (err) {
+// 	console.log(`Cannot import banner img ../pages${canonicalURL.pathname}/${content.banner}`, err);
+// }
+
+---
+
+<html class="h-full" lang="en">
+	<head>
+	  <meta title={content.title} />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/x-icon" href="/favicons/favicon.ico" />
+		<title>{content.title}</title>
+		<style global>
+			@import "../styles/global.css";
+	  </style>
+		<style>
+			html,
+			body {
+				font-family: system-ui;
+			}		
+		</style>
+	</head>
+	<body class="h-full">
+		<main class="min-h-full flex flex-col h-screen justify-between">
+			<Header client:visible activePage={activePage} />
+			<div class="py-0">
+  			<article class="my-prose w-full max-w-[1000px] px-20 py-20 ml-auto mr-auto mt-0 mb-0">
+          <div>
+						<h1 class="text-center mb-5 mt-0">
+							{content.title}
+						</h1>
+						<div class="flex justify-center mb-5 h3">
+							{content.author && <h3 class="text-center text-sm opacity-60 font-medium my-0 mx-1">{content.author}</h3>}
+							{content.author && <span class="text-center text-sm opacity-60 font-medium my-0 mx-1">—</span>}
+							{content.date && <h3 class="text-center text-sm opacity-60 font-medium my-0 mx-1">{formatDate(content.date)}</h3>}
+						</div>
+						{content.banner && (
+							<div class="text-center">
+								<img src={bannerImg} alt="" />
+								{content.bannerCredit ? <Markdown>{content.bannerCredit}</Markdown> : null}
+							</div>
+						)}
+						{content.tags && (
+							<div class="mt-3">
+								<Tags tags={content.tags} withLink invertBackground />
+							</div>
+						)}
+						<br />
+						{content.description ? <Markdown>{content.description}</Markdown> : null}
+						<slot /> <!-- Content goes here -->
+					</div>          
+		  	</article>
+			</div>
+			<Footer />
+		</main>
+	</body>
+</html>

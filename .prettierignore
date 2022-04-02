@@ -1,0 +1,5 @@
+# do not run prettier in node_modules folder
+node_modules
+
+# keep legacy .js files untouched
+*.js

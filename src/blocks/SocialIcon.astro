@@ -1,0 +1,26 @@
+---
+export interface Props {
+  color?: string
+  url: string
+  linkClass?: string
+  title?: string
+}
+
+const {color = "rgba(255,255,255,0.7)", url, linkClass = "ml-3", title = ""} = Astro.props
+---
+<style define:vars={{ color }}>
+  .link-color {
+    color: var(--color);
+  }
+  .link-color:hover {
+    color: rgba(255,255,255,1);
+  }
+</style>
+<a
+  href={url}
+  class={`link-color ${linkClass}`}
+  aria-label={title}
+  title={title}
+>
+  <slot />
+</a>

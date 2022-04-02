@@ -1,0 +1,72 @@
+---
+import PageLayout from "../../layouts/page-layout.astro"
+import { MarkdownFrontmatter } from "../../utils/prepare-story-data"
+import { kebabCase } from "../../utils/kebab-case"
+import { TextLink } from "../../blocks/TextLink"
+
+export async function getStaticPaths() {
+	const allPosts = await Astro.fetchContent<MarkdownFrontmatter>('../blog/**/*.md');
+  const allTagsUnique = [...new Set(allPosts.flatMap(p => p.tags))].map(t => kebabCase(t)).sort()
+
+	const sortedPosts = allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+
+  const postsPerTag = allTagsUnique.map(tag => {
+    const posts = sortedPosts.filter(p => p.tags?.map(t => kebabCase(t)).includes(tag))
+
+    return {
+      posts,
+      tag,
+      count: posts.length
+    }
+  })
+
+
+	return [{
+      params: { tag: undefined }, 
+      props: { 
+        tag: "undefined", 
+        allTags: postsPerTag.map(t => ({name: t.tag, count: t.count}))
+      }
+    }, 
+    ...allTagsUnique.map(tag => (
+    { 
+      params: { tag }, 
+      props: { 
+        tag, 
+        allPosts: postsPerTag.find(p => p.tag === tag)?.posts
+      }
+    }
+  ))]
+}
+
+
+const { allPosts, allTags, tag } = Astro.props
+
+const totalCount = allPosts?.length
+const tagHeader = `${totalCount} post${totalCount === 1 ? "" : "s"} tagged with "${tag}"`
+---
+<PageLayout activePage="tags" title="Tags">
+  <div class="my-prose w-full max-w-[1000px] p-10 pt-0 ml-auto mr-auto mt-0 mb-0">
+    {allPosts ? (
+      <h1>{tagHeader} / <TextLink to="/tags">All Tags</TextLink></h1>
+      <ul>
+        {allPosts.map((post: MarkdownFrontmatter) => (
+          <li>
+            <TextLink to={post.url}>{post.title}</TextLink>
+          </li>
+        ))}
+      </ul>    
+    ) : (
+      <h1>All Available Tags</h1>
+      <ul>
+        {allTags.map((tag: any) => (
+          <li>
+            <TextLink to={`/tags/${kebabCase(tag.name)}/`}>
+              {tag.name} ({tag.count})
+            </TextLink>
+          </li>
+        ))}
+      </ul>
+    )}
+  </div>
+</PageLayout>

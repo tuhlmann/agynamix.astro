@@ -1,0 +1,49 @@
+---
+import PageLayout from "../../layouts/page-layout.astro"
+import PostPreview from "../../components/PostPreview.astro"
+import authorData from "../../data/authors.json"
+import { MarkdownFrontmatter } from "../../utils/prepare-story-data"
+
+export async function getStaticPaths({ paginate, rss }) {
+	const allPosts = await Astro.fetchContent<MarkdownFrontmatter>('../blog/**/*.md');  
+	const sortedPosts = allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+
+	// Generate an RSS feed from this collection of posts.
+	// NOTE: This is disabled by default, since it requires `buildOptions.site` to be set in your "astro.config.mjs" file.
+	//   rss({
+	//     title: 'Don’s Blog',
+	//     description: 'An example blog on Astro',
+	//     customData: `<language>en-us</language>`,
+	//     items: sortedPosts.map(item => ({
+	//       title: item.title,
+	//       description: item.description,
+	//       link: item.url,
+	//       pubDate: item.date,
+	//     })),
+	//   });
+
+	// Return a paginated collection of paths for all posts
+	const result = paginate(sortedPosts, { pageSize: 10 });  
+
+//  console.log(result[0]);
+ 
+	return result
+}
+
+// page
+let title = "AGYNAMIX Torsten Uhlmann | Blog"
+let description = "Torsten's thoughts and adventures through the realm of programming"
+let canonicalURL = Astro.request.canonicalURL;
+
+const { page } = Astro.props;
+---
+
+<PageLayout activePage="blog" title={title}>
+  <div class="my-prose w-full max-w-[1000px] p-10 pt-0 ml-auto mr-auto mt-0 mb-0">
+    <h2>All Posts</h2>
+    <small class="count">{page.start + 1}–{page.end + 1} of {page.total}</small>
+    {page.data.map((post: any) => <PostPreview post={post} author={authorData[post.author]} />)}
+  </div>
+</PageLayout>    
+
+<!-- <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} /> -->

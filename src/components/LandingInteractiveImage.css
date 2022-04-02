@@ -1,0 +1,17 @@
+.landing-image {
+  max-height: 50vh;
+}			
+
+.landing-image-wrap {
+  position: relative;
+} 
+
+.landing-modal {
+  padding: 0;
+}
+
+.landing-modal video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

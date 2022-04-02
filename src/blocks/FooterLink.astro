@@ -1,0 +1,10 @@
+---
+export interface Props {
+  to: string;
+  className?: string
+}
+
+const { to, className = "" } = Astro.props;
+---
+
+<a href={to} class={`text-sm text-gray-300 hover:text-white ${className}`}><slot /></a>

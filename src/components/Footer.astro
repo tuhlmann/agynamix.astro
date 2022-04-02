@@ -1,0 +1,91 @@
+---
+import FooterLink from "../blocks/FooterLink.astro";
+import CallIcon from "../blocks/CallIcon.astro";
+import ContactIcon from "../blocks/ContactIcon.astro";
+import FollowIcon from "../blocks/FollowIcon.astro";
+import CopyrightIcon from "../blocks/CopyrightIcon.astro";
+import Facebook from "../blocks/Facebook.astro";
+import Twitter from "../blocks/Twitter.astro";
+import LinkedIn from "../blocks/LinkedIn.astro";
+import Github from "../blocks/Github.astro";
+import { config } from "../data/config";
+---
+
+
+<footer class="bg-gray-800" aria-labelledby="footer-heading">
+  <h2 id="footer-heading" class="sr-only">Footer</h2>
+  <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:py-6 lg:px-8">
+    <div class="xl:grid xl:grid-cols-2 xl:gap-8">
+      <div class="grid grid-cols-2 gap-8 xl:col-span-2">
+        <div class="md:grid md:grid-cols-2 md:gap-8">
+          <div class="self-center">
+            <ul role="list" class="space-y-4">
+              <li class="flex">
+                <div class="hidden sm:block self-center">
+                  <CallIcon />
+                </div>
+                <div>
+                  <span class="text-sm text-gray-300">
+                    {config.phone}<br />
+                    <FooterLink to={`mailto:${config.email}`}>{config.email}</FooterLink>
+                  </span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-12 md:mt-0 self-center">
+            <ul role="list" class="space-y-4">
+              <li class="flex">
+                <div class="hidden sm:block self-center">
+                  <ContactIcon />
+                </div>
+                <div>
+                  <div class="text-sm text-gray-300">
+                    AGYNAMIX®<br />
+                    Buchenweg 5<br />
+                    09380 Thalheim<br />
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="md:grid md:grid-cols-2 md:gap-8">
+          <div class="self-center">
+            <ul role="list" class="space-y-4">
+              <li class="flex">
+                <div class="hidden sm:block self-center">
+                  <FollowIcon />
+                </div>
+                <div class="flex items-center">
+                  <Facebook />
+                  <Twitter />
+                  <Github />
+                  <LinkedIn />
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-12 md:mt-0 self-center">
+            <ul role="list" class="space-y-4">
+              <li class="flex items-center">
+                <div class="hidden sm:block self-center">
+                  <CopyrightIcon />
+                </div>
+                <div>
+                  <span class="text-sm text-gray-300">
+                    <FooterLink to="/imprint">Imprint</FooterLink> / <FooterLink to="/privacy-policy">Privacy Policy</FooterLink>
+                  </span>
+                  <div class="text-sm text-gray-300">
+                    © 2022 by Torsten Uhlmann.<br />
+                    Built with <span>❤</span> in Thalheim.
+                  </div>                
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,32 @@
+---
+export interface Props {
+  background: string
+  link: string
+  text: string
+}
+
+const { background, link, text } = Astro.props
+---
+
+<style>
+  .round-link {
+    background-position: center !important;
+    background-size: contain !important;
+  }
+  .round-link-inner {
+    margin: auto;
+    text-align: center;
+    color: white;
+    opacity: 0.8;
+  }
+  .round-link-inner:hover {
+    opacity: 1;
+  }
+</style>
+<a class="self-stretch sm:self-auto no-underline"  href={link}>
+  <div class="round-link flex m-2 justify-items-center p-3 h-[70px] rounded-xl sm:w-[130px] sm:h-[130px] sm:rounded-full" style={`background: ${background}`}>
+    <span class="round-link-inner">
+      {text}
+    </span>
+  </div>
+</a>

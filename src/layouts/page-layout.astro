@@ -1,0 +1,39 @@
+---
+import Header from "../components/Header.tsx";
+import Footer from "../components/Footer.astro";
+
+export interface Props {
+	activePage: string
+	title?: string
+}
+
+const { activePage, title = "AGYNAMIX Torsten Uhlmann" } = Astro.props
+---
+
+<html class="h-full" lang="en">
+	<head>
+	  <meta title={title} />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/x-icon" href="/favicons/favicon.ico" />
+		<title>{title}</title>
+		<style global>
+			@import "../styles/global.css";
+	  </style>
+		<style>
+			html,
+			body {
+				font-family: system-ui;
+			}		
+		</style>
+	</head>
+	<body class="h-full">
+		<main class="min-h-full flex flex-col h-screen justify-between">
+			<Header client:visible activePage={activePage} />
+			<div class="py-20">
+        <slot /> <!-- Content goes here -->
+			</div>
+			<Footer />
+		</main>
+	</body>
+</html>
