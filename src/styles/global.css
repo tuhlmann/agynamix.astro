@@ -1,7 +1,7 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@tailwind variants;
+@tailwind variants; */
 
 :root {
   --hover-light: rgba(219, 87, 86, 0.15);
@@ -9,7 +9,6 @@
   --bg-color: #eae5e5
 }
 
-@layer base {
 
   body {
     background-color: var(--bg-color);
@@ -41,4 +40,3 @@
     @apply text-base;
   } */
 
-}

@@ -5,13 +5,13 @@ import { kebabCase } from "../../utils/kebab-case"
 import { TextLink } from "../../blocks/TextLink"
 
 export async function getStaticPaths() {
-	const allPosts = await Astro.fetchContent<MarkdownFrontmatter>('../blog/**/*.md');
-  const allTagsUnique = [...new Set(allPosts.flatMap(p => p.tags))].map(t => kebabCase(t)).sort()
+	const allPosts = await Astro.glob<MarkdownFrontmatter>('../blog/**/*.md');
+  const allTagsUnique = [...new Set(allPosts.flatMap(p => p.frontmatter.tags))].map(t => kebabCase(t)).sort()
 
-	const sortedPosts = allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+	const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
 
   const postsPerTag = allTagsUnique.map(tag => {
-    const posts = sortedPosts.filter(p => p.tags?.map(t => kebabCase(t)).includes(tag))
+    const posts = sortedPosts.filter(p => p.frontmatter.tags?.map(t => kebabCase(t)).includes(tag))
 
     return {
       posts,
@@ -22,9 +22,9 @@ export async function getStaticPaths() {
 
 
 	return [{
-      params: { tag: undefined }, 
+      params: { tag: "all" }, 
       props: { 
-        tag: "undefined", 
+        tag: "all", 
         allTags: postsPerTag.map(t => ({name: t.tag, count: t.count}))
       }
     }, 
@@ -48,11 +48,11 @@ const tagHeader = `${totalCount} post${totalCount === 1 ? "" : "s"} tagged with 
 <PageLayout activePage="tags" title="Tags">
   <div class="my-prose w-full max-w-[1000px] p-10 pt-0 ml-auto mr-auto mt-0 mb-0">
     {allPosts ? (
-      <h1>{tagHeader} / <TextLink to="/tags">All Tags</TextLink></h1>
+      <h1>{tagHeader} / <TextLink to="/tags/all">All Tags</TextLink></h1>
       <ul>
-        {allPosts.map((post: MarkdownFrontmatter) => (
+        {allPosts.map((post: any) => (
           <li>
-            <TextLink to={post.url}>{post.title}</TextLink>
+            <TextLink to={post.url}>{post.frontmatter.title}</TextLink>
           </li>
         ))}
       </ul>    

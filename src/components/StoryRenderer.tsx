@@ -185,12 +185,12 @@ export default function StoryRenderer(p: Props): JSX.Element {
             <div class="story-wrapper">
               <div class="story-block flex justify-between items-start sm:items-center flex-col-reverse sm:flex-row">
                 <div class="self-center sm:self-start">
-                  <h2 class="text-center sm:text-inherit">
+                  <h2 class="text-center sm:text-left">
                     <a href={`#${slug}`} id={slug}>
                       {position}
                     </a>
                   </h2>
-                  <h4 class="text-center sm:text-inherit">
+                  <h4 class="text-center sm:text-left">
                     {client};
                     <small>
                       {" "}

@@ -5,7 +5,8 @@ title: "EclipseCon 2007: Day 2"
 author: "Torsten Uhlmann"
 tags: ["business"]
 categories: []
-description:
+description: "This is a multiline description
+with multiple lines **bah**"
 banner: banner.jpg
 bannerCredit: "Photo by Torsten Uhlmann"
 layout: "../../../layouts/blog-post.astro"

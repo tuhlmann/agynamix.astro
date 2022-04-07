@@ -3,10 +3,11 @@ import PageLayout from "../../layouts/page-layout.astro"
 import PostPreview from "../../components/PostPreview.astro"
 import authorData from "../../data/authors.json"
 import { MarkdownFrontmatter } from "../../utils/prepare-story-data"
+import { TextLink } from "../../blocks/TextLink"
 
 export async function getStaticPaths({ paginate, rss }) {
-	const allPosts = await Astro.fetchContent<MarkdownFrontmatter>('../blog/**/*.md');  
-	const sortedPosts = allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+	const allPosts = await Astro.glob<MarkdownFrontmatter>('../blog/**/*.md');  
+	const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
 
 	// Generate an RSS feed from this collection of posts.
 	// NOTE: This is disabled by default, since it requires `buildOptions.site` to be set in your "astro.config.mjs" file.
@@ -33,16 +34,43 @@ export async function getStaticPaths({ paginate, rss }) {
 // page
 let title = "AGYNAMIX Torsten Uhlmann | Blog"
 let description = "Torsten's thoughts and adventures through the realm of programming"
-let canonicalURL = Astro.request.canonicalURL;
+let canonicalURL = Astro.canonicalURL;
 
 const { page } = Astro.props;
 ---
 
 <PageLayout activePage="blog" title={title}>
-  <div class="my-prose w-full max-w-[1000px] p-10 pt-0 ml-auto mr-auto mt-0 mb-0">
-    <h2>All Posts</h2>
-    <small class="count">{page.start + 1}–{page.end + 1} of {page.total}</small>
-    {page.data.map((post: any) => <PostPreview post={post} author={authorData[post.author]} />)}
+  <div class="w-full max-w-[1000px] py-10 pt-0 ml-auto mr-auto mt-0 mb-0">
+    <div class="flex items-center mb-3 text-gray-600">
+			<div class="flex-1 flex justify-between">
+			  <div>
+					{page.url.prev ? (
+						<a href={page.url.prev} class="relative inline-flex items-center underline hover:text-gray-900"> &#x1F804; Previous </a>
+					) : null}
+				</div>
+  		  <span>Post {page.start + 1}–{page.end + 1} of {page.total}</span>
+				<div>
+					{page.url.next ? (
+						<a href={page.url.next} class="ml-3 relative inline-flex items-center underline hover:text-gray-900"> Next &#x1F806;</a>
+					) : null }
+				</div>
+      </div>
+		</div>
+		<div class="max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+      {page.data.map((post: any) => <PostPreview post={post} author={authorData[post.author]} />)}
+		</div>
+		<div class="mt-6">
+		  <div class="flex-1 flex justify-between">
+			  <div>
+					{page.url.prev ? (
+						<a href={page.url.prev} class="relative inline-flex items-center text-gray-600 underline hover:text-gray-900"> &#x1F804; Previous </a>
+					) : null}
+				</div>
+				{page.url.next ? (
+  				<a href={page.url.next} class="ml-3 relative inline-flex items-center text-gray-600 underline hover:text-gray-900"> Next &#x1F806;</a>
+				) : null }
+      </div>
+		</div>
   </div>
 </PageLayout>    
 
