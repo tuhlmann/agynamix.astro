@@ -1,13 +1,15 @@
 ---
 import RoundLink from "../components/RoundLink.astro";
-import { LandingInteractiveImage } from "../components/LandingInteractiveImage";
+import { LandingInteractiveImage } from "../components/LandingInteractiveImage.tsx";
 import resumeImg from "../images/resume.svg"
 import skillsImg from "../images/skills.svg"
 import clientImg from "../images/client.svg"
 import PageLayout from '../layouts/page-layout.astro';
+import { TextLink } from "../blocks/TextLink"
+import { config } from "../data/config"
 ---
 
-<PageLayout activePage="index">
+<PageLayout activePage="index" title="Welcome to AGYNAMIX!">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-around">
 		<div class="flex justify-between flex-col sm:flex-row">
 			<LandingInteractiveImage client:visible />						
@@ -15,16 +17,19 @@ import PageLayout from '../layouts/page-layout.astro';
 				<!-- Replace with your content -->
 				<div class="px-4 py-8 sm:px-0">
 					<div>
-						<h1>Hello, my name is Torsten.</h1>
-						<p>
+						<h1 class="h1 my-2">Hello, my name is Torsten.</h1>
+						<p class="my-2">
 							I'm a Full Stack software developer working with Scala, Java, Clojure and Typescript, 
-							amongst others.
+							<TextLink to="/resume#skills">amongst others</TextLink>.
 						</p>
-						<p>
-							I love developing new things and working with great teams; 
-							I taught courses, spoke at conferences and wrote a book.
+						<p class="my-2">
+							I love developing <TextLink to="/products">new things</TextLink> and working with 
+							<TextLink to="/clients">great teams</TextLink>; 
+							I taught <TextLink to="/resume#training">courses</TextLink>, 
+							spoke at <TextLink to="/resume#training">conferences</TextLink> and wrote a 
+							<TextLink to="/resume#2012-05-01-packt-publishing">book</TextLink>.
 						</p>
-						<h1>More about me:</h1>
+						<h2 class="h2">More about me:</h2>
 						<div class="flex justify-between flex-col sm:flex-row sm:items-center lg:pr-8 lg:pl-8">
 							<RoundLink
 								background={`linear-gradient(45deg, rgba(219, 87, 86, 0.75), rgba(219, 87, 86, 1)), url(${resumeImg})`}
@@ -42,10 +47,10 @@ import PageLayout from '../layouts/page-layout.astro';
 								text="My Clients"
 							/>
 						</div>
-					<div>
+					<div class="my-2">
 						<p>
 							If you're looking for an accomplished software engineer you've come to the right place, 
-							let's get in touch!
+							<TextLink to={`mailto:${config.email}`}>let's get in touch!</TextLink>
 						</p>
 					</div>
 

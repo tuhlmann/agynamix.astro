@@ -25,6 +25,13 @@
     @apply text-gray-900;
   }
 
+  body .h2 {
+    @apply font-semibold;
+    @apply text-2xl;
+    @apply leading-relaxed;
+    @apply text-gray-900;
+  }
+
   .my-prose {
     @apply prose;
     @apply lg:prose-lg;

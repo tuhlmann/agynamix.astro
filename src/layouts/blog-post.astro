@@ -12,17 +12,17 @@ export interface Props {
 }
 
 const { activePage, content } = Astro.props
-const canonicalURL = Astro.canonicalURL;
+
+let blogDir = Astro.canonicalURL.pathname
+if (blogDir.endsWith("/")) {
+  blogDir = blogDir.slice(0, -1)
+}
+const pos = blogDir.lastIndexOf("/")
+blogDir = blogDir.substring(pos + 1)
 
 let bannerImg = ""
-if (content.banner) {
-	// console.log("CanonicalURL", canonicalURL);
-	bannerImg = canonicalURL.href.replace("/blog/", "/blog-assets/") + content.banner
-	// try {
-	// 	const bannerImgMod = await import(`../src/pages${canonicalURL.pathname}${content.banner}`)
-	// } catch(err) {		
-	// 	console.log(`could not import ../src/pages${canonicalURL.pathname}${content.banner}`, err);		
-	// }
+if (content.banner) {	
+	bannerImg = `/blog-assets/${blogDir}/${content.banner}`
 }
 
 ---
@@ -81,4 +81,7 @@ if (content.banner) {
 			rewireImagesAndLinks();
 		</script>
 	</body>
+  <link rel="stylesheet" type="text/css" href="/lib/cookieconsent.min.css" />
+  <script is:inline src="/lib/cookieconsent.min.js" />
+  <script is:inline src="/lib/cookieconsent_init.js" />	
 </html>
