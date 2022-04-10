@@ -1,0 +1,33 @@
+---
+import Header from "../components/Header.tsx";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css"
+import "../styles/fonts.css"
+
+export interface Props {
+	activePage: string
+	title?: string
+}
+
+const { activePage, title = "AGYNAMIX Torsten Uhlmann" } = Astro.props
+---
+
+<html class="h-full" lang="en">
+	<head>
+	  <meta title={title} />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/x-icon" href="/favicons/favicon.ico" />
+		<title>{title}</title>
+	</head>
+	<body class="h-full">
+		<main class="min-h-full flex flex-col h-screen justify-between">
+			<Header client:visible activePage={activePage} />
+        <slot /> <!-- Content goes here -->
+			<Footer />
+		</main>
+	</body>
+  <link rel="stylesheet" type="text/css" href="/lib/cookieconsent.min.css" />
+  <script is:inline src="/lib/cookieconsent.min.js" />
+  <script is:inline src="/lib/cookieconsent_init.js" />	
+</html>

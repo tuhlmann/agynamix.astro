@@ -9,7 +9,7 @@ interface Props {
   children: JSX.Element
 }
 
-export function TextLink(props: Props): any {
+export function TextLink(props: Props): JSX.Element {
   // transition ease-in delay-500
   return (
     <a class={classNames("text-link no-underline w-fit", props.className)} href={props.to}>

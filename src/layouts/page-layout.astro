@@ -1,7 +1,5 @@
 ---
-import Header from "../components/Header.tsx";
-import Footer from "../components/Footer.astro";
-import "../styles/global.css"
+import CommonLayout from "./common-layout.astro"
 
 export interface Props {
 	activePage: string
@@ -11,30 +9,8 @@ export interface Props {
 const { activePage, title = "AGYNAMIX Torsten Uhlmann" } = Astro.props
 ---
 
-<html class="h-full" lang="en">
-	<head>
-	  <meta title={title} />
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/x-icon" href="/favicons/favicon.ico" />
-		<title>{title}</title>
-		<style>
-			html,
-			body {
-				font-family: system-ui;
-			}		
-		</style>
-	</head>
-	<body class="h-full">
-		<main class="min-h-full flex flex-col h-screen justify-between">
-			<Header client:visible activePage={activePage} />
-			<div class="py-20">
-        <slot /> <!-- Content goes here -->
-			</div>
-			<Footer />
-		</main>
-	</body>
-  <link rel="stylesheet" type="text/css" href="/lib/cookieconsent.min.css" />
-  <script is:inline src="/lib/cookieconsent.min.js" />
-  <script is:inline src="/lib/cookieconsent_init.js" />	
-</html>
+<CommonLayout activePage={activePage} title={title}>
+	<div class="py-20">
+		<slot /> <!-- Content goes here -->
+	</div>
+</CommonLayout>

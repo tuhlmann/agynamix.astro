@@ -3,7 +3,6 @@ import PageLayout from "../../layouts/page-layout.astro"
 import PostPreview from "../../components/PostPreview.astro"
 import authorData from "../../data/authors.json"
 import { MarkdownFrontmatter } from "../../utils/prepare-story-data"
-import { TextLink } from "../../blocks/TextLink"
 
 export async function getStaticPaths({ paginate, rss }) {
 	const allPosts = await Astro.glob<MarkdownFrontmatter>('../blog/**/*.md');  
@@ -24,7 +23,7 @@ export async function getStaticPaths({ paginate, rss }) {
 	//   });
 
 	// Return a paginated collection of paths for all posts
-	const result = paginate(sortedPosts, { pageSize: 10 });  
+	const result = paginate(sortedPosts, { pageSize: 12 });  
 
 //  console.log(result[0]);
  

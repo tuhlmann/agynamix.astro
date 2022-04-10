@@ -2,7 +2,7 @@
 import PageLayout from "../../layouts/page-layout.astro"
 import { MarkdownFrontmatter } from "../../utils/prepare-story-data"
 import { kebabCase } from "../../utils/kebab-case"
-import { TextLink } from "../../blocks/TextLink"
+import { TextLink } from "../../blocks/TextLink.tsx"
 
 export async function getStaticPaths() {
 	const allPosts = await Astro.glob<MarkdownFrontmatter>('../blog/**/*.md');

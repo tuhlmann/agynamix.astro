@@ -1,4 +1,8 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable no-undef */
+
+const defaultTheme = require("tailwindcss/defaultTheme")
+
 module.exports = {
   content: ["./public/**/*.html", "./src/**/*.{astro,js,jsx,svelte,ts,tsx,vue}"],
   theme: {
@@ -18,6 +22,9 @@ module.exports = {
           800: "#a05a07",
           900: "#804705",
         },
+      },
+      fontFamily: {
+        sans: ["Plex Sans", ...defaultTheme.fontFamily.sans],
       },
     },
   },

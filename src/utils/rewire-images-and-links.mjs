@@ -6,6 +6,9 @@
  */
 export default function rewireImagesAndLinks() {
   const el = document.getElementById("blog-post-content")
+  if (!el) {
+    return
+  }
 
   let blogDir = location.pathname
   if (blogDir.endsWith("/")) {

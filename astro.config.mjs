@@ -14,5 +14,15 @@ import tailwind from "@astrojs/tailwind"
 //   ],
 // })
 export default defineConfig({
+  markdown: {
+    syntaxHighlight: "shiki",
+    shikiConfig: {
+      theme: "dracula",
+      // Learn more about this configuration here:
+      // https://docs.astro.build/en/guides/markdown-content/#syntax-highlighting
+      langs: ["astro", "javascript", "js", "typescript", "ts", "scala", "java", "sql", "clojure", "css", "rust", "rs"],
+      wrap: true,
+    },
+  },
   integrations: [tailwind(), solid()],
 })

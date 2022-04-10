@@ -2,13 +2,12 @@
 import PageLayout from '../layouts/page-layout.astro'
 import { Markdown } from 'astro/components'
 
-import { TextLink } from "../blocks/TextLink"
-// import website from "../../config/website"
+import { TextLink } from "../blocks/TextLink.tsx"
 
-import logo from "../images/logo.png"
+import torstenProfileImg from "../images/torsten_square.jpg"
 import contactMe from "../images/consulting/undraw_contact_us_15o2.svg"
 
-import { config } from "../data/config";
+import { config } from "../data/config"
 ---
 
 <PageLayout title="Consulting Services" activePage="consulting">
@@ -19,39 +18,53 @@ import { config } from "../data/config";
       </div>  
       <div>
         <img
-          class="block mb-1 rounded-md max-w-[300px]"
+          class="m-0 mb-1 rounded-md max-w-[150px]"
           alt="AGYNAMIX"
-          src={logo}
+          src={torstenProfileImg}
         />
       </div>
     </div>
   
-<Markdown>
-I'm a full stack software developer with more than 20 years of experience in numerous fields and with numerous languages.
-
-I have developed software for all of my professional life and even [before](/about), and I didn't really want to do anything else.
-Languages change, developer roles change, but the desire to create something useful always stays strong.
-
-I love learning new things and meeting new people. 
-Over the years I have worked with a plethora of different programming languages.
-I worked with Cobol, C++, Java, Groovy, Ruby and Perl.
-
-Since 2009 I have transitioned into using Scala, Javascript, Clojure and Typescript, with a sprinkle of GO.
-
-I worked with numerous web frameworks including Lift, AngularJS, MarkoJS and my favorite, ReactJS.
-
-I use to keep my application's data in SQL databases like PostgreSQL and NoSQL stores, mostly MongoDB.
-
-I developed and sold several applications, some of them are available now on my [github account](https://github.com/tuhlmann).
-
-Over the years I have worked with a large number of [clients](/clients), including:
-
-- German Telekom
-- the german bank 1822 Sparkasse
-- the social network sgrouples, now mewe.com
-- Underscore Consulting
-- Ascendant, Inc.
-</Markdown>
+<div>
+  <p>
+    I'm a full stack software developer with more than 20 years of experience in numerous fields and with numerous languages.
+  </p>
+  <p>
+    I have developed software for all of my professional life and even <TextLink to="/about">before</TextLink>, 
+    and I didn't really want to do anything else.
+    Languages change, developer roles change, but the desire to create something useful always stays strong.
+  </p>
+  <p>
+    I love learning new things and meeting new people. 
+    Over the years I have worked with a plethora of different programming languages.
+    I worked with Cobol, C++, Java, Groovy, Ruby and Perl.
+  </p>
+  <p>
+    Since 2009 I have transitioned into using Scala, Javascript, Clojure and Typescript, with a sprinkle of GO.
+  </p>
+  <p>
+    I worked with numerous web frameworks including Lift, AngularJS, MarkoJS and my favorite, ReactJS.
+  </p>
+  <p>
+    I use to keep my application's data in SQL databases like PostgreSQL and NoSQL stores, mostly MongoDB.
+  </p>
+  <p>
+    I developed and sold several applications, some of them are available now on my 
+    <TextLink to="https://github.com/tuhlmann">github account</TextLink>.
+  </p>
+  <p>
+    Over the years I have worked with a large number of <TextLink to="/clients">clients</TextLink>, including:
+  </p>
+  <p>
+  <ul>
+    <li>German Telekom</li>
+    <li>the german bank 1822 Sparkasse</li>
+    <li>the social network sgrouples, now mewe.com</li>
+    <li>Underscore Consulting</li>
+    <li>Ascendant, Inc.</li>
+  </ul>
+  </p>
+</div>
 
   <div class="flex justify-between mb-6 mt-5">
     <div>
