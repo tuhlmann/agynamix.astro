@@ -8,4 +8,6 @@
 - [x] Fix typography in MD files
 - [x] Fix links to use TextLink styling
 - [x] Change used fonts
-- [ ] 
+- [ ] Create deploySite.sh script
+  - save old public/
+  - uncompress site dir, rename, chown, reload server
