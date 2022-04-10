@@ -26,6 +26,9 @@ module.exports = {
       fontFamily: {
         sans: ["Plex Sans", ...defaultTheme.fontFamily.sans],
       },
+      strokeWidth: {
+        "0": "0px",
+      },
     },
   },
   plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],

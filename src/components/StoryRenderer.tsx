@@ -15,7 +15,6 @@ import {
   StoryData,
 } from "../utils/prepare-story-data"
 import { TextLink } from "../blocks/TextLink"
-import "./StoryRenderer.css"
 import { RecommendationStrong } from "../blocks/RecommendationStrong"
 import { Tags } from "~/blocks/Tags"
 
@@ -31,11 +30,13 @@ interface Props {
 
 function renderClientImage(url?: string, img?: string): JSX.Element | null {
   if (img) {
-    const i = <img class="min-w-[200px] max-w-[200px]" src={img} />
+    const i = <img class="mb-0 min-w-[200px] max-w-[200px]" src={img} />
     if (url) {
       return (
         <div class="self-center sm:self-start">
-          <a href={url}>{i}</a>
+          <a class="text-inherit" href={url}>
+            {i}
+          </a>
         </div>
       )
     }
@@ -78,11 +79,11 @@ function renderRecommendations(converter: Converter.Converter, recommendations?:
 
     return (
       <div class="mt-5 text-base">
-        <h4>Recommendations</h4>
-        <ul>
+        <h4 class="m-0 uppercase opacity-60 text-sm leading-9 tracking-wide">Recommendations</h4>
+        <ul class="list-none m-0">
           <For each={recommendations}>
             {r => (
-              <li class="mt-5">
+              <li class="flex items-center justify-between m-0 mb-3 mt-5">
                 <div class="flex flex-col w-full">{renderRecommendation(converter, r)}</div>
               </li>
             )}
@@ -97,7 +98,7 @@ function renderImage(converter: Converter.Converter, imageElement: ImageElement)
   const { image, align, description } = imageElement
   const imgEl = (
     <div class="pt-0 pb-0 pl-[5px] pr-[5px]">
-      <img class="max-w-[350px]" src={image} />
+      <img class="mb-0 max-w-[350px]" src={image} />
     </div>
   )
   const txt = (
@@ -127,10 +128,10 @@ function renderImages(converter: Converter.Converter, images?: ImageElement[]): 
 
     return (
       <div class="mt-5 text-base">
-        <ul>
+        <ul class="list-none m-0">
           <For each={images}>
             {i => (
-              <li class="mt-5">
+              <li class="flex items-center justify-between m-0 mb-3 mt-5">
                 <div class="flex w-full justify-between flex-col sm:flex-row">{renderImage(converter, i)}</div>
               </li>
             )}
@@ -182,15 +183,15 @@ export default function StoryRenderer(p: Props): JSX.Element {
           const niceStart = formatDate(start)
           const niceEnd = formatDate(end)
           return (
-            <div class="story-wrapper">
-              <div class="story-block flex justify-between items-start sm:items-center flex-col-reverse sm:flex-row">
+            <div class="bg-white rounded-lg p-10 mb-5">
+              <div class="flex justify-between items-start sm:items-center flex-col-reverse sm:flex-row">
                 <div class="self-center sm:self-start">
-                  <h2 class="text-center sm:text-left">
-                    <a href={`#${slug}`} id={slug}>
+                  <h2 class="text-center sm:text-left mr-1 flex-1 mb-3 sm:m-0">
+                    <a class="text-inherit" href={`#${slug}`} id={slug}>
                       {position}
                     </a>
                   </h2>
-                  <h4 class="text-center sm:text-left">
+                  <h4 class="text-center sm:text-left m-0 uppercase opacity-60 text-sm leading-9 tracking-wide">
                     {client};
                     <small>
                       {" "}
@@ -205,7 +206,7 @@ export default function StoryRenderer(p: Props): JSX.Element {
               </div>
               {props.withDescription ? (
                 <>
-                  <hr />
+                  <hr class="my-5 mx-0 opacity-50" />
                   <div class="mt-5 text-base">
                     <div innerHTML={converter.makeHtml(description)}></div>
                   </div>

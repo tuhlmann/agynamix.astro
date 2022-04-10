@@ -20,7 +20,7 @@ const { activePage, title = "AGYNAMIX Torsten Uhlmann" } = Astro.props
 		<link rel="icon" type="image/x-icon" href="/favicons/favicon.ico" />
 		<title>{title}</title>
 	</head>
-	<body class="h-full">
+	<body class="h-full bg-primary-bg font-sans text-base leading-6">
 		<main class="min-h-full flex flex-col h-screen justify-between">
 			<Header client:visible activePage={activePage} />
         <slot /> <!-- Content goes here -->
