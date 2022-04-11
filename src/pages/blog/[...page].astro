@@ -41,7 +41,7 @@ const { page } = Astro.props;
 <PageLayout activePage="blog" title={title}>
   <div class="w-full max-w-[1000px] py-10 pt-0 ml-auto mr-auto mt-0 mb-0">
     <div class="flex items-center mb-3 text-gray-600">
-			<div class="flex-1 flex justify-between">
+			<div class="flex-1 flex justify-between m-2 sm:m-0">
 			  <div>
 					{page.url.prev ? (
 						<a href={page.url.prev} class="relative inline-flex items-center underline hover:text-gray-900"> &#x1F804; Previous </a>
@@ -59,7 +59,7 @@ const { page } = Astro.props;
       {page.data.map((post: any) => <PostPreview post={post} author={authorData[post.author]} />)}
 		</div>
 		<div class="mt-6">
-		  <div class="flex-1 flex justify-between">
+		  <div class="flex-1 flex justify-between m-2 sm:m-0">
 			  <div>
 					{page.url.prev ? (
 						<a href={page.url.prev} class="relative inline-flex items-center text-gray-600 underline hover:text-gray-900"> &#x1F804; Previous </a>

@@ -6,7 +6,7 @@ import { AllowedCategories } from "../utils/prepare-story-data"
 ---
 
 <PageLayout activePage="products" title="My Products">
-  <div class="my-prose w-full max-w-[1000px] p-10 ml-auto mr-auto mt-0 mb-0">
+  <div class="my-prose w-full max-w-[1000px] p-3 md:p-10 ml-auto mr-auto mt-0 mb-0">
     <StoryRenderer client:visible story={story} categories={[AllowedCategories.Product]} />
   </div>
 </PageLayout>  

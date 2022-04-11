@@ -80,10 +80,10 @@ function renderRecommendations(converter: Converter.Converter, recommendations?:
     return (
       <div class="mt-5 text-base">
         <h4 class="m-0 uppercase opacity-60 text-sm leading-9 tracking-wide">Recommendations</h4>
-        <ul class="list-none m-0">
+        <ul class="list-none m-0 p-0">
           <For each={recommendations}>
             {r => (
-              <li class="flex items-center justify-between m-0 mb-3 mt-5">
+              <li class="flex items-center justify-between p-0 m-0 mb-3 mt-5">
                 <div class="flex flex-col w-full">{renderRecommendation(converter, r)}</div>
               </li>
             )}
@@ -97,15 +97,11 @@ function renderRecommendations(converter: Converter.Converter, recommendations?:
 function renderImage(converter: Converter.Converter, imageElement: ImageElement): JSX.Element {
   const { image, align, description } = imageElement
   const imgEl = (
-    <div class="pt-0 pb-0 pl-[5px] pr-[5px]">
-      <img class="mb-0 max-w-[350px]" src={image} />
+    <div class="p-0">
+      <img class="mb-0 max-w-full md:max-w-[350px]" src={image} />
     </div>
   )
-  const txt = (
-    <div class="pt-0 pb-0 pl-[5px] pr-[5px]">
-      {description && <div innerHTML={converter.makeHtml(description)}></div>}
-    </div>
-  )
+  const txt = <div class="p-0 md:pr-3">{description && <div innerHTML={converter.makeHtml(description)}></div>}</div>
 
   return align && align === Alignment.Right ? (
     <>
@@ -128,10 +124,10 @@ function renderImages(converter: Converter.Converter, images?: ImageElement[]): 
 
     return (
       <div class="mt-5 text-base">
-        <ul class="list-none m-0">
+        <ul class="list-none m-0 p-0">
           <For each={images}>
             {i => (
-              <li class="flex items-center justify-between m-0 mb-3 mt-5">
+              <li class="flex items-center justify-between p-0 m-0 mb-3 mt-5">
                 <div class="flex w-full justify-between flex-col sm:flex-row">{renderImage(converter, i)}</div>
               </li>
             )}
@@ -183,7 +179,7 @@ export default function StoryRenderer(p: Props): JSX.Element {
           const niceStart = formatDate(start)
           const niceEnd = formatDate(end)
           return (
-            <div class="bg-white rounded-lg p-10 mb-5">
+            <div class="bg-white rounded-lg p-3 md:p-10 mb-5">
               <div class="flex justify-between items-start sm:items-center flex-col-reverse sm:flex-row">
                 <div class="self-center sm:self-start">
                   <h2 class="text-center sm:text-left mr-1 flex-1 mb-3 sm:m-0">

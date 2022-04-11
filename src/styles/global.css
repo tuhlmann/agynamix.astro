@@ -45,5 +45,5 @@ body .h2 {
   @apply list-disc;
   @apply list-inside;
   @apply lg:prose-h1:text-3xl;
-  @apply prose-h1:leading-relaxed;
+  @apply lg:prose-h1:leading-relaxed;
 }

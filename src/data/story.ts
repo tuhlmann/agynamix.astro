@@ -423,7 +423,7 @@ This software manages garden tenants, readings, documents, a shared calendar and
       tags: ["Scala", "Speaking"],
       categories: [AllowedCategories.Training],
       description: `
-     I was giving talks at Scala conferences about my[Lift](https://liftweb.net), the Scala web framework I'm involved with for many years.
+     I was giving talks at Scala conferences about [Lift](https://liftweb.net), the Scala web framework I've been involved with for many years.
     `,
     },
     {
@@ -436,7 +436,7 @@ This software manages garden tenants, readings, documents, a shared calendar and
       tags: ["Scala", "Speaking"],
       categories: [AllowedCategories.Training],
       description: `
-     I was giving talks at Scala conferences about my[Lift](https://liftweb.net), the Scala web framework I'm involved with for many years.
+     I was giving talks at Scala conferences about [Lift](https://liftweb.net), the Scala web framework I've been involved with for many years.
     `,
     },
     {
