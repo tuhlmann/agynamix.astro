@@ -11,7 +11,12 @@ services:
       - "traefik.enable=true"
       - "traefik.docker.network=traefik_web"
       - "traefik.http.routers.agynamix.entrypoints=websecure"
-      - "traefik.http.routers.agynamix.rule=Host(`agynamix.com`) || Host(`www.agynamix.com`)"
+      - >
+        traefik.http.routers.agynamix_astro.rule=
+        Host(`agynamix.com`) ||
+        Host(`www.agynamix.com`) ||
+        Host(`agynamix.de`) ||
+        Host(`www.agynamix.de`)
       - "traefik.http.services.agynamix.loadbalancer.server.port=80"
       - "traefik.http.routers.agynamix.tls=true"
       - "traefik.http.routers.agynamix.tls.certresolver=default"
