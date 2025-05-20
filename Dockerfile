@@ -7,7 +7,7 @@ RUN npm install
 
 # Copy source and build with custom mode
 COPY . .
-RUN npm run build -- --mode custom
+RUN npm run build
 
 FROM nginx:alpine AS runtime
 
