@@ -1,7 +1,7 @@
 ---
 services:
   agynamix_homepage:
-    image: ghcr.io/tuhlmann/agynamix.astro:20250520-174245
+    image: ghcr.io/tuhlmann/agynamix.astro:20250520-181031
     restart: unless-stopped
     container_name: agynamix_homepage
     networks:
