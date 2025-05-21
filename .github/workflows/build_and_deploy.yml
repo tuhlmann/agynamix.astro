@@ -54,7 +54,7 @@ jobs:
       - name: Set SSH private key
         env:
           SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_HOST: ${{ vars.SSH_HOST }}
         run: |
           mkdir -p ~/.ssh
           echo "$SSH_KEY" > ~/.ssh/id_ed25519
@@ -63,7 +63,7 @@ jobs:
 
       - name: Create remote directory
         run: |
-          ssh -i ~/.ssh/id_ed25519 root@${{ secrets.SSH_HOST }} <<'EOF'
+          ssh -i ~/.ssh/id_ed25519 root@${{ vars.SSH_HOST }} <<'EOF'
             set -euo pipefail
             mkdir -p /docker/agynamix
             chmod 0755 /docker/agynamix
@@ -71,11 +71,11 @@ jobs:
 
       - name: Copy docker-compose file
         run: |
-          scp -i ~/.ssh/id_ed25519 ./docker-compose.yml root@${{ secrets.SSH_HOST }}:/docker/agynamix/docker-compose.yml
+          scp -i ~/.ssh/id_ed25519 ./docker-compose.yml root@${{ vars.SSH_HOST }}:/docker/agynamix/docker-compose.yml
 
       - name: Start Docker container
         run: |
-          ssh -i ~/.ssh/id_ed25519 root@${{ secrets.SSH_HOST }} <<'EOF'
+          ssh -i ~/.ssh/id_ed25519 root@${{ vars.SSH_HOST }} <<'EOF'
             set -euo pipefail
             cd /docker/agynamix
             docker-compose pull
