@@ -56,14 +56,16 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: SSH and deploy
+      - name: Deploy to Server via SSH
         run: |
-          ssh -o StrictHostKeyChecking=no root@${{ secrets.SSH_HOST }} <<'EOF'
+          ssh -o StrictHostKeyChecking=no root@${{ secrets.SSH_HOST }} <<EOF
             set -e
             mkdir -p /docker/agynamix
             chmod 0755 /docker/agynamix
             exit
           EOF
+        env:
+          SSH_AUTH_SOCK: ${{ env.SSH_AUTH_SOCK }}
 
       - name: Copy docker-compose file
         run: |
