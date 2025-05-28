@@ -80,5 +80,5 @@ jobs:
             set -euo pipefail
             cd /docker/agynamix
             docker-compose pull
-            docker-compose up -d
+            docker-compose up -d --force-recreate --remove-orphans
           EOF
