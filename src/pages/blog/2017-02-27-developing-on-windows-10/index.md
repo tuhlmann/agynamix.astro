@@ -1,13 +1,16 @@
 ---
 slug: developing-on-windows-10
-date: 2017-02-27
-title: "Developing Web Applications on Windows 10"
-author: "Torsten Uhlmann"
-tags: ["Windows", "Clojure", "Scala"]
+date: 2017-02-27T00:00:00.000Z
+title: Developing Web Applications on Windows 10
+author: Torsten Uhlmann
+tags:
+  - Windows
+  - Clojure
+  - Scala
 categories: []
-description:
-banner: banner.jpg
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2017-02-27-developing-on-windows-10/banner.jpg
+layout: ../../../layouts/blog-post.astro
 ---
 
 Oh I was so desperately waiting for a new Macbook Pro to be released in 2017. And it was. And I was so disappointed, like many others were. I wasn't looking for a super thin designer laptop, what I need is a work horse.

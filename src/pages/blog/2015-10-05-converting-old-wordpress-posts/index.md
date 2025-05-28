@@ -1,14 +1,15 @@
 ---
 slug: converting-old-wordpress-posts
-date: 2015-10-05
-title: "Converting my old Wordpress posts to Markdown"
-author: "Torsten Uhlmann"
-tags: ["Clojure"]
+date: 2015-10-05T00:00:00.000Z
+title: Converting my old Wordpress posts to Markdown
+author: Torsten Uhlmann
+tags:
+  - Clojure
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2015-10-05-converting-old-wordpress-posts/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 I was moving my old Wordpress site to a new statically generated version. Getting hacked sucks, you know...
@@ -22,7 +23,7 @@ Here are the outlined steps I took to get this done, maybe this list helps futur
 * First setting up an Ubuntu VirtualBox to reinstall my Wordpress site. I had teared mine down immediately when I was notified that it was hacked. If yours is still running- well, good for you.
 * Now, Wordpress has an export feature that allows you to export posts and/or pages into an `XML` file. I used that to export all posts.
 
-![Wordpress Posts Export](./wordpress_posts_export.png)
+![Wordpress Posts Export](/assets/blog/2015-10-05-converting-old-wordpress-posts/wordpress_posts_export.png)
 
 * Then came the fun part. I wipped up a short quick & dirty Clojure script to read the `XML`, extract the posts and important metadata and write them as `HTML` files.
 * The script then reads back the `HTML` files, uses `sed` to search and replace old image paths and then uses `pandoc` to transform the `HTML` contents into Markdown.

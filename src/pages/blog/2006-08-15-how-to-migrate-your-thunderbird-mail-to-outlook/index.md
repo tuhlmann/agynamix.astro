@@ -1,14 +1,17 @@
 ---
 slug: how-to-migrate-your-thunderbird-mail-to-outlook
-date: 2006-08-15
-title: "How to migrate your Thunderbird mail to Outlook"
-author: "Torsten Uhlmann"
-tags: ["business", "programming"]
+date: 2006-08-15T00:00:00.000Z
+title: How to migrate your Thunderbird mail to Outlook
+author: Torsten Uhlmann
+tags:
+  - business
+  - programming
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: >-
+  /assets/blog/2006-08-15-how-to-migrate-your-thunderbird-mail-to-outlook/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 Now, Thunderbird is a wonderful email client. I like it. I really do! For instance there is that nifty little feature which let's you edit a sent mail as if it were brand new. Cool. But in a corporate environment where everybody else is exchanging contacts, appointments and other PIM data via Outlook it's just uncool to open you vcard files with an ordinary editor. So I decided to jump upon the Outlook wagon. But I didn't want to loose my Thunderbird mail archive which keeps mails of my different projects as reference points. The problem however is that Outlook can't directly import mail from Thunderbird, only from Eudora and Outlook Express. Outlook Express in turn can import from older versions of Netscape Communicator, but not from Thunderbird. But I wouldn't write this entry if I didn't succeed. So here's what I did:

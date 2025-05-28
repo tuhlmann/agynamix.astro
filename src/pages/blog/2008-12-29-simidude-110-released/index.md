@@ -1,14 +1,15 @@
 ---
 slug: simidude-110-released
-date: 2008-12-29
-title: "Simidude 1.1.0 released"
-author: "Torsten Uhlmann"
-tags: ["newsletter"]
+date: 2008-12-29T00:00:00.000Z
+title: Simidude 1.1.0 released
+author: Torsten Uhlmann
+tags:
+  - newsletter
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2008-12-29-simidude-110-released/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 Today I released version 1.1.0 of [AGYNAMIX Simidude](http://www.simidude.com). This new release comes along with a load of new features that just were not ready for version 1 but are now.

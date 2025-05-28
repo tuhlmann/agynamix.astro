@@ -1,4 +1,4 @@
-import { mergeProps, For, JSX } from "solid-js"
+import { mergeProps, For } from "solid-js"
 import { Tag } from "./Tag"
 
 interface Props {

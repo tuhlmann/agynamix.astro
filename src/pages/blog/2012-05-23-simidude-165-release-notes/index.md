@@ -1,14 +1,20 @@
 ---
 slug: simidude-165-release-notes
-date: 2012-05-23
-title: "Simidude 1.6.5 Release Notes"
-author: "Torsten Uhlmann"
-tags: ["business", "english", "marketing", "newsletter", "release-notes", "simidude"]
+date: 2012-05-23T00:00:00.000Z
+title: Simidude 1.6.5 Release Notes
+author: Torsten Uhlmann
+tags:
+  - business
+  - english
+  - marketing
+  - newsletter
+  - release-notes
+  - simidude
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2012-05-23-simidude-165-release-notes/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 Simidude 1.6.5 Release Notes

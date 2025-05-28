@@ -1,17 +1,18 @@
 ---
 slug: simidude-version-100-released
-date: 2008-12-16
-title: "Simidude Version 1.0.0 released"
-author: "Torsten Uhlmann"
-tags: ["newsletter"]
+date: 2008-12-16T00:00:00.000Z
+title: Simidude Version 1.0.0 released
+author: Torsten Uhlmann
+tags:
+  - newsletter
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2008-12-16-simidude-version-100-released/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
-Today I'd like to announce, after much sweat, the release of Simidude 1.0.0. [![](./screenshot_vista-300x199.jpg "screenshot_vista")](./screenshot_vista1.jpg) Simidude is an easy to use cross platform Drag&Drop and clipboard synchronization tool. During the last weeks I have cleaned up the code and made the program easier to use and to install (I hope). Simidude clients now install pretty much hassle free- if you have computers whitin the same subnet (which usually is the case for small companies or home networks) the clients connect to each other automatically. If you put something in one computers clipboard it will be synchronized to all other connected clients. From there you can activate the item on the target machine and paste it to where it should go. I had the original idea for this application while surfing the net on my developer machine, looking for information how to setup a certain thing. When I found what I needed I searched for a way to transport the URL between those machines. I found several options:
+Today I'd like to announce, after much sweat, the release of Simidude 1.0.0. [![](/assets/blog/2008-12-16-simidude-version-100-released/screenshot_vista-300x199.jpg "screenshot_vista")](/assets/blog/2008-12-16-simidude-version-100-released/screenshot_vista1.jpg) Simidude is an easy to use cross platform Drag&Drop and clipboard synchronization tool. During the last weeks I have cleaned up the code and made the program easier to use and to install (I hope). Simidude clients now install pretty much hassle free- if you have computers whitin the same subnet (which usually is the case for small companies or home networks) the clients connect to each other automatically. If you put something in one computers clipboard it will be synchronized to all other connected clients. From there you can activate the item on the target machine and paste it to where it should go. I had the original idea for this application while surfing the net on my developer machine, looking for information how to setup a certain thing. When I found what I needed I searched for a way to transport the URL between those machines. I found several options:
 
 -   USB stick
 -   email the link

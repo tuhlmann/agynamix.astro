@@ -1,11 +1,7 @@
 ---
-export interface Props {
-  background: string
-  link: string
-  text: string
-}
+import { RoundLinkProps } from "~/types/component-types";
 
-const { background, link, text } = Astro.props
+const { background, link, text } = Astro.props;
 ---
 
 <style>
@@ -23,8 +19,11 @@ const { background, link, text } = Astro.props
     opacity: 1;
   }
 </style>
-<a class="self-stretch sm:self-auto no-underline"  href={link}>
-  <div class="round-link flex m-2 justify-items-center p-3 h-[70px] rounded-xl sm:w-[130px] sm:h-[130px] sm:rounded-full" style={`background: ${background}`}>
+<a class="self-stretch sm:self-auto no-underline" href={link}>
+  <div
+    class="round-link flex m-2 justify-items-center p-3 h-[70px] rounded-xl sm:w-[130px] sm:h-[130px] sm:rounded-full"
+    style={`background: ${background}`}
+  >
     <span class="round-link-inner text-lg font-medium">
       {text}
     </span>

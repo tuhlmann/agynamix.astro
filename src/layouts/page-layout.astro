@@ -1,16 +1,13 @@
 ---
-import CommonLayout from "./common-layout.astro"
+import CommonLayout from "./common-layout.astro";
+import { LayoutProps } from "~/types/layout-types";
 
-export interface Props {
-	activePage: string
-	title?: string
-}
-
-const { activePage, title = "AGYNAMIX Torsten Uhlmann" } = Astro.props
+const { activePage, title = "AGYNAMIX Torsten Uhlmann" } = Astro.props;
 ---
 
 <CommonLayout activePage={activePage} title={title}>
-	<div class="py-20">
-		<slot /> <!-- Content goes here -->
-	</div>
+  <div class="py-20">
+    <slot />
+    <!-- Content goes here -->
+  </div>
 </CommonLayout>

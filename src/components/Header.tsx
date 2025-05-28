@@ -1,5 +1,4 @@
 import { createSignal, Show } from "solid-js"
-import { JSX } from "solid-js/jsx-runtime"
 import classNames from "classnames"
 
 interface Props {
@@ -17,7 +16,7 @@ const inactiveMobCls = "border-transparent text-gray-200 hover:bg-gray-50 hover:
 //   return window.location.pathname.indexOf(p) > -1 ? ifTrue : ifFalse
 // }
 
-export default function Header(props: Props): JSX.Element {
+export default function Header(props: Props) {
   const [mmOpen, setMmOpen] = createSignal(false)
 
   return (

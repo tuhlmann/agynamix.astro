@@ -1,14 +1,16 @@
 ---
 slug: nested-properties-in-ant
-date: 2008-04-29
-title: "Nested properties in Ant"
-author: "Torsten Uhlmann"
-tags: ["english", "programming"]
+date: 2008-04-29T00:00:00.000Z
+title: Nested properties in Ant
+author: Torsten Uhlmann
+tags:
+  - english
+  - programming
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2008-04-29-nested-properties-in-ant/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 Today while scripting my [Dopus](http://cms.agynamix.de/downloads/cat_view-2.html) Ant files I came across a problem with nested properties.

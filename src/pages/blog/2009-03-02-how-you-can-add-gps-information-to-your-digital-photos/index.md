@@ -1,19 +1,23 @@
 ---
 slug: how-you-can-add-gps-information-to-your-digital-photos
-date: 2009-03-02
-title: "How you can add GPS information to your digital photos"
-author: "Torsten Uhlmann"
-tags: ["english", "gps", "photography"]
+date: 2009-03-02T00:00:00.000Z
+title: How you can add GPS information to your digital photos
+author: Torsten Uhlmann
+tags:
+  - english
+  - gps
+  - photography
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: >-
+  /assets/blog/2009-03-02-how-you-can-add-gps-information-to-your-digital-photos/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 One of the great waves of the last years is geotagging, meaning you keep track of the locations you have been with the means of a GPS tracker and than be able to create a map that shows the waypoint of your last trip. Of course geotagging is more but for the course of this article it generically means to tag something with GPS information.
 
-[![](http://blog.agynamix.de/wp-content/uploads/2009/03/gps_tagged_photo-300x299.jpg)](./gps_tagged_photo.jpg)
+[![](http://blog.agynamix.de/wp-content/uploads/2009/03/gps_tagged_photo-300x299.jpg)](/assets/blog/2009-03-02-how-you-can-add-gps-information-to-your-digital-photos/gps_tagged_photo.jpg)
 
 Lately I thought of a way to tag my digital photos with GPS information. Recent SLR cameras may come with a build in GPS but my Canon 400D is just 2 years old and I don't wont to buy a new one just because of this. A few days ago I figured out a pretty convenient way to record the location of where I am and later put this information into my photos. This procedure works under the assumption that both your GPS logger and your digital camera use nearly the same clock settings. **Theory:** The GPS logger records our present location every, say, 30 seconds. At home when you upload your photos to your camera you need a software that will look up the time code in your photo and then use that time code to look up a recording of a GPS location that was made to a close point in time. If no recording is found (say one minute before and after the time code of the photo) then no location information is added. **Let's get to work:** I found the following components best to work with:
 

@@ -1,28 +1,23 @@
-import { defineConfig } from "astro/config"
-import solid from "@astrojs/solid-js"
-import tailwind from "@astrojs/tailwind"
+// @ts-ignore
+import { defineConfig } from "astro/config";
+
+import solidJs from "@astrojs/solid-js";
+import tailwindcss from "@tailwindcss/vite";
+
+const site = process.env.SITE_URL || "https://www.agynamix.de";
 
 // https://astro.build/config
-
-// @ts-check
-// export default defineConfig({
-//   integrations: [
-//     tailwind({
-//       config: { path: "./tailwind.config.cjs", applyBaseStyles: false },
-//     }),
-//     solid(),
-//   ],
-// })
 export default defineConfig({
-  markdown: {
-    syntaxHighlight: "shiki",
-    shikiConfig: {
-      theme: "dracula",
-      // Learn more about this configuration here:
-      // https://docs.astro.build/en/guides/markdown-content/#syntax-highlighting
-      langs: ["astro", "javascript", "js", "typescript", "ts", "scala", "java", "sql", "clojure", "css", "rust", "rs"],
-      wrap: true,
-    },
+  site,
+  integrations: [solidJs()],
+
+  vite: {
+    plugins: [tailwindcss()],
   },
-  integrations: [tailwind(), solid()],
-})
+
+  markdown: {
+    syntaxHighlight: "prism",
+    drafts: true, // if you're using draft support
+    html: true, // allow raw HTML like <a> or <details>
+  },
+});

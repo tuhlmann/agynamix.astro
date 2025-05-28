@@ -3,7 +3,6 @@
 /* eslint-disable solid/no-innerhtml */
 import { compareAsc, parseISO, subYears } from "date-fns"
 import { mergeProps, For, createSignal, createMemo } from "solid-js"
-import { JSX } from "solid-js/jsx-runtime"
 // import SolidMarkdown from "solid-markdown"
 import Converter from "showdown"
 import {
@@ -28,7 +27,7 @@ interface Props {
   less?: string
 }
 
-function renderClientImage(url?: string, img?: string): JSX.Element | null {
+function renderClientImage(url?: string, img?: string) {
   if (img) {
     const i = <img class="mb-0 min-w-[200px] max-w-[200px]" src={img} />
     if (url) {
@@ -45,7 +44,7 @@ function renderClientImage(url?: string, img?: string): JSX.Element | null {
   return null
 }
 
-function renderRecommendation(converter: Converter.Converter, recommendation: Recommendation): JSX.Element {
+function renderRecommendation(converter: Converter.Converter, recommendation: Recommendation) {
   const { title, link, by, date, description } = recommendation
   const titleElem = link ? (
     <TextLink to={link}>
@@ -71,7 +70,7 @@ function renderRecommendation(converter: Converter.Converter, recommendation: Re
   )
 }
 
-function renderRecommendations(converter: Converter.Converter, recommendations?: Recommendation[]): JSX.Element {
+function renderRecommendations(converter: Converter.Converter, recommendations?: Recommendation[]) {
   {
     if (!recommendations?.length) {
       return null
@@ -94,7 +93,7 @@ function renderRecommendations(converter: Converter.Converter, recommendations?:
   }
 }
 
-function renderImage(converter: Converter.Converter, imageElement: ImageElement): JSX.Element {
+function renderImage(converter: Converter.Converter, imageElement: ImageElement) {
   const { image, align, description } = imageElement
   const imgEl = (
     <div class="p-0">
@@ -116,7 +115,7 @@ function renderImage(converter: Converter.Converter, imageElement: ImageElement)
   )
 }
 
-function renderImages(converter: Converter.Converter, images?: ImageElement[]): JSX.Element | null {
+function renderImages(converter: Converter.Converter, images?: ImageElement[]) {
   {
     if (!images?.length) {
       return null
@@ -138,7 +137,7 @@ function renderImages(converter: Converter.Converter, images?: ImageElement[]): 
   }
 }
 
-export default function StoryRenderer(p: Props): JSX.Element {
+export default function StoryRenderer(p: Props) {
   const converter = new Converter.Converter()
 
   const props = mergeProps({ withDescription: false, withImages: true, yearsBack: 100 }, p)
@@ -153,7 +152,7 @@ export default function StoryRenderer(p: Props): JSX.Element {
 
   const limitedElements = createMemo(() =>
     allElements().filter(c => {
-      const endDate = parseISO(c.end)
+      const endDate = c.end ? parseISO(c.end) : new Date()
       return compareAsc(endDate, renderUntil()) > -1
     }),
   )
@@ -202,7 +201,7 @@ export default function StoryRenderer(p: Props): JSX.Element {
               </div>
               {props.withDescription ? (
                 <>
-                  <hr class="my-5 mx-0 opacity-50" />
+                  <hr class="opacity-50" />
                   <div class="mt-5 text-base">
                     <div innerHTML={converter.makeHtml(description)}></div>
                   </div>

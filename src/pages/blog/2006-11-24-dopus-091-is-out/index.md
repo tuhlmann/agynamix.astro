@@ -1,14 +1,15 @@
 ---
 slug: dopus-091-is-out
-date: 2006-11-24
-title: "Dopus 0.9.1 is out"
-author: "Torsten Uhlmann"
-tags: ["business"]
+date: 2006-11-24T00:00:00.000Z
+title: Dopus 0.9.1 is out
+author: Torsten Uhlmann
+tags:
+  - business
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2006-11-24-dopus-091-is-out/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 I've released a new version of Dopus (Docbook Publishing System) today. New features include:

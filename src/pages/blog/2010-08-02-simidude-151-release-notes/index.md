@@ -1,14 +1,19 @@
 ---
 slug: simidude-151-release-notes
-date: 2010-08-02
-title: "Simidude 1.5.1 Release Notes"
-author: "Torsten Uhlmann"
-tags: ["business", "it", "newsletter", "release-notes", "simidude"]
+date: 2010-08-02T00:00:00.000Z
+title: Simidude 1.5.1 Release Notes
+author: Torsten Uhlmann
+tags:
+  - business
+  - it
+  - newsletter
+  - release-notes
+  - simidude
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2010-08-02-simidude-151-release-notes/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 Hi everybody! [![Sequoia Bear](http://www.agynamix.de/wp-content/uploads/2010/08/Sequoia_Bear.jpg "Sequoia Bear")](http://www.agynamix.de/wp-content/uploads/2010/08/Sequoia_Bear.jpg) I finally released version 1.5.1 of Simidude. This is mainly a bug fix version that improves upon version 1.5.0:

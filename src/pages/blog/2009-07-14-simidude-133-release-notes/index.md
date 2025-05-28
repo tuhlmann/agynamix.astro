@@ -1,14 +1,15 @@
 ---
 slug: simidude-133-release-notes
-date: 2009-07-14
-title: "Simidude 1.3.3 Release Notes"
-author: "Torsten Uhlmann"
-tags: ["release-notes"]
+date: 2009-07-14T00:00:00.000Z
+title: Simidude 1.3.3 Release Notes
+author: Torsten Uhlmann
+tags:
+  - release-notes
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2009-07-14-simidude-133-release-notes/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 These are the release notes for version 1.3.3 of the cross platform network clipboard Simidude. I published version 1.3.1 and 1.3.2 earlier this week but had to pull it back due to a problem with the installer. Version 1.3.3 is a maintenance release that fixed some bugs and brought a few new features:

@@ -1,14 +1,16 @@
 ---
 slug: wordpress-26-safe-mode-and-file-uploads
-date: 2008-11-14
-title: "Wordpress 2.6, safe_mode and file uploads"
-author: "Torsten Uhlmann"
-tags: ["english", "programming"]
+date: 2008-11-14T00:00:00.000Z
+title: 'Wordpress 2.6, safe_mode and file uploads'
+author: Torsten Uhlmann
+tags:
+  - english
+  - programming
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2008-11-14-wordpress-26-safe-mode-and-file-uploads/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 Since I'm (most of the time) a responsible internet user I try to keep my web applications up to date.
@@ -29,7 +31,7 @@ Since I'm running a real root server with ssh access I went to the server and to
 
 Then I realized the following:
 
-[![](http://blog.agynamix.de/wp-content/uploads/2008/11/linstow_006-224x300.jpg "linstow_006")](./linstow_006.jpg)
+[![](http://blog.agynamix.de/wp-content/uploads/2008/11/linstow_006-224x300.jpg "linstow_006")](/assets/blog/2008-11-14-wordpress-26-safe-mode-and-file-uploads/linstow_006.jpg)
 
 The uploads directory was owned by web4.www-data. web4 is my user account on the machine, www-data is the user and group of the Apache server (standard on Debian based systems).
 

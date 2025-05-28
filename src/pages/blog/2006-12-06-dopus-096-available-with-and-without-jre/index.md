@@ -1,14 +1,15 @@
 ---
 slug: dopus-096-available-with-and-without-jre
-date: 2006-12-06
-title: "Dopus (0.9.6) available with and without JRE"
-author: "Torsten Uhlmann"
-tags: ["programming"]
+date: 2006-12-06T00:00:00.000Z
+title: Dopus (0.9.6) available with and without JRE
+author: Torsten Uhlmann
+tags:
+  - programming
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2006-12-06-dopus-096-available-with-and-without-jre/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 Dopus as been enhanced again. It now includes a "ReleaseNotes" document that tracks changes. Amongst others there are now two versions available, one with JRE, one without. So if you are on Mac or Unix or already have a Windows JRE installed you can save yourself some bandwidth and download the significantly smaller version. Changes include:

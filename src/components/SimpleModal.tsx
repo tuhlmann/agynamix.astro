@@ -1,4 +1,4 @@
-import { createEffect, JSX, onCleanup } from "solid-js"
+import { createEffect, onCleanup } from "solid-js"
 import "./SimpleModal.css"
 
 interface Props {
@@ -29,7 +29,7 @@ function clickOutside(element: Element, accessor: () => any): void {
   onCleanup(() => document.body.removeEventListener("click", onClick))
 }
 
-export function SimpleModal(props: Props): JSX.Element {
+export function SimpleModal(props: Props) {
   createEffect(() => {
     window.addEventListener("keyup", handleKeyUp(props.onCloseRequest), false)
   })
