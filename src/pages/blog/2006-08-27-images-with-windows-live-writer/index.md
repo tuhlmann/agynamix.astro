@@ -1,14 +1,15 @@
 ---
 slug: images-with-windows-live-writer
-date: 2006-08-27
-title: "Images with Windows Live Writer"
-author: "Torsten Uhlmann"
-tags: ["business"]
+date: 2006-08-27T00:00:00.000Z
+title: Images with Windows Live Writer
+author: Torsten Uhlmann
+tags:
+  - business
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2006-08-27-images-with-windows-live-writer/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 Using Wordpress 2 as our blogging tool, I'd like to be able to set up MS Live Writer in a way that it can upload images to Wordpress' upload directory via FTP. This is a test for this: [](http://blog.agynamix.de/wp-content/uploads/ImageswithWindowsLiveWriter_F340/Sonnenuntergang1.jpg)[](http://blog.agynamix.de/wp-content/uploads/ImageswithWindowsLiveWriter_F340/Sonnenuntergang9.jpg)

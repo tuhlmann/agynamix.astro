@@ -1,8 +1,8 @@
-import { createSignal, JSX, Show } from "solid-js"
+import { createSignal, Show } from "solid-js"
 import PlayIcon from "../blocks/PlayIcon"
 import { SimpleModal } from "./SimpleModal"
 
-export function LandingInteractiveImage(): JSX.Element {
+export function LandingInteractiveImage() {
   const [showModal, setShowModal] = createSignal(false)
 
   const handlePlayClicked = (): void => {

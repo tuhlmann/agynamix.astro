@@ -1,0 +1,9 @@
+---
+// src/components/Markdown.astro
+import { marked } from "marked";
+
+const { content, class: className = "" } = Astro.props;
+const html = marked(content);
+---
+
+<div class={className} set:html={html} />

@@ -1,14 +1,22 @@
 ---
 slug: simidude-160-release-notes
-date: 2010-10-04
-title: "Simidude 1.6.0 Release Notes"
-author: "Torsten Uhlmann"
-tags: ["business", "english", "it", "marketing", "newsletter", "release-notes", "simidude", "simidude"]
+date: 2010-10-04T00:00:00.000Z
+title: Simidude 1.6.0 Release Notes
+author: Torsten Uhlmann
+tags:
+  - business
+  - english
+  - it
+  - marketing
+  - newsletter
+  - release-notes
+  - simidude
+  - simidude
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2010-10-04-simidude-160-release-notes/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 Finally!

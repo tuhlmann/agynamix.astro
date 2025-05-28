@@ -1,11 +1,10 @@
-import { JSX } from "solid-js"
 import "./PlayIcon.css"
 
 interface Props {
   onClick: () => void
 }
 
-export default function PlayIcon(props: Props): JSX.Element {
+export default function PlayIcon(props: Props) {
   const { onClick } = props
   // const [count, setCount] = createSignal(0);
   // const add = () => setCount(count() + 1);

@@ -1,14 +1,14 @@
 ---
 slug: dpml-magic
-date: 2005-09-19
-title: "DPML Magic"
-author: "Torsten Uhlmann"
+date: 2005-09-19T00:00:00.000Z
+title: DPML Magic
+author: Torsten Uhlmann
 tags: []
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2005-09-19-dpml-magic/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 I’ll probably will give [DPML Magic](http://dpml.net/magic/latest/) a try. I found this (below) and thought to post it here to remember myself to do it:

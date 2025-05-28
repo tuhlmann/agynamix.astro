@@ -1,14 +1,16 @@
 ---
 slug: apache-ldap-authentifizierung-und-open-exchange
-date: 2006-02-24
-title: "Apache LDAP Authentifizierung und Open-Exchange"
-author: "Torsten Uhlmann"
-tags: ["programming"]
+date: 2006-02-24T00:00:00.000Z
+title: Apache LDAP Authentifizierung und Open-Exchange
+author: Torsten Uhlmann
+tags:
+  - programming
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: >-
+  /assets/blog/2006-02-24-apache-ldap-authentifizierung-und-open-exchange/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 Open-Exchange ist ja eine wunderbare Sache. Die schönste und am schwierigsten zu installierende Groupware, die mir bis jetzt untergekommen ist. Nun möchte ich gern unsere Subversion-Repositories über mod\_svn zugänglich machen und zur Authentifizierung die LDAP-Daten nutzen, die Open-Exchange sowieso schon anlegt. Also:

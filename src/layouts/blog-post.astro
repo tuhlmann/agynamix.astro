@@ -1,63 +1,96 @@
 ---
-import { Markdown } from 'astro/components'
-import { Tags } from "../blocks/Tags"
-import { formatDate } from "../utils/prepare-story-data"
-import CommonLayout from "./common-layout.astro"
+import Markdown from "~/components/Markdown.astro";
 
-export interface Props {
-	activePage: string
-	title?: string
-}
+import { Tags } from "../blocks/Tags";
+import { formatDate } from "../utils/prepare-story-data";
+import CommonLayout from "./common-layout.astro";
+import { LayoutProps } from "~/types/layout-types";
 
-const { activePage, content } = Astro.props
+const { activePage, content } = Astro.props;
 
-let blogDir = Astro.canonicalURL.pathname
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+let blogDir = canonicalURL.pathname;
+
 if (blogDir.endsWith("/")) {
-  blogDir = blogDir.slice(0, -1)
+  blogDir = blogDir.slice(0, -1);
 }
-const pos = blogDir.lastIndexOf("/")
-blogDir = blogDir.substring(pos + 1)
+const pos = blogDir.lastIndexOf("/");
+blogDir = blogDir.substring(pos + 1);
 
-let bannerImg = ""
-if (content.banner) {	
-	bannerImg = `/blog-assets/${blogDir}/${content.banner}`
+let bannerImg = "";
+if (content.banner) {
+  bannerImg = `/blog-assets/${blogDir}/${content.banner}`;
 }
-
 ---
 
 <CommonLayout activePage={activePage} title={content.title}>
-	<div class="py-0">
-		<article class="my-prose w-full max-w-[1000px] p-3 md:p-10 xl:p-20 ml-auto mr-auto mt-0 mb-0">
-			<div>
-				<h1 class="text-center mb-5 mt-0">
-					{content.title}
-				</h1>
-				<div class="flex justify-center mb-5 h3">
-					{content.author && <h3 class="text-center text-sm opacity-60 font-medium my-0 mx-1">{content.author}</h3>}
-					{content.author && <span class="text-center text-sm opacity-60 font-medium my-0 mx-1">—</span>}
-					{content.date && <h3 class="text-center text-sm opacity-60 font-medium my-0 mx-1">{formatDate(content.date)}</h3>}
-				</div>
-				{content.banner && (
-					<div class="text-center">
-						<img class="m-0 rounded" src={bannerImg} alt="" />
-						{content.bannerCredit ? <Markdown class="m-0 mt-2 text-sm opacity-60 text-right">{content.bannerCredit}</Markdown> : null}
-					</div>
-				)}
-				{content.tags && (
-					<div class="mt-1">
-						<Tags tags={content.tags} withLink invertBackground />
-					</div>
-				)}
-				<br />
-				{content.description ? <Markdown>{content.description}</Markdown> : null}
-				<div id="blog-post-content">
-					<slot /> <!-- Content goes here -->
-				</div>
-			</div>          
-		</article>
-	</div>
-	<script hoist type="module">
-	import rewireImagesAndLinks from '../utils/rewire-images-and-links.mjs';
-	rewireImagesAndLinks();
-	</script>
+  <div class="py-0">
+    <article
+      class="my-prose w-full max-w-[1000px] p-3 md:p-10 xl:p-20 ml-auto mr-auto mt-0 mb-0"
+    >
+      <div>
+        <h1 class="text-center mb-5 mt-0">
+          {content.title}
+        </h1>
+        <div class="not-prose flex justify-center mb-5 h3">
+          {
+            content.author && (
+              <h3 class="text-center text-sm opacity-70 font-medium my-0 mx-1">
+                {content.author}
+              </h3>
+            )
+          }
+          {
+            content.author && (
+              <h3 class="text-center text-sm opacity-70 font-medium my-0 mx-1">
+                —
+              </h3>
+            )
+          }
+          {
+            content.date && (
+              <h3 class="text-center text-sm opacity-70 font-medium my-0 mx-1">
+                {formatDate(content.date)}
+              </h3>
+            )
+          }
+        </div>
+        {
+          content.banner && (
+            <div class="text-center">
+              <img class="not-prose m-0 rounded" src={content.banner} alt="" />
+              {content.bannerCredit ? (
+                <Markdown
+                  class="not-prose m-0 mt-2 text-sm opacity-60 text-right"
+                  content={content.bannerCredit}
+                />
+              ) : null}
+            </div>
+          )
+        }
+        {
+          content.tags && (
+            <div class="mt-1">
+              <Tags tags={content.tags} withLink invertBackground />
+            </div>
+          )
+        }
+        <br />
+        {
+          content.description ? (
+            <Markdown content={content.description} />
+          ) : null
+        }
+        <div id="blog-post-content">
+          <slot />
+          <!-- Content goes here -->
+        </div>
+      </div>
+    </article>
+  </div>
+  <!-- @ts-ignore -->
+  <!-- <script type="module" set:head>
+    import rewireImagesAndLinks from "../utils/rewire-images-and-links.mjs";
+    rewireImagesAndLinks();
+  </script> -->
 </CommonLayout>

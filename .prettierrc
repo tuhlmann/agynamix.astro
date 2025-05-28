@@ -1,13 +1,11 @@
 {
-  "printWidth": 120,
-  "tabWidth": 2,
-  "useTabs": false,
-  "semi": false,
-  "singleQuote": false,
-  "trailingComma": "all",
-  "bracketSpacing": true,
-  "bracketSameLine": false,
-  "proseWrap": "preserve",
-  "parser": "babel-ts",
-  "arrowParens": "avoid"
+  "plugins": ["prettier-plugin-astro"],
+  "overrides": [
+    {
+      "files": "*.astro",
+      "options": {
+        "parser": "astro"
+      }
+    }
+  ]
 }

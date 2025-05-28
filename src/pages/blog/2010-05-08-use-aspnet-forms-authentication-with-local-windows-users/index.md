@@ -1,14 +1,15 @@
 ---
 slug: use-aspnet-forms-authentication-with-local-windows-users
-date: 2010-05-08
-title: "Use ASP.NET Forms Authentication with local Windows Users"
-author: "Torsten Uhlmann"
+date: 2010-05-08T00:00:00.000Z
+title: Use ASP.NET Forms Authentication with local Windows Users
+author: Torsten Uhlmann
 tags: []
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: >-
+  /assets/blog/2010-05-08-use-aspnet-forms-authentication-with-local-windows-users/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 Summary

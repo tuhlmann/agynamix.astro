@@ -41,7 +41,7 @@ export interface StoryData {
   client: string
   logo?: string
   start: string
-  end: string
+  end?: string
   short?: string // short description
   description: string
   slug?: string
@@ -113,6 +113,9 @@ export function formatDateMMYYY(date: string): string {
   return format(d, DateFormat.MonthAndYear)
 }
 
-export function formatDate(date: any) {
+export function formatDate(date?: any) {
+  if (!date) {
+    return "ongoing"
+  }
   return new Date(date).toUTCString().replace(/(\d\d\d\d) .*/, "$1") // remove everything after YYYY
 }

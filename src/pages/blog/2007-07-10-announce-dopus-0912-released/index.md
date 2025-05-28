@@ -1,14 +1,17 @@
 ---
 slug: announce-dopus-0912-released
-date: 2007-07-10
-title: "Announce: Dopus 0.9.12 released"
-author: "Torsten Uhlmann"
-tags: ["english", "news", "programming"]
+date: 2007-07-10T00:00:00.000Z
+title: 'Announce: Dopus 0.9.12 released'
+author: Torsten Uhlmann
+tags:
+  - english
+  - news
+  - programming
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2007-07-10-announce-dopus-0912-released/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 I just released Dopus 0.9.12. Here is a not so precise list of some of the changes:

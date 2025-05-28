@@ -1,14 +1,15 @@
 ---
 slug: doo-and-figwheel
-date: 2015-09-22
-title: "ClojureScript Testing with Doo and Figwheel"
-author: "Torsten Uhlmann"
-tags: ["Clojure"]
+date: 2015-09-22T00:00:00.000Z
+title: ClojureScript Testing with Doo and Figwheel
+author: Torsten Uhlmann
+tags:
+  - Clojure
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2015-09-22-doo-and-figwheel/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 These days I was playing with strategies to run

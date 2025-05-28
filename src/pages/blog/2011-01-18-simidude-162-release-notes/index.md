@@ -1,14 +1,19 @@
 ---
 slug: simidude-162-release-notes
-date: 2011-01-18
-title: "Simidude 1.6.2 Release Notes"
-author: "Torsten Uhlmann"
-tags: ["business", "english", "it", "newsletter", "simidude"]
+date: 2011-01-18T00:00:00.000Z
+title: Simidude 1.6.2 Release Notes
+author: Torsten Uhlmann
+tags:
+  - business
+  - english
+  - it
+  - newsletter
+  - simidude
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2011-01-18-simidude-162-release-notes/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 Simidude 1.6.2 Release Notes

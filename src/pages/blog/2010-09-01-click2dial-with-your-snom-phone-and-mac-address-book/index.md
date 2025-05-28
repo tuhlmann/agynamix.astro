@@ -1,14 +1,19 @@
 ---
 slug: click2dial-with-your-snom-phone-and-mac-address-book
-date: 2010-09-01
-title: "Click2Dial with your Snom Phone and Mac Address Book"
-author: "Torsten Uhlmann"
-tags: ["english", "fritzbox-snom-phone", "mac", "telefonie"]
+date: 2010-09-01T00:00:00.000Z
+title: Click2Dial with your Snom Phone and Mac Address Book
+author: Torsten Uhlmann
+tags:
+  - english
+  - fritzbox-snom-phone
+  - mac
+  - telefonie
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: >-
+  /assets/blog/2010-09-01-click2dial-with-your-snom-phone-and-mac-address-book/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 A while back my old trusty FritzBox (PBX/router/fax/whatever) went south which actually was a good thing. Shopping for a new model I noticed that the newer versions of it (from 7170 onwards) support IP phones like the Snom IP phones I had lying around. When I had separate office rooms I used an Asterisk (Trixbox, in fact) pbx and Snom phones with it. After a switched solely to FritzBox these Snom's lied dormant- until now. One thing I liked about the Asterisk solution was a quick way to dial a phone number from an address book. Back then I used Windows machines with Outlook and the free Asterisk Outlook Tapi plugin that was available. Now the Fritzbox does not support click2dial for IP phone (at least I have not found this feature) but the Snom phone supports command URLs. So the URL:

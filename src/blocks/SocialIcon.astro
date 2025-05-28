@@ -1,10 +1,5 @@
 ---
-export interface Props {
-  color?: string
-  url: string
-  linkClass?: string
-  title?: string
-}
+import type { SocialIconProps } from '~/types/block-types';
 
 const {color = "rgba(255,255,255,0.7)", url, linkClass = "ml-3", title = ""} = Astro.props
 ---

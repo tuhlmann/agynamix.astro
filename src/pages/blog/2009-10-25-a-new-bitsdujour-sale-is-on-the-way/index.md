@@ -1,14 +1,16 @@
 ---
 slug: a-new-bitsdujour-sale-is-on-the-way
-date: 2009-10-25
-title: "A New BitsDuJour Sale is on the Way!"
-author: "Torsten Uhlmann"
-tags: ["marketing", "newsletter"]
+date: 2009-10-25T00:00:00.000Z
+title: A New BitsDuJour Sale is on the Way!
+author: Torsten Uhlmann
+tags:
+  - marketing
+  - newsletter
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2009-10-25-a-new-bitsdujour-sale-is-on-the-way/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 Our last [BitsDuJour](http://www.bitsdujour.com/software/simidude/) sale is a couple month back and it was quiet successful, so they invited me back for a new round.

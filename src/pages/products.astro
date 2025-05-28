@@ -1,12 +1,19 @@
 ---
-import PageLayout from '../layouts/page-layout.astro'
-import story from "../data/story"
-import StoryRenderer from "../components/StoryRenderer.tsx"
-import { AllowedCategories } from "../utils/prepare-story-data"
+import PageLayout from "../layouts/page-layout.astro";
+import story from "../data/story";
+import StoryRenderer from "../components/StoryRenderer.tsx";
+import { AllowedCategories } from "../utils/prepare-story-data";
 ---
 
 <PageLayout activePage="products" title="My Products">
-  <div class="my-prose w-full max-w-[1000px] p-3 md:p-10 ml-auto mr-auto mt-0 mb-0">
-    <StoryRenderer client:visible story={story} categories={[AllowedCategories.Product]} />
+  <div
+    class="my-prose w-full max-w-[1000px] p-3 md:p-10 ml-auto mr-auto mt-0 mb-0"
+  >
+    <StoryRenderer
+      client:visible
+      story={story}
+      withDescription
+      categories={[AllowedCategories.Product]}
+    />
   </div>
-</PageLayout>  
+</PageLayout>

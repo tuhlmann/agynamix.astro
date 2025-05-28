@@ -1,17 +1,21 @@
 ---
 slug: integration-between-asterisk-pbx-and-the-fantastic-open-xchange
-date: 2006-03-08
-title: "Integration between Asterisk PBX and the fantastic Open-Xchange"
-author: "Torsten Uhlmann"
-tags: ["business", "news", "programming"]
+date: 2006-03-08T00:00:00.000Z
+title: Integration between Asterisk PBX and the fantastic Open-Xchange
+author: Torsten Uhlmann
+tags:
+  - business
+  - news
+  - programming
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: >-
+  /assets/blog/2006-03-08-integration-between-asterisk-pbx-and-the-fantastic-open-xchange/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
-We have created a small perl script that integrates OX with an Asterisk PBX. It uses Asterisk's Manager API which means OX and Asterisk can run on different machines. [![OX Click2Dial](./OX_Click2Dial.jpg)](./OX_Click2Dial.jpg "OX Click2Dial")
+We have created a small perl script that integrates OX with an Asterisk PBX. It uses Asterisk's Manager API which means OX and Asterisk can run on different machines. [![OX Click2Dial](/assets/blog/2006-03-08-integration-between-asterisk-pbx-and-the-fantastic-open-xchange/OX_Click2Dial.jpg)](/assets/blog/2006-03-08-integration-between-asterisk-pbx-and-the-fantastic-open-xchange/OX_Click2Dial.jpg "OX Click2Dial")
 
 Requirements:
 -------------
@@ -51,4 +55,4 @@ You must set `faxEnabled=link` in order to activate the links. You must activate
 -   If it has collected all data without error it will use the Asterisk Manager to originate a call.
 -   After the user phone rings, the user picks up the phone and Asterisk will then dial the given number.
 
-I hope you find this script useful. Resources: <span id="p33">[ax\_asterisk.zip](./ax_asterisk.zip)</span>
+I hope you find this script useful. Resources: <span id="p33">[ax\_asterisk.zip](/assets/blog/2006-03-08-integration-between-asterisk-pbx-and-the-fantastic-open-xchange/ax_asterisk.zip)</span>
