@@ -11,7 +11,7 @@ function excerpt(str: string): string {
 
 let bannerImg = "/images/blog_banner.jpg"
 if (post.frontmatter.banner) {
-	bannerImg = `/public/${post.frontmatter.banner}`
+	bannerImg = post.frontmatter.banner
 }
 ---
 

@@ -15,7 +15,7 @@ layout: ../../../layouts/blog-post.astro
 
 **Yesterday, the incredible happened.**
 
-![100-0014\_img.jpg](./100-0014_img.jpg)
+![100-0014\_img.jpg](/assets/blog/2007-08-05-my-world-broke-into-pieces/100-0014_img.jpg)
 
 In just a moment, with the blinking of an eye, the world I had know was destroyed. Scattered. What happened, you may ask (and even if you don't because you don't bother a slightest bit I'm gonna tell you)?
 
@@ -31,6 +31,6 @@ While I hate that thought I actually think Daniel (that son) did something great
 
 And you know, my wife just insists in not buying a new one.
 
-[![img\_0110.jpg](./img_0110.jpg)](http://blog.agynamix.de/?attachment_id=108 "img_0110.jpg")
+[![img\_0110.jpg](/assets/blog/2007-08-05-my-world-broke-into-pieces/img_0110.jpg)](http://blog.agynamix.de/?attachment_id=108 "img_0110.jpg")
 
 I still love her.

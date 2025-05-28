@@ -14,7 +14,7 @@ bannerCredit: Photo by Torsten Uhlmann
 layout: ../../../layouts/blog-post.astro
 ---
 
-![](./daniel_und_blumen21.jpg) I'd like to announce a substantial price drop for the Simidude application. Simidude will from now on be available for just USD 25 or 20 Euro. Due to the exchange rate between Euro and USD the previous USD I felt the price was too high. Considering the fact that most purchases come from within the United States I adjusted the price accordingly. In the last few weeks I received a lot of great comments about Simidude like this one:
+![](/assets/blog/2009-04-22-simidude-now-costs-just-25-bucks/daniel_und_blumen21.jpg) I'd like to announce a substantial price drop for the Simidude application. Simidude will from now on be available for just USD 25 or 20 Euro. Due to the exchange rate between Euro and USD the previous USD I felt the price was too high. Considering the fact that most purchases come from within the United States I adjusted the price accordingly. In the last few weeks I received a lot of great comments about Simidude like this one:
 
 > *<span class="dealCommentName">"Patrick J. Says:</span>* *Hi Torsten, just ordered it, a big thanks for this very useful product! As Alexander D. said, the 'one license per cluster' scheme is very kind. Please keep on the good work. "*
 

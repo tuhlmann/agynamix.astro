@@ -15,7 +15,7 @@ layout: ../../../layouts/blog-post.astro
 
 A while back I bought myself a Vodafone [UMTS flat rate](http://www.moobicent.de/) together with one of thise nifty UMTS USB sticks. Mine is a Novatel Ovation MC950D.
 
-![](./thalheim_im_winter.jpg)
+![](/assets/blog/2009-01-03-use-your-novatel-ovation-mc950d-with-linux/thalheim_im_winter.jpg)
 
 For Windows, there isn't much to bother. The stick comes with the Mobile Connect Lite software installed in the memory part. These kinds of USB devices act as a memory stick when not activated otherwise or as an UMTS modem. So the first time you connect the stick it will connect as a memory stick and show you a directory with the setup files for the Mobile Connect drivers. Install them and the next time (you might need to reboot) you connect the stick it will reconnect as an UMTS modem.
 

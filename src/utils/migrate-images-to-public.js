@@ -1,6 +1,11 @@
 import fs from "fs/promises";
 import path from "path";
+import { fileURLToPath } from "url";
 import matter from "gray-matter";
+
+// Reconstruct __dirname for ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const rootDir = path.resolve(__dirname, "../.."); // goes from src/utils → project root
 const pagesDir = path.join(rootDir, "src/pages/blog");

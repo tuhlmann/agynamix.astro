@@ -25,4 +25,4 @@ public static void main(String[] args) throws Exception {
 }
 ```
 
-<span id="p36">[SWTClassLoader](./SWTClassLoader.zip)</span> Thanks to Peter Nehrer for this tip.
+<span id="p36">[SWTClassLoader](/assets/blog/2006-04-25-a-nice-way-to-launch-swt-applications/SWTClassLoader.zip)</span> Thanks to Peter Nehrer for this tip.
