@@ -11,7 +11,6 @@ import Github from "../blocks/Github.astro";
 import { config } from "../data/config";
 ---
 
-
 <footer class="bg-gray-800" aria-labelledby="footer-heading">
   <h2 id="footer-heading" class="sr-only">Footer</h2>
   <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:py-6 lg:px-8">
@@ -27,7 +26,9 @@ import { config } from "../data/config";
                 <div>
                   <span class="text-sm text-gray-300">
                     {config.phone}<br />
-                    <FooterLink to={`mailto:${config.email}`}>{config.email}</FooterLink>
+                    <FooterLink to={`mailto:${config.email}`}
+                      >{config.email}</FooterLink
+                    >
                   </span>
                 </div>
               </li>
@@ -74,12 +75,14 @@ import { config } from "../data/config";
                 </div>
                 <div>
                   <span class="text-sm text-gray-300">
-                    <FooterLink to="/imprint">Imprint</FooterLink> / <FooterLink to="/privacy-policy">Privacy Policy</FooterLink>
+                    <FooterLink to="/imprint">Imprint</FooterLink> / <FooterLink
+                      to="/privacy-policy">Privacy Policy</FooterLink
+                    >
                   </span>
                   <div class="text-sm text-gray-300">
                     © 2022 by Torsten Uhlmann.<br />
                     Built with <span>❤</span> in Thalheim.
-                  </div>                
+                  </div>
                 </div>
               </li>
             </ul>

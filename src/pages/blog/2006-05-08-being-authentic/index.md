@@ -1,14 +1,15 @@
 ---
 slug: being-authentic
-date: 2006-05-08
-title: "Being Authentic"
-author: "Torsten Uhlmann"
-tags: ["business"]
+date: 2006-05-08T00:00:00.000Z
+title: Being Authentic
+author: Torsten Uhlmann
+tags:
+  - business
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2006-05-08-being-authentic/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 As we go along in our adventure to create a software development company, one of the most important steps for us is to find our identity. That one is crucial as it defines our company's strategy, the things we do or don't.

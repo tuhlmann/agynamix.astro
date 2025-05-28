@@ -1,14 +1,18 @@
 ---
 slug: keep-wordpress-up-to-date-with-subversion
-date: 2008-05-12
-title: "Keep Wordpress up to date with Subversion"
-author: "Torsten Uhlmann"
-tags: ["business", "english", "subversion", "wordpress"]
+date: 2008-05-12T00:00:00.000Z
+title: Keep Wordpress up to date with Subversion
+author: Torsten Uhlmann
+tags:
+  - business
+  - english
+  - subversion
+  - wordpress
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2008-05-12-keep-wordpress-up-to-date-with-subversion/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 I use Wordpress as my blogging system. I'm very satisfied. I need to keep it up to date. Now it's daunting to do the whole update ceremony by hand. Wouldn't it be nice if there where an automated mechanism? There is. ![101-0133\_IMG](./101-0133-img.jpg)The german [CT](http://www.heise.de/ct/) magazine published an article about using Subversion for automated updates. The idea is so simple I'm embarrassed I didn't think of it before! Wordpress uses Subversion as it's source control system. In Subversion you usually create a directory "branches" where a directory is created for each release branch. And then there's a directory "tags" which contains a tag name (like "2.5.1" which is the latest release as of this post) for every release. Now what you can do is check out (svn co) the Wordpress code from the Subversion repository telling it you want to the, say, release tagged with "2.5.1". Subversion will copy the code into a specified directory and will also keep the Subversion metadata (".svn" directories) in place. Now whenever the fine folks at Wordpress release their version "2.5.2" you "switch" the code over to that tag, Subversion automatically updates your local sources with the latest changes from the repository and you are done. For all this stuff to work you need the Subversion client installed on your Wordpress host as well as ssh access to your account. To install Subversion on a Debian based system like Ubuntu you just say "apt-get install subversion" and it will be installed if not already present. The Wordpress repository is located at <http://svn.automattic.com/wordpress>. If you want to checkout the "2.5.1" release tag you would issues the following command:

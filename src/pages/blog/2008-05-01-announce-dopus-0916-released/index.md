@@ -1,14 +1,18 @@
 ---
 slug: announce-dopus-0916-released
-date: 2008-05-01
-title: "Announce: Dopus 0.9.16 released"
-author: "Torsten Uhlmann"
-tags: ["docbook", "dopus", "english", "programming"]
+date: 2008-05-01T00:00:00.000Z
+title: 'Announce: Dopus 0.9.16 released'
+author: Torsten Uhlmann
+tags:
+  - docbook
+  - dopus
+  - english
+  - programming
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2008-05-01-announce-dopus-0916-released/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 Dear Dopus users, I just release version 0.9.16 of Dopus. This is a bugfix release, with the following enhancements:

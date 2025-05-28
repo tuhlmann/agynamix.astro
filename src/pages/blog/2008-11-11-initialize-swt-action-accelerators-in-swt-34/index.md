@@ -1,14 +1,17 @@
 ---
 slug: initialize-swt-action-accelerators-in-swt-34
-date: 2008-11-11
-title: "Initialize SWT Action accelerators in SWT 3.4"
-author: "Torsten Uhlmann"
-tags: ["english", "programming"]
+date: 2008-11-11T00:00:00.000Z
+title: Initialize SWT Action accelerators in SWT 3.4
+author: Torsten Uhlmann
+tags:
+  - english
+  - programming
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: >-
+  /assets/blog/2008-11-11-initialize-swt-action-accelerators-in-swt-34/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 While developing my new application [Simidude](http://www.simidude.com) I ran about a funny problem with JFace's MenuManager. I develop Simidude (an easy to use cross platform clipboard synchronizer and Drag & Drop tool- it's exciting, [you should look at it](http://www.simidude.com) :)) using Java 5 and the SWT/JFace libraries from [Eclipse](http://www.eclipse.org). SWT provides Java with a platform specific look and feel which makes my application appear native on all supported (Windows, Mac and Linux) platforms. Because I want the application to be small and carry as little overhead as possible I do not use the Eclipse RCP platform but rather just the GUI libraries. Now when writing a JFace application you subclass ApplicationWindow for your application's main window. To create a menu bar you overwrite the method "MenuMnager createMenuManager()" in which you create your top level menu items like "File", "Edit" or "Help" as well as the Actions that you plug into them. An Action basically wraps up the information needed to display a menu entry as well as some code to do something. Actions can be reused to be shown in the menubar as well as in the toolbar. An Action can hold for instance an image object, a tooltip text or an accelerator definition. To set an accelerator for my "Quit" action I'd do something like this:

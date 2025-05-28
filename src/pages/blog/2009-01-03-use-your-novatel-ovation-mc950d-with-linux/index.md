@@ -1,14 +1,16 @@
 ---
 slug: use-your-novatel-ovation-mc950d-with-linux
-date: 2009-01-03
-title: "Use your Novatel Ovation MC950D with Linux"
-author: "Torsten Uhlmann"
-tags: ["business", "english"]
+date: 2009-01-03T00:00:00.000Z
+title: Use your Novatel Ovation MC950D with Linux
+author: Torsten Uhlmann
+tags:
+  - business
+  - english
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2009-01-03-use-your-novatel-ovation-mc950d-with-linux/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 A while back I bought myself a Vodafone [UMTS flat rate](http://www.moobicent.de/) together with one of thise nifty UMTS USB sticks. Mine is a Novatel Ovation MC950D.

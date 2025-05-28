@@ -1,14 +1,21 @@
 ---
 slug: synchronize-your-media-library-with-itunes
-date: 2010-07-04
-title: "Synchronize your media library with iTunes"
-author: "Torsten Uhlmann"
-tags: ["english", "it", "itunes", "mac", "media", "news", "programming"]
+date: 2010-07-04T00:00:00.000Z
+title: Synchronize your media library with iTunes
+author: Torsten Uhlmann
+tags:
+  - english
+  - it
+  - itunes
+  - mac
+  - media
+  - news
+  - programming
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2010-07-04-synchronize-your-media-library-with-itunes/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 This article will show you how you can synchronize your media library (movies, tv shows and iTunes shows at the moment) with iTunes.

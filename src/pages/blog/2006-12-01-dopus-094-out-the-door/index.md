@@ -1,14 +1,17 @@
 ---
 slug: dopus-094-out-the-door
-date: 2006-12-01
-title: "Dopus 0.9.4 out the door"
-author: "Torsten Uhlmann"
-tags: ["business", "news", "programming"]
+date: 2006-12-01T00:00:00.000Z
+title: Dopus 0.9.4 out the door
+author: Torsten Uhlmann
+tags:
+  - business
+  - news
+  - programming
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2006-12-01-dopus-094-out-the-door/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 I have released Dopus version 0.9.4 today. This is a minor bug fix release which cures the following issues:

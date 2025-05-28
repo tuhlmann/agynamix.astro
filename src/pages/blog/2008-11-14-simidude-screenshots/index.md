@@ -1,14 +1,15 @@
 ---
 slug: simidude-screenshots
-date: 2008-11-14
-title: "Simidude Screenshots"
-author: "Torsten Uhlmann"
-tags: ["newsletter"]
+date: 2008-11-14T00:00:00.000Z
+title: Simidude Screenshots
+author: Torsten Uhlmann
+tags:
+  - newsletter
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2008-11-14-simidude-screenshots/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 I had some slight problems with my Wordpress installation that prevented me from uploading files. Since I corrected the problems now I'd like to present the first screenshots of Simidude. To not offend any particular platform or their followersI will present the screenshots in alphabetic order :) :

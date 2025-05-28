@@ -1,14 +1,16 @@
 ---
 slug: asterisk-auf-ubuntu-linux-amd64
-date: 2006-02-18
-title: "Asterisk auf Ubuntu Linux (AMD64)"
-author: "Torsten Uhlmann"
-tags: ["business", "news"]
+date: 2006-02-18T00:00:00.000Z
+title: Asterisk auf Ubuntu Linux (AMD64)
+author: Torsten Uhlmann
+tags:
+  - business
+  - news
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2006-02-18-asterisk-auf-ubuntu-linux-amd64/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 Da denkt man nun, man hat einen tollen Prozessor. Ha, Pustekuchen! Wenn man sich außerhalb der i386 Gewässer bewegt, darf man an manchen Stellen zum eigenen Schraubenzieher greifen. Aber jetzt läuft es- [Asterisk](http://blog.agynamix.de/wp-admin/www.asterisk.org) (1.2.1) zusammen mit [AMP](http://coalescentsystems.ca/index.php?option=com_content&task=view&id=31&Itemid=57 "Asterisk Management Portal") auf unserem Ubuntu-Server. Ich bin dabei, für den ganzen Kram eine Installanleitung zu verfassen, hier schonmal ein paar Tipps im Voraus: Für die Installation habe ich mir den Bristuff-Patch von [www.junghanns.net](http://83.137.99.169/~junghanns.net/downloads/bristuff-0.3.0-PRE-1f.tar.gz) heruntergeladen (Version mit dem f hintendran), dazu dann noch den passenden [Florz-Patch](http://zaphfc.florz.dyndns.org/):

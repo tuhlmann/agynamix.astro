@@ -1,14 +1,17 @@
 ---
 slug: simidude-now-costs-just-25-bucks
-date: 2009-04-22
-title: "Simidude now costs just 25 bucks"
-author: "Torsten Uhlmann"
-tags: ["marketing", "newsletter", "simidude"]
+date: 2009-04-22T00:00:00.000Z
+title: Simidude now costs just 25 bucks
+author: Torsten Uhlmann
+tags:
+  - marketing
+  - newsletter
+  - simidude
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2009-04-22-simidude-now-costs-just-25-bucks/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 ![](./daniel_und_blumen21.jpg) I'd like to announce a substantial price drop for the Simidude application. Simidude will from now on be available for just USD 25 or 20 Euro. Due to the exchange rate between Euro and USD the previous USD I felt the price was too high. Considering the fact that most purchases come from within the United States I adjusted the price accordingly. In the last few weeks I received a lot of great comments about Simidude like this one:

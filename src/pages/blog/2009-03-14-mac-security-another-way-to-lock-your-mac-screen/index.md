@@ -1,14 +1,19 @@
 ---
 slug: mac-security-another-way-to-lock-your-mac-screen
-date: 2009-03-14
-title: "Mac Security- Another Way to Lock Your Mac Screen"
-author: "Torsten Uhlmann"
-tags: ["business", "english", "mac", "mac"]
+date: 2009-03-14T00:00:00.000Z
+title: Mac Security- Another Way to Lock Your Mac Screen
+author: Torsten Uhlmann
+tags:
+  - business
+  - english
+  - mac
+  - mac
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: >-
+  /assets/blog/2009-03-14-mac-security-another-way-to-lock-your-mac-screen/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 When using your Mac in a busy environment it might be important to shield it against unauthorized access. If you leave your desk to head for that donut of yours or to dispose of the many coffee you drank you may not want to leave your machine unattended. There are two simple settings that will prevend any unauthorized access to your Mac:

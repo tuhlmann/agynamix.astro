@@ -1,14 +1,15 @@
 ---
 slug: simidude-140-release-notes
-date: 2009-09-23
-title: "Simidude 1.4.0 Release Notes"
-author: "Torsten Uhlmann"
-tags: ["release-notes"]
+date: 2009-09-23T00:00:00.000Z
+title: Simidude 1.4.0 Release Notes
+author: Torsten Uhlmann
+tags:
+  - release-notes
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2009-09-23-simidude-140-release-notes/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 These are the release notes for version 1.4.0 of the cross platform network clipboard Simidude. Version 1.4.0 adds quite a list of new features that will make your use of Simidude more effective and fun:

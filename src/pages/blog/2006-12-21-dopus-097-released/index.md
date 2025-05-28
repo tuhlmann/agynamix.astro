@@ -1,14 +1,16 @@
 ---
 slug: dopus-097-released
-date: 2006-12-21
-title: "Dopus 0.9.7 released"
-author: "Torsten Uhlmann"
-tags: ["business", "programming"]
+date: 2006-12-21T00:00:00.000Z
+title: Dopus 0.9.7 released
+author: Torsten Uhlmann
+tags:
+  - business
+  - programming
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2006-12-21-dopus-097-released/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 From the release notes (also a docbook document transformed while packaging Dopus):

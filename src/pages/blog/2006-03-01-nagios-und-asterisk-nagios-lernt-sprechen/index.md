@@ -1,14 +1,16 @@
 ---
 slug: nagios-und-asterisk-nagios-lernt-sprechen
-date: 2006-03-01
-title: "Nagios und Asterisk (Nagios lernt sprechen)"
-author: "Torsten Uhlmann"
-tags: ["news", "programming"]
+date: 2006-03-01T00:00:00.000Z
+title: Nagios und Asterisk (Nagios lernt sprechen)
+author: Torsten Uhlmann
+tags:
+  - news
+  - programming
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2006-03-01-nagios-und-asterisk-nagios-lernt-sprechen/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 Da wir ja bei uns eine [Asterisk](http://www.asterisk.org)-Telefonanlage im Einsatz haben (Hint: wir verkaufen die auch!) und außerdem ein Nagios-Monitoringsystem (NMS: Network Management System), lag die Idee ja nahe, Nagios über Asterisk reden zu lassen. Dazu habe ich folgendes gemacht: Im Nagios ein neues Kommando notify-by-asterisk angelegt, dass im entsprechenden Kontakt angegeben wird. Das Kommando selbst ist recht simpel:

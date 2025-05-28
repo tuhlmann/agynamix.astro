@@ -1,11 +1,8 @@
 ---
 import { Tags } from "../blocks/Tags"
 import { formatDate } from "../utils/prepare-story-data"
+import { PostPreviewProps } from "~/types/component-types"
 
-export interface Props {
-	post: any;
-	author: string;
-}
 const { post, author } = Astro.props;
 
 function excerpt(str: string): string {
@@ -14,7 +11,7 @@ function excerpt(str: string): string {
 
 let bannerImg = "/images/blog_banner.jpg"
 if (post.frontmatter.banner) {
-	bannerImg = `${post.url.replace("/blog/", "/blog-assets/")}/${post.frontmatter.banner}`
+	bannerImg = `/public/${post.frontmatter.banner}`
 }
 ---
 

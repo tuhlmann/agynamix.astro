@@ -1,14 +1,16 @@
 ---
 slug: my-world-broke-into-pieces
-date: 2007-08-05
-title: "My world broke into pieces"
-author: "Torsten Uhlmann"
-tags: ["english", "news"]
+date: 2007-08-05T00:00:00.000Z
+title: My world broke into pieces
+author: Torsten Uhlmann
+tags:
+  - english
+  - news
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2007-08-05-my-world-broke-into-pieces/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 **Yesterday, the incredible happened.**

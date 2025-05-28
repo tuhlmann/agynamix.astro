@@ -1,14 +1,15 @@
 ---
 slug: eclipsecon-2007-day-3
-date: 2007-03-08
-title: "EclipseCon 2007: Day 3"
-author: "Torsten Uhlmann"
-tags: ["business"]
+date: 2007-03-08T00:00:00.000Z
+title: 'EclipseCon 2007: Day 3'
+author: Torsten Uhlmann
+tags:
+  - business
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2007-03-08-eclipsecon-2007-day-3/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 Now that the 3rd day at EclipseCon is over, lets reflect a little bit over it. It was the first time I tried the "Continental Breakfast" at the EclipseCon. Well, the sessions and talks where better. Seems this kind of breakfast is not my taste. Never mind. From 9:00 to 10:00 Robert M. Lefkowitz was holding a keynote talk about the anomalies of Open Source software. Very entertaining. After that was my second try to get into an [Equinox session](http://www.eclipsecon.org/2007/index.php?page=sub/&id=4243), which failed miserably because either the room was too small or the people where too many. Or both. So since I didn't really get my hand on another talk I found some time to stray around, visit the exhibiters booth and just relax. [](./img_1730.jpg "img_1730.jpg")

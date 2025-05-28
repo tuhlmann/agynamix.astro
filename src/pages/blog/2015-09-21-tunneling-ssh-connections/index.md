@@ -1,14 +1,14 @@
 ---
 slug: tunneling-ssh-connections
-date: 2015-09-21
-title: "Tunneling SSH Connections"
-author: "Torsten Uhlmann"
+date: 2015-09-21T00:00:00.000Z
+title: Tunneling SSH Connections
+author: Torsten Uhlmann
 tags: []
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2015-09-21-tunneling-ssh-connections/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 ## Problem
@@ -35,7 +35,7 @@ Here are my settings for the SOCKS proxy within FoxyProxy:
 
 ![FoxyProxy Details](./foxyproxy_2.png)
 
-__Update 7.5.2016:__ As [Richard](https://twitter.com/d6y) reports, if you are on a Mac you can configure its on board socks proxy like so:
+__Update 7.5.2016:__ As [Richard](https://x.com/d6y) reports, if you are on a Mac you can configure its on board socks proxy like so:
 
 ```
 # enable it:

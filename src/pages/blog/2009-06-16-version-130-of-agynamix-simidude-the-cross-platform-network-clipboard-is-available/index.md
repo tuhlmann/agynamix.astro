@@ -1,14 +1,21 @@
 ---
-slug: version-130-of-agynamix-simidude-the-cross-platform-network-clipboard-is-available
-date: 2009-06-16
-title: "Version 1.3.0 of AGYNAMIX Simidude, the cross platform network clipboard is available"
-author: "Torsten Uhlmann"
-tags: ["it", "marketing", "newsletter"]
+slug: >-
+  version-130-of-agynamix-simidude-the-cross-platform-network-clipboard-is-available
+date: 2009-06-16T00:00:00.000Z
+title: >-
+  Version 1.3.0 of AGYNAMIX Simidude, the cross platform network clipboard is
+  available
+author: Torsten Uhlmann
+tags:
+  - it
+  - marketing
+  - newsletter
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: >-
+  /assets/blog/2009-06-16-version-130-of-agynamix-simidude-the-cross-platform-network-clipboard-is-available/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 Finally! After a short beta period I have now released version 1.3.0 of AGYNAMIX Simidude, my cross platform network clipboard and file copy tool. I did not get around to create new and shiny screenshots yet- I'll post them as soon as possible! This one is a pretty big release with huge improvements in usability and features. Here is a list of new features that were added since version 1.2.0:

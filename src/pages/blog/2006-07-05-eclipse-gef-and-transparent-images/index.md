@@ -1,14 +1,16 @@
 ---
 slug: eclipse-gef-and-transparent-images
-date: 2006-07-05
-title: "Eclipse GEF and transparent images"
-author: "Torsten Uhlmann"
-tags: ["english", "programming"]
+date: 2006-07-05T00:00:00.000Z
+title: Eclipse GEF and transparent images
+author: Torsten Uhlmann
+tags:
+  - english
+  - programming
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2006-07-05-eclipse-gef-and-transparent-images/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 Well then, the other day I tried to improve the appearance of [Net-Herald](http://net-herald.agynamix.de), our monitoring and controlling application ([video here](http://www.agynamix.de/cms/index.php?option=content&task=view&id=13⟨=en)). [![Overview](./gef_overview.jpg)](./gef_overview.jpg "Overview") In the overview you see the result of this adventure. I have set a background image (the clouds) to make the look more attractive. The user can insert any image (texture, a country map, a technical plan) to merge with the shown elements. The image is drawn in the root element of the GEF diagram (condensed view): 

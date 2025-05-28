@@ -1,14 +1,15 @@
 ---
 slug: announce-dopus-0914-released
-date: 2008-02-15
-title: "Announce: Dopus 0.9.14 released"
-author: "Torsten Uhlmann"
-tags: ["programming"]
+date: 2008-02-15T00:00:00.000Z
+title: 'Announce: Dopus 0.9.14 released'
+author: Torsten Uhlmann
+tags:
+  - programming
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2008-02-15-announce-dopus-0914-released/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 I wrapped up a new release of Dopus. This release includes a few bugfixes as well as new support for Docbook Website creation. From the release notes:

@@ -1,14 +1,16 @@
 ---
 slug: windows-live-writer-beta-available
-date: 2006-08-16
-title: "Windows Live Writer Beta available"
-author: "Torsten Uhlmann"
-tags: ["business", "programming"]
+date: 2006-08-16T00:00:00.000Z
+title: Windows Live Writer Beta available
+author: Torsten Uhlmann
+tags:
+  - business
+  - programming
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2006-08-16-windows-live-writer-beta-available/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 MS has released a Beta version of Live Writer, a blog writing software for Windows (and .Net). [This](http://windowslivewriter.spaces.live.com/PersonalSpace.aspx?_c02_owner=1) is the blog entry that contains the download link.

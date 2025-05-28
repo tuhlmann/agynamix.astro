@@ -1,14 +1,17 @@
 ---
 slug: announce-version-110-of-dobudish-released
-date: 2008-07-29
-title: "Announce: Version 1.1.0 of DobuDish released"
-author: "Torsten Uhlmann"
-tags: ["docbook", "english", "programming"]
+date: 2008-07-29T00:00:00.000Z
+title: 'Announce: Version 1.1.0 of DobuDish released'
+author: Torsten Uhlmann
+tags:
+  - docbook
+  - english
+  - programming
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2008-07-29-announce-version-110-of-dobudish-released/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 Hi all, today I released version 1.1.0 of DobuDish. The change: I have added new global-\[pre/post\] targets to DobuDish as well as an initially empty file "system/etc/build-user-augments.xml" which is supposed to hold user defined actions for the global targets. The logic is as follow:

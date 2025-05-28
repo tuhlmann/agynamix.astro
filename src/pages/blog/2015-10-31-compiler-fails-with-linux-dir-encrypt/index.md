@@ -1,14 +1,17 @@
 ---
 slug: compiler-fails-with-linux-dir-encrypt
-date: 2015-10-31
-title: "Scala compiler fails with Linux directory encryption"
-author: "Torsten Uhlmann"
-tags: ["Scala", "Linux", "Ubuntu"]
+date: 2015-10-31T00:00:00.000Z
+title: Scala compiler fails with Linux directory encryption
+author: Torsten Uhlmann
+tags:
+  - Scala
+  - Linux
+  - Ubuntu
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2015-10-31-compiler-fails-with-linux-dir-encrypt/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 I'm always quiet excited when a new release of my currently favorite Linux OS appears and so I was installing shiny Ubuntu 15.10 on a test machine a few days ago.

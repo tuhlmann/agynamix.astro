@@ -1,13 +1,14 @@
 ---
 slug: a-new-blog
-date: 2015-07-31
-title: "A New Time, a New Blog"
-author: "Torsten Uhlmann"
-tags: ["Cryogen"]
+date: 2015-07-31T00:00:00.000Z
+title: 'A New Time, a New Blog'
+author: Torsten Uhlmann
+tags:
+  - Cryogen
 categories: []
-description:
-banner: banner.jpg
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2015-07-31-a-new-blog/banner.jpg
+layout: ../../../layouts/blog-post.astro
 ---
 
 After torching my old site

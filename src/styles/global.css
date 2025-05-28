@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 @tailwind variants; */
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
 
 :root {
   --hover-light: rgba(219, 87, 86, 0.15);
@@ -46,4 +49,16 @@ body .h2 {
   @apply list-inside;
   @apply lg:prose-h1:text-3xl;
   @apply lg:prose-h1:leading-relaxed;
+  @apply max-w-[1000px]
+}
+
+.my-prose {
+  hr {
+    @apply my-5;
+    @apply mx-0;
+  } 
+}
+
+.text-link {
+  @apply no-underline;
 }

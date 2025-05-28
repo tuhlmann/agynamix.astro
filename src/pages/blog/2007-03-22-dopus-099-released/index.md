@@ -1,14 +1,15 @@
 ---
 slug: dopus-099-released
-date: 2007-03-22
-title: "Dopus 0.9.9 released"
-author: "Torsten Uhlmann"
-tags: ["business"]
+date: 2007-03-22T00:00:00.000Z
+title: Dopus 0.9.9 released
+author: Torsten Uhlmann
+tags:
+  - business
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2007-03-22-dopus-099-released/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 Hi everybody, right now (well actually, a few minutes ago) I released a new version of the Docbook Publishing Tool [**Dopus**](http://cms.agynamix.de/downloads/cat_view-2.html). I'm sorry for the quietness around but I was very busy with projects at my customers places, own projects and, of course, the very cool EclipseCon. Anyway, without boring you to dust, here are the new features of this release:[![img\_1673.jpg](./img_1673.jpg)](./img_1673.jpg "img_1673.jpg")

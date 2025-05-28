@@ -1,4 +1,12 @@
 {
+  "extends": "astro/tsconfigs/strict",
+  "include": [
+    ".astro/types.d.ts",
+    "**/*"
+  ],
+  "exclude": [
+    "dist"
+  ],
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
@@ -6,10 +14,14 @@
         "src/*"
       ]
     },
-    "typeRoots": ["node_modules/@types", "./typings"],
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
-    "moduleResolution": "node",
-    "esModuleInterop": true
-  }
+    "moduleResolution": "bundler",
+    "verbatimModuleSyntax": false,
+    "esModuleInterop": true,
+    "module": "ESNext",
+    "target": "ESNext",
+    "strict": true,
+    "noImplicitAny": false
+   }
 }

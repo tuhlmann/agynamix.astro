@@ -1,14 +1,18 @@
 ---
 slug: integration-between-asterisk-pbx-and-the-fantastic-open-xchange
-date: 2006-03-08
-title: "Integration between Asterisk PBX and the fantastic Open-Xchange"
-author: "Torsten Uhlmann"
-tags: ["business", "news", "programming"]
+date: 2006-03-08T00:00:00.000Z
+title: Integration between Asterisk PBX and the fantastic Open-Xchange
+author: Torsten Uhlmann
+tags:
+  - business
+  - news
+  - programming
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: >-
+  /assets/blog/2006-03-08-integration-between-asterisk-pbx-and-the-fantastic-open-xchange/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 We have created a small perl script that integrates OX with an Asterisk PBX. It uses Asterisk's Manager API which means OX and Asterisk can run on different machines. [![OX Click2Dial](./OX_Click2Dial.jpg)](./OX_Click2Dial.jpg "OX Click2Dial")

@@ -1,14 +1,18 @@
 ---
 slug: how-you-can-add-gps-information-to-your-digital-photos
-date: 2009-03-02
-title: "How you can add GPS information to your digital photos"
-author: "Torsten Uhlmann"
-tags: ["english", "gps", "photography"]
+date: 2009-03-02T00:00:00.000Z
+title: How you can add GPS information to your digital photos
+author: Torsten Uhlmann
+tags:
+  - english
+  - gps
+  - photography
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: >-
+  /assets/blog/2009-03-02-how-you-can-add-gps-information-to-your-digital-photos/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 One of the great waves of the last years is geotagging, meaning you keep track of the locations you have been with the means of a GPS tracker and than be able to create a map that shows the waypoint of your last trip. Of course geotagging is more but for the course of this article it generically means to tag something with GPS information.

@@ -1,14 +1,15 @@
 ---
 slug: eclipsecon-2007-day-4
-date: 2007-03-09
-title: "EclipseCon 2007: Day 4"
-author: "Torsten Uhlmann"
-tags: ["business"]
+date: 2007-03-09T00:00:00.000Z
+title: 'EclipseCon 2007: Day 4'
+author: Torsten Uhlmann
+tags:
+  - business
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2007-03-09-eclipsecon-2007-day-4/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 Well, today was the last day of this conference. It was a very exciting event. Since it was my first EclipseCon I can't compare it to the previous ones. But there was some kind of special spirit there- people, yet from different backgrounds and following different goals still had some common ground- Eclipse. The day started with a gorgeous keynote by Dr. Herbert Thomson. He talked about software security. Well actually, he didn't just talk, rather passionately convincing the audience about the matter. He was speaking about fuzzy testing- injecting random bytes of characters into an application. And within a few minutes he showed (live) how the Macromedia FlashPlayer 6 could be compromised by finding possible stack overflows through fuzzy testing. Pretty amazing... There was another talk about security in [Eclipse applications](http://www.eclipsecon.org/2007/index.php?page=sub/&id=3889) . Neil Bartlett pointed to a project called [Eclipse-JAAS](http://sourceforge.net/projects/eclipse-jaas) which he started to address security in RCP client server applications. After lunch two ladies from the Eclipse team [intruduced the Eclipse test framework](http://www.eclipsecon.org/2007/index.php?page=sub/&id=3726) (org.eclipse.test) which they use to automatically unit test and performance test the Eclipse SDK. Finally, Mike Milinkovich and a row of project leads held a panel at the theater to talk about the future of Eclipse and answer questions. According to the board there where 1353 attendees which drank 665 gallons of coffee. [](./img_1667.jpg "img_1667.jpg")

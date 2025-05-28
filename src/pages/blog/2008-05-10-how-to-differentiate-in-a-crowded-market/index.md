@@ -1,14 +1,16 @@
 ---
 slug: how-to-differentiate-in-a-crowded-market
-date: 2008-05-10
-title: "How to differentiate in a crowded market"
-author: "Torsten Uhlmann"
-tags: ["business", "english"]
+date: 2008-05-10T00:00:00.000Z
+title: How to differentiate in a crowded market
+author: Torsten Uhlmann
+tags:
+  - business
+  - english
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: /assets/blog/2008-05-10-how-to-differentiate-in-a-crowded-market/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 [![IMG\_2444](./img-2444.jpg)](./img-2444.jpg) Last year in October we went shopping for a construction company for our new home. Currently I have rented office space and I'd rather have living and working space together.

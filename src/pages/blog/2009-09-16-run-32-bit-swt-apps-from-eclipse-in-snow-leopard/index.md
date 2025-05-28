@@ -1,14 +1,16 @@
 ---
 slug: run-32-bit-swt-apps-from-eclipse-in-snow-leopard
-date: 2009-09-16
-title: "Run 32 bit SWT apps from Eclipse in Snow Leopard"
-author: "Torsten Uhlmann"
-tags: ["it"]
+date: 2009-09-16T00:00:00.000Z
+title: Run 32 bit SWT apps from Eclipse in Snow Leopard
+author: Torsten Uhlmann
+tags:
+  - it
 categories: []
-description:
-banner: banner.jpg
-bannerCredit: "Photo by Torsten Uhlmann"
-layout: "../../../layouts/blog-post.astro"
+description: null
+banner: >-
+  /assets/blog/2009-09-16-run-32-bit-swt-apps-from-eclipse-in-snow-leopard/banner.jpg
+bannerCredit: Photo by Torsten Uhlmann
+layout: ../../../layouts/blog-post.astro
 ---
 
 After I received an update for my UMTS modem driver to finally work with Snow Leopard I again decided to update my MacBook Pro to Snowy. After getting that system up to speed again I continued working on Simidude- I'm about to integrate global hotkey support- at least on Windows and Linux for now. Firing up Eclipse, editing a bit and launching Simidude brought me this error:
