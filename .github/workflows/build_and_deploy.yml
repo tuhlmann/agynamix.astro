@@ -79,6 +79,7 @@ jobs:
           ssh -i ~/.ssh/id_ed25519 root@${{ vars.SSH_HOST }} <<'EOF'
             set -euo pipefail
             cd /docker/agynamix
+            docker compose down --remove-orphans
             docker compose pull
-            docker compose up -d --force-recreate --remove-orphans
+            docker compose up -d --force-recreate
           EOF
