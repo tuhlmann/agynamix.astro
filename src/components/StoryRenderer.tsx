@@ -152,7 +152,7 @@ export default function StoryRenderer(p: Props) {
 
   const limitedElements = createMemo(() =>
     allElements().filter(c => {
-      const endDate = parseISO(c.end)
+      const endDate = c.end ? parseISO(c.end) : new Date()
       return compareAsc(endDate, renderUntil()) > -1
     }),
   )

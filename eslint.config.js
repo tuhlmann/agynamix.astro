@@ -1,4 +1,4 @@
-import eslintPluginAstro from 'eslint-plugin-astro';
+import eslintPluginAstro from "eslint-plugin-astro";
 import { rules as prettierConfigRules } from "eslint-config-prettier";
 import prettierPlugin from "eslint-plugin-prettier";
 
@@ -8,9 +8,14 @@ const astroConfig = [
     rules: {
       // override/add rules settings here, such as:
       // "astro/no-set-html-directive": "error"
-    }
-  }
-]
+    },
+  },
+];
+
+const typescriptConfig = [
+  // TypeScript ESLint Plugin
+  plugins.typescriptEslint,
+];
 
 const prettierConfig = [
   // Prettier Plugin
@@ -28,11 +33,12 @@ const prettierConfig = [
       "prettier/prettier": "error",
     },
   },
-]
+];
 
 export default [
   // add more generic rule sets here, such as:
   // js.configs.recommended,
   ...astroConfig,
-  ...prettierConfig
+  ...typescriptConfig,
+  ...prettierConfig,
 ];

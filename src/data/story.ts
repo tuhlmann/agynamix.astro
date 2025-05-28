@@ -3,6 +3,48 @@ import { prepareData, sortByDate, StoryData, AllowedCategories } from "../utils/
 
 export default (
   [
+        {
+      position: "Symnix",
+      client: "AGYNAMIX",
+      logo: "/images/products/symnix_logo_dark.svg",
+      start: "2022-10-01",
+      link: "https://symnix.com",
+      tags: ["Rust", "Typescript", "React", "PostgreSQL", "Docker"],
+      categories: [AllowedCategories.Product, AllowedCategories.Resume],
+      description: `
+      Symnix is a new product that is currently in development. 
+      It is a web based application that allows users to manage 
+      their hosted applications more efficiently.
+      Symnix allows individuals and organizations to create, manage, 
+      and monitor multiple hosts with multiple installed applications.
+      Symnix aims to streamline the server management using latest industry standards and best practices.
+
+      It is built using Rust for the backend, Typescript and React for the frontend, and PostgreSQL for the database. The application is containerized using Docker to ensure easy deployment and scalability.
+    `,      
+    },
+    {
+      position: "Senior Frontend Developer",
+      client: "TXODDS, Ltd.",
+      logo: "/images/clients/TXODDS.svg",
+      start: "2024-08-05",
+      end: "2025-05-05",
+      link: "https://txodds.net/",
+      tags: ["VueJS", "Javascript", "Typescript", "Docker"],
+      categories: [AllowedCategories.Client, AllowedCategories.Resume],
+      short: "*Our vision is to connect the sports betting ecosystem to the most compelling and innovative, ultra-low latency sports odds delivery platform*",
+      description: `Our team developed several frontend applications for the *tx-scores* project.
+
+TX-Scores is 'a professional scouting network—not casual coverage.
+This is a community of scouts and analysts who know the sport, know the teams, and care about getting it right.'
+
+...
+
+Each scout works in real time with a dedicated analyst ..., giving every game a 1:1 layer of live oversight.'
+
+We used VueJS 3 with Typescript to develop the frontend applications, which are deployed as Docker containers.
+
+`,
+    },
     {
       position: "Senior Fullstack Developer",
       client: "iCombine UG",
@@ -31,7 +73,7 @@ export default (
       client: "ScaledAgile, Inc",
       logo: "/images/clients/ScaledAgile.svg",
       start: "2019-05-01",
-      end: "2022-01-07",
+      end: "2024-07-07",
       link: "https://collaborate.scaledagile.com",
       tags: ["Scala", "Lift", "AngularJS", "Angular 12", "Javascript", "Typescript", "Docker", "PostgreSQL"],
       categories: [AllowedCategories.Client, AllowedCategories.Resume],
