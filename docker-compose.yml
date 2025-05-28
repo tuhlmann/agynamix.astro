@@ -1,0 +1,27 @@
+---
+services:
+  agynamix_homepage:
+    image: ghcr.io/tuhlmann/agynamix.astro:20250528-131539
+    restart: unless-stopped
+    container_name: agynamix_homepage
+    networks:
+      - web
+      - default
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik_web"
+      - "traefik.http.routers.agynamix.entrypoints=websecure"
+      - "traefik.http.routers.agynamix.rule=Host(`agynamix.com`) || Host(`www.agynamix.com`) || Host(`agynamix.de`) || Host(`www.agynamix.de`)"
+      - "traefik.http.services.agynamix.loadbalancer.server.port=8080"
+      - "traefik.http.routers.agynamix.tls=true"
+      - "traefik.http.routers.agynamix.tls.certresolver=default"
+      - "traefik.http.middlewares.agynamix_ratelimit.ratelimit.average=50"
+      - "traefik.http.middlewares.agynamix_ratelimit.ratelimit.burst=50"
+      - "traefik.http.middlewares.agynamix_ratelimit.ratelimit.period=1m"
+      - "traefik.http.routers.agynamix.middlewares=agynamix_ratelimit@docker"
+
+networks:
+  default:
+  web:
+    external: true
+    name: traefik_web
