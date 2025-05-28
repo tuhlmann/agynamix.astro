@@ -1,16 +1,4 @@
-# Astro Starter Kit: Basics
-
-```sh
-npm create astro@latest -- --template basics
-```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+# AGYNAMIX Website
 
 ## 🚀 Project Structure
 
@@ -46,3 +34,18 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+
+## Deploy New Version
+
+Follow these steps to trigger the Github action to deploy a new version of the website:
+
+- Merge/push the desired changes to the main branch
+- Let the GitHub Action run (you can view the details in the Actions tab)
+- Look up the created tag in the Container Registry
+(https://github.com/tuhlmann/agynamix.astro/pkgs/container/agynamix.astro)
+- Update the created tag in docker-compose.yml under
+image: ghcr.io/tuhlmann/agynamix.astro:$TAG
+- Push the change to docker-compose.yml to the main branch
+- GitHub Action deploys the new image to the server → done
+
