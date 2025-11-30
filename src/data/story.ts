@@ -1,9 +1,36 @@
 /* eslint-disable max-len */
-import { prepareData, sortByDate, StoryData, AllowedCategories } from "../utils/prepare-story-data"
+import {
+  prepareData,
+  sortByDate,
+  StoryData,
+  AllowedCategories,
+} from "../utils/prepare-story-data";
 
 export default (
   [
-        {
+    {
+      position: "Invoicer",
+      client: "AGYNAMIX",
+      logo: "/images/products/invoicer_logo.png",
+      start: "2025-10-01",
+      link: "https://invoicer.agynamix.de",
+      tags: ["Kotlin", "Jetpack Compose", "SQLite", "GoBD"],
+      categories: [AllowedCategories.Product, AllowedCategories.Resume],
+      short:
+        "Professional desktop invoicing application for freelancers and small businesses",
+      description: `
+      AGYNAMIX Invoicer is a comprehensive desktop application designed specifically for freelancers and small businesses to manage their invoicing needs efficiently.
+
+      Built with JavaFX, it provides a modern, intuitive interface for creating professional invoices, managing customers, tracking payments, and maintaining complete financial records.
+
+      The application offers features including customizable invoice templates, automatic invoice numbering, VAT/tax calculations, payment tracking, customer management, and extensive reporting capabilities.
+
+      It runs natively on Windows, MacOS, and Linux, ensuring data privacy by storing all information locally on the user's computer without requiring cloud connectivity.
+
+      AGYNAMIX Invoicer emphasizes ease of use while providing powerful features for financial management, making it an ideal solution for professionals who value data sovereignty and need reliable, offline-capable invoicing software.
+      `,
+    },
+    {
       position: "Symnix",
       client: "AGYNAMIX",
       logo: "/images/products/symnix_logo_dark.svg",
@@ -12,15 +39,15 @@ export default (
       tags: ["Rust", "Typescript", "React", "PostgreSQL", "Docker"],
       categories: [AllowedCategories.Product, AllowedCategories.Resume],
       description: `
-      Symnix is a new product that is currently in development. 
-      It is a web based application that allows users to manage 
+      Symnix is a new product that is currently in development.
+      It is a web based application that allows users to manage
       their hosted applications more efficiently.
-      Symnix allows individuals and organizations to create, manage, 
+      Symnix allows individuals and organizations to create, manage,
       and monitor multiple hosts with multiple installed applications.
       Symnix aims to streamline the server management using latest industry standards and best practices.
 
       It is built using Rust for the backend, Typescript and React for the frontend, and PostgreSQL for the database. The application is containerized using Docker to ensure easy deployment and scalability.
-    `,      
+    `,
     },
     {
       position: "Senior Frontend Developer",
@@ -31,7 +58,8 @@ export default (
       link: "https://txodds.net/",
       tags: ["VueJS", "Javascript", "Typescript", "Docker"],
       categories: [AllowedCategories.Client, AllowedCategories.Resume],
-      short: "*Our vision is to connect the sports betting ecosystem to the most compelling and innovative, ultra-low latency sports odds delivery platform*",
+      short:
+        "*Our vision is to connect the sports betting ecosystem to the most compelling and innovative, ultra-low latency sports odds delivery platform*",
       description: `Our team developed several frontend applications for the *tx-scores* project.
 
 TX-Scores is 'a professional scouting network—not casual coverage.
@@ -52,9 +80,18 @@ We used VueJS 3 with Typescript to develop the frontend applications, which are 
       start: "2022-02-01",
       end: "2022-08-31",
       link: "https://icombine.net/",
-      tags: ["Scala", "Lift", "AngularJS", "React", "Javascript", "Typescript", "PostgreSQL"],
+      tags: [
+        "Scala",
+        "Lift",
+        "AngularJS",
+        "React",
+        "Javascript",
+        "Typescript",
+        "PostgreSQL",
+      ],
       categories: [AllowedCategories.Client, AllowedCategories.Resume],
-      short: "*Connect your experts to the right project roles, trainings and peers*",
+      short:
+        "*Connect your experts to the right project roles, trainings and peers*",
       description: `
     *iCombine helps to connect experts to the right project roles, trainings and peers*
 
@@ -75,14 +112,23 @@ We used VueJS 3 with Typescript to develop the frontend applications, which are 
       start: "2019-05-01",
       end: "2024-07-07",
       link: "https://collaborate.scaledagile.com",
-      tags: ["Scala", "Lift", "AngularJS", "Angular 12", "Javascript", "Typescript", "Docker", "PostgreSQL"],
+      tags: [
+        "Scala",
+        "Lift",
+        "AngularJS",
+        "Angular 12",
+        "Javascript",
+        "Typescript",
+        "Docker",
+        "PostgreSQL",
+      ],
       categories: [AllowedCategories.Client, AllowedCategories.Resume],
       short: "*Tackling complex problems through online collaboration*",
       description: `
-      ScaledAgile Collaborate (formerly Conteneo Weave) is an online collaboration and planning platform. 
+      ScaledAgile Collaborate (formerly Conteneo Weave) is an online collaboration and planning platform.
       The backend uses PostgreSQL, Scala and Lift, containerization and AWS.
       The frontend is built with Angular. While legacy AngularJS 1 code exists,
-      new features use a new frontend centric Angular 12 / Typescript architecture 
+      new features use a new frontend centric Angular 12 / Typescript architecture
       within a NX workspace.
 
       During the last 2 years we expanded Collaborate's reach considerably by intergrating collaborative planning
@@ -116,13 +162,22 @@ We used VueJS 3 with Typescript to develop the frontend applications, which are 
       start: "2013-07-01",
       end: "2019-02-28",
       link: "https://www.ascendantcompliancemanager.com",
-      tags: ["Scala", "Lift", "GO", "AngularJS", "Javascript", "MarkoJS", "Docker", "MongoDB"],
+      tags: [
+        "Scala",
+        "Lift",
+        "GO",
+        "AngularJS",
+        "Javascript",
+        "MarkoJS",
+        "Docker",
+        "MongoDB",
+      ],
       categories: [AllowedCategories.Client, AllowedCategories.Resume],
       short: "*Compliance & Risk Management, Solved*",
       description: `
-     In a small team of awesomely great developers we implement a suite of tools 
-     using best of breed frameworks like AngularJS for the frontend. 
-     The backend server is developed as a set of Scala applications on top 
+     In a small team of awesomely great developers we implement a suite of tools
+     using best of breed frameworks like AngularJS for the frontend.
+     The backend server is developed as a set of Scala applications on top
      of the Lift web framework. We use the MongoDB database.
     `,
       recommendations: [
@@ -156,7 +211,8 @@ We used VueJS 3 with Typescript to develop the frontend applications, which are 
       link: "https://underscore.io",
       tags: ["Scala", "Lift", "MongoDB", "Cloudbees"],
       categories: [AllowedCategories.Client, AllowedCategories.Resume],
-      short: "*Scala & Lift projects with the awesome folks at Underscore Consulting.*",
+      short:
+        "*Scala & Lift projects with the awesome folks at Underscore Consulting.*",
       description: `
      I was in charge of developing part of a Scala / Lift client application
      together with a really cool team of Underscore developers.
@@ -167,11 +223,11 @@ We used VueJS 3 with Typescript to develop the frontend applications, which are 
           by: "Richard Dallaway, Partner Underscore Consulting LLP",
           description: `
 We worked with Torsten in on an innovative real-time interactive NFC platform
-for a US corporation. It was a pleasure to work with him. 
-He brought technical knowledge, especially with Lift, Scala, and Angular. 
-He worked with the customer to understand their needs. As well as generally 
-contributing to the project, he took on responsibility for (and delivered) 
-a rich reporting tool.        
+for a US corporation. It was a pleasure to work with him.
+He brought technical knowledge, especially with Lift, Scala, and Angular.
+He worked with the customer to understand their needs. As well as generally
+contributing to the project, he took on responsibility for (and delivered)
+a rich reporting tool.
         `,
         },
       ],
@@ -193,9 +249,10 @@ a rich reporting tool.
           link: "/documents/sgrouples_rec_tuhlmann.pdf",
         },
       ],
-      short: "*Formerly sgrouples.com. Scala, Lift & Mongo DB. MeWe is a privacy conscious social network.*",
+      short:
+        "*Formerly sgrouples.com. Scala, Lift & Mongo DB. MeWe is a privacy conscious social network.*",
       description: `
-     With a small bunch of other high profile developers we develop the social groups 
+     With a small bunch of other high profile developers we develop the social groups
      platform https://sgrouples.com (now: https://mewe.com).
     `,
     },
@@ -234,10 +291,11 @@ a rich reporting tool.
       link: "https://www.1822direkt.de",
       tags: ["Java", "JBoss", "Tomcat", "JSF"],
       categories: [AllowedCategories.Client, AllowedCategories.Resume],
-      short: "*Java & JSP. Wrote a frontend for processing customer printables.*",
+      short:
+        "*Java & JSP. Wrote a frontend for processing customer printables.*",
       description: `
       Development of a JSF(Java Server Faces) front end for an in house application to manage correspondence to their customers.
-      We used Tomcat 5, JBoss and JSF 1.2 with MyFaces for development and deployment.    
+      We used Tomcat 5, JBoss and JSF 1.2 with MyFaces for development and deployment.
     `,
     },
     {
@@ -247,7 +305,14 @@ a rich reporting tool.
       start: "2015-03-01",
       end: "2017-12-31",
       link: "https://github.com/tuhlmann/numerix",
-      tags: ["Clojure", "Clojurescript", "MongoDB", "Reagent", "re-frame", "re-com"],
+      tags: [
+        "Clojure",
+        "Clojurescript",
+        "MongoDB",
+        "Reagent",
+        "re-frame",
+        "re-com",
+      ],
       categories: [AllowedCategories.Product, AllowedCategories.Resume],
       description: `
       Numerix was planned as a multi tenant tool for freelancers or small companies. It contains modules for
@@ -257,14 +322,14 @@ a rich reporting tool.
       user management, complete with notification emails, password reset, etc.; a calendar*
 
       On the technical side, Numerix is a Clojure / Clojurescript project using Reagent and re-frame, storing data into a MongoDB.
-      It uses a [role based permissions system](https://github.com/tuhlmann/permissions) similar 
+      It uses a [role based permissions system](https://github.com/tuhlmann/permissions) similar
       to [Apache Shiro's wildcard permissions](http://shiro.apache.org/permissions.html).
     `,
       images: [
         {
           image: "/images/products/numerix-invoice.png",
           description: `
-        You can create invoices from tracked time and also adding manual entries along with different taxes, 
+        You can create invoices from tracked time and also adding manual entries along with different taxes,
         a generated invoice number etc. When done you can generate a PDF from it via the Flying Saucer project.
         `,
           align: "right",
@@ -283,7 +348,7 @@ a rich reporting tool.
       description: `
 Gartenverein is an attempt to create a hosted application to manage small garden communities in Germany.
 
-Garden communities are managed like associations. Invoices need to be sent, 
+Garden communities are managed like associations. Invoices need to be sent,
 water and power meter readings have to be collected and stored.
 
 This software manages garden tenants, readings, documents, a shared calendar and more.
@@ -317,7 +382,7 @@ This software manages garden tenants, readings, documents, a shared calendar and
       and connects to them. After that transmitting a file from one machine to another is
       just a drag and drop operation with Simidude.
 
-      Simidude runs on Windows, Linux and Mac computers, as well as in virtual machines. 
+      Simidude runs on Windows, Linux and Mac computers, as well as in virtual machines.
     `,
       images: [
         {
@@ -383,17 +448,18 @@ This software manages garden tenants, readings, documents, a shared calendar and
           date: "2005-01-03",
           by: "Projektleiter,  T-Systems",
           description: `
-        Der Consultant kennt sich gut mit C++ und Java aus, er arbeitet souverän mit den Konzepten 
-        objektorientierter Programmierung. Alle Arbeiten wurden zu unserer vollsten Zufriedenheit termingerecht 
-        fertiggestellt. Über die konkrete Programmieraufgabe hinaus bewies der Consultant im Rahmen seiner Tätigkeit 
-        ein hohes Engagement. Durch ihn wurden Fehler und Verbesserungspotentiale in Anforderungen und Umsetzung aufgezeigt. 
-        Er unterstützte seine Kollegen auch über seinen Aufgabenbereich hinaus. Die Zusammenarbeit war sehr angenehm, 
-        der Consultant war eine Bereicherung für das Projektteam. Ich würde sehr gern 
+        Der Consultant kennt sich gut mit C++ und Java aus, er arbeitet souverän mit den Konzepten
+        objektorientierter Programmierung. Alle Arbeiten wurden zu unserer vollsten Zufriedenheit termingerecht
+        fertiggestellt. Über die konkrete Programmieraufgabe hinaus bewies der Consultant im Rahmen seiner Tätigkeit
+        ein hohes Engagement. Durch ihn wurden Fehler und Verbesserungspotentiale in Anforderungen und Umsetzung aufgezeigt.
+        Er unterstützte seine Kollegen auch über seinen Aufgabenbereich hinaus. Die Zusammenarbeit war sehr angenehm,
+        der Consultant war eine Bereicherung für das Projektteam. Ich würde sehr gern
         wieder mit dem Consultant zusammenarbeiten.
       `,
         },
         {
-          title: "Projekt Verschiedene Projekte im Bereich C++ und Java, 11/96 - 01/05",
+          title:
+            "Projekt Verschiedene Projekte im Bereich C++ und Java, 11/96 - 01/05",
           date: "2005-02-03",
           by: "Project Center Team Leiter, T-Systems GEI GmbH",
           description: `
@@ -407,37 +473,38 @@ This software manages garden tenants, readings, documents, a shared calendar and
         `,
         },
       ],
-      short: "*Lots of projects, lots of experience. Java, Oracle & large servers.*",
+      short:
+        "*Lots of projects, lots of experience. Java, Oracle & large servers.*",
       description: `
       As a contractor for T-Systems I was involved in numerous projects:
 
-      __I maintained__ a mid sized Eclipse RCP application that is used in-house in the test department. 
-      The application is developed using these technologies: Eclipse RCP EMF: Eclipse Modeling Framework Teneo: 
-      Database persistence using Hibernate and Oracle for EMF models JDBC: 
+      __I maintained__ a mid sized Eclipse RCP application that is used in-house in the test department.
+      The application is developed using these technologies: Eclipse RCP EMF: Eclipse Modeling Framework Teneo:
+      Database persistence using Hibernate and Oracle for EMF models JDBC:
       lower level JDBC programming for a number of features that need direct db access
 
-      __I extended__ an already existing migration framework (which I helped develop some years ago) 
+      __I extended__ an already existing migration framework (which I helped develop some years ago)
       which is designed for the transformation of mass data.
 
       One part of the assignment is to extend the core functionality of the framework to fit the current requirements.
 
-      One of my other tasks was the creation of an Eclipse RCP application for the existing DSL (Domain Specific Language). 
-      Eclipse Plugins had been written using the XText framework to lift the weight of writing XML files from the authors of the business rules. 
-      They now get an updatable RCP application delivered to their machines which they use to write business rules in a domain specific 
+      One of my other tasks was the creation of an Eclipse RCP application for the existing DSL (Domain Specific Language).
+      Eclipse Plugins had been written using the XText framework to lift the weight of writing XML files from the authors of the business rules.
+      They now get an updatable RCP application delivered to their machines which they use to write business rules in a domain specific
       and environmentally clean language. The application will then generate the XML for them.
 
-      __Create__ and extend a Perl based test framework. A complex framework allows quick creation of new test scenarios that will be executed 
-      in a distributed manner on Unix machines. I also extended a number of test tools that were developed as Eclipse RCP applications 
+      __Create__ and extend a Perl based test framework. A complex framework allows quick creation of new test scenarios that will be executed
+      in a distributed manner on Unix machines. I also extended a number of test tools that were developed as Eclipse RCP applications
       using the Eclipse EMF framework.
 
       __Design__ and development of a high performance data extraction application.
       The application would read data from multiple Oracle schemas, aggregates it and distributes it into multiple files and other databases.
-      The application needs to process millions of records in just a few hours. 
+      The application needs to process millions of records in just a few hours.
       This level of performance was only possible with careful design and multi threading.
 
-      __We developed__ a fairly complex application that would generate invoices using LaTeX and send them - optionally 
-      signed and encrypted - by email to the customer. The application was designed to run in multiple processes, 
-      possibly distributed across multiple machines. The distributed C++ components used Corba to communicate. 
+      __We developed__ a fairly complex application that would generate invoices using LaTeX and send them - optionally
+      signed and encrypted - by email to the customer. The application was designed to run in multiple processes,
+      possibly distributed across multiple machines. The distributed C++ components used Corba to communicate.
       Data was stored in a Oracle database. There also was a self service website written Java and servlet (yuck) technology.
     `,
     },
@@ -451,7 +518,7 @@ This software manages garden tenants, readings, documents, a shared calendar and
       tags: ["Java", "Speaking"],
       categories: [AllowedCategories.Training],
       description: `
-     I was teaching several Java and programming basics courses at ML Consulting Dresden and Berlin. 
+     I was teaching several Java and programming basics courses at ML Consulting Dresden and Berlin.
      I got very good ratings from my students and the manager of the consulting facility wants me back for more.
     `,
     },
@@ -505,12 +572,12 @@ This software manages garden tenants, readings, documents, a shared calendar and
       tags: ["Computer Science", "Databases", "Algorithm"],
       categories: [AllowedCategories.Education],
       description: `
-      I only studied once, so there's not much here. Since I got that programmable calculater in 8th grade 
+      I only studied once, so there's not much here. Since I got that programmable calculater in 8th grade
       I wanted to do something with computers.
 
-      Well and this is what I did. I started computer science at this university and finished it 
-      quite successfully 4,5 years later. I started at a big telco company shortly before I finished my study. 
-      I never was a fan of just hanging around...    
+      Well and this is what I did. I started computer science at this university and finished it
+      quite successfully 4,5 years later. I started at a big telco company shortly before I finished my study.
+      I never was a fan of just hanging around...
     `,
     },
     {
@@ -572,4 +639,4 @@ This software manages garden tenants, readings, documents, a shared calendar and
   ] as StoryData[]
 )
   .map(prepareData)
-  .sort(sortByDate)
+  .sort(sortByDate);
