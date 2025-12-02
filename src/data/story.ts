@@ -21,11 +21,11 @@ export default (
       description: `
       AGYNAMIX Invoicer is a comprehensive desktop application designed specifically for freelancers and small businesses to manage their invoicing needs efficiently.
 
-      Built with JavaFX, it provides a modern, intuitive interface for creating professional invoices, managing customers, tracking payments, and maintaining complete financial records.
+      Built with Jetpack Compose, it provides a modern, intuitive interface for creating professional invoices, managing customers, tracking payments, and maintaining complete financial records.
 
       The application offers features including customizable invoice templates, automatic invoice numbering, VAT/tax calculations, payment tracking, customer management, and extensive reporting capabilities.
 
-      It runs natively on Windows, MacOS, and Linux, ensuring data privacy by storing all information locally on the user's computer without requiring cloud connectivity.
+      It runs on Windows, MacOS, and Linux, ensuring data privacy by storing all information locally on the user's computer without requiring cloud connectivity.
 
       AGYNAMIX Invoicer emphasizes ease of use while providing powerful features for financial management, making it an ideal solution for professionals who value data sovereignty and need reliable, offline-capable invoicing software.
       `,
