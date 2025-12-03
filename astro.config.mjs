@@ -2,6 +2,7 @@
 import { defineConfig } from "astro/config";
 
 import solidJs from "@astrojs/solid-js";
+import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 
 const site = process.env.SITE_URL || "https://www.agynamix.de";
@@ -9,7 +10,7 @@ const site = process.env.SITE_URL || "https://www.agynamix.de";
 // https://astro.build/config
 export default defineConfig({
   site,
-  integrations: [solidJs()],
+  integrations: [solidJs(), sitemap()],
 
   vite: {
     plugins: [tailwindcss()],

@@ -1,0 +1,7 @@
+# robots.txt for agynamix.de
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.agynamix.de/sitemap-index.xml
