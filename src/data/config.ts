@@ -5,8 +5,8 @@ export const config = {
   social: {
     Twitter: "https://x.com/agynamix/",
     TwitterHandle: "@agynamix",
-    facebook: "https://facebook.com/agynamix/",
     github: "https://github.com/tuhlmann/",
     linkedin: "https://www.linkedin.com/in/torstenuhlmann/",
+    xing: "https://www.xing.com/profile/Torsten_Uhlmann2",
   },
 }
