@@ -11,160 +11,138 @@ bannerCredit: Photo by Torsten Uhlmann
 layout: ../../../layouts/blog-post.astro
 ---
 
-# Building AGYNAMIX Invoicer with AI: Lessons from the Trenches
+# Building AGYNAMIX Invoicer: My Journey with AI-Assisted Development
 
-For the past several months, I've been deep in the trenches developing [AGYNAMIX Invoicer](https://invoicer.agynamix.de/) - a cross-platform invoicing application built with Kotlin and Jetpack Compose Desktop. As a solo developer, I decided to embrace AI as my development partner. Not to replace thinking, mind you, but to accelerate the grunt work and serve as a sounding board for ideas.
+When I embarked on creating [AGYNAMIX Invoicer](https://invoicer.agynamix.de), my cross-platform invoicing application for freelancers and small businesses, I didn't expect to transition from being primarily a developer to something resembling a product manager, architect, and tester all rolled into one. Yet that's precisely what happened as I incorporated AI into my development workflow.
 
-The result? A functional, offline-first invoicing application for freelancers and small companies that runs on Windows, Mac, and Linux. No subscriptions. No cloud. You own it. Period. We're currently in pre-release, and the launch prices you see now won't last forever - fair warning!
+For those unfamiliar, AGYNAMIX Invoicer is a Kotlin/Jetpack Compose Desktop application that runs natively on Windows, Mac, and Linux. It's built for freelancers who need time tracking and invoice generation from timesheets, as well as small companies requiring GoBD compliance (the German tax regulations that make accountants wake up in cold sweats). Our philosophy is refreshingly simple: 100% offline-first, no subscription, no cloud—you own the software outright. We're currently in pre-release, with prices that will eventually increase, but early adopters who provide meaningful feedback will receive a free one-year license once we go live.
 
-But this post isn't about the product (though if you need GoBD-compliant invoicing with time tracking, [go check it out](https://invoicer.agynamix.de/)). This is about what I learned using AI as my coding companion, the good, the bad, and the occasionally "dumb as a bag of rocks" moments.
+Now, let's talk about the AI-powered development journey that's been equal parts fascinating and frustrating.
 
-## The Single Most Important Discovery: Just Ask If It Has Questions
+## The AI Model Landscape: Not All Models Are Created Equal
 
-Here's something that took me embarrassingly long to figure out: AI models work better when you treat them like actual team members and ask if they have questions about requirements.
+I've worked extensively with Claude 4.5, GPT-5.1 Codex, and Gemini 3 Pro, and each has distinct characteristics that affect how I use them.
 
-Seriously. This one change transformed my workflow.
+Gemini 3 Pro is excellent for planning phases. It seems more adept at considering cross-dependencies and the implications of changes—almost like having a systems thinker on the team. Unfortunately, it also has a frustrating tendency to break down mid-conversation and refuse to answer perfectly reasonable requests. Whether this is due to the VSCode Copilot integration or Gemini being overwhelmed by its sudden popularity, I can't say. All I know is that asking it to generate a simple data model sometimes results in an AI existential crisis.
 
-Instead of dumping a task description and hoping for the best, I now explicitly ask: "Do you have any questions? Are the requirements clear?" Nine times out of ten, the AI will come back with clarifying questions that expose assumptions I hadn't articulated or edge cases I hadn't considered. It's like having a junior developer who's not afraid to admit they don't understand something - refreshing, honestly.
+Claude 4.5 has become my daily driver. It's more consistent and rarely refuses reasonable requests. I occasionally experiment with smaller models to compare their capabilities, which feels a bit like taking the training wheels off a bicycle only to immediately crash into a tree.
 
-This simple habit has saved me countless debugging sessions where I'd otherwise be thinking "why on earth did you implement it that way?" when the real answer was "because you weren't specific enough, buddy."
+GPT-5.1 Codex is powerful but requires more specific prompting. It's like working with a brilliant colleague who takes everything literally—great when you know exactly what to ask for, less helpful when you're still figuring things out.
 
-## Baby Steps and Git Commits: Your Safety Net
+## Techniques That Actually Work
 
-When I started, I treated AI like a magic code generator. Give it a task, walk away, come back to find working code. That... didn't work out so well.
+### Context Management: The Goldilocks Principle
 
-I learned the hard way (a half-day of AI coding followed by two days of my refactoring and debugging) that you need to work in small, testable increments. Think of it like this: AI is that brilliant kid who knows everything but needs constant guidance to apply that knowledge appropriately.
+I've learned to create new chat sessions for new tasks to keep the context "just right"—not too bloated, not too sparse. Think of it as memory management for AI. If I let context accumulate too much, the model starts to get confused about what we're actually working on. 
 
-Now my workflow looks like this:
+However, I maintain the same session when the context is critical to understanding the current task. It's a balancing act—like deciding whether to bring up that awkward conversation from three years ago or start fresh.
 
-1. Break down the task
-2. Let AI tackle one small piece
-3. Test it immediately
-4. Git commit if it works
-5. Move to the next piece
+### Communication Style: Politeness Pays Off
 
-Those git commits are gold. They're checkpoints you can roll back to when AI decides to go off the rails. And it will go off the rails. Oh, it will.
+This might sound silly, but I've found that being polite to AI models yields better results. I explain my motives and reasoning, which not only helps the AI understand my goals but also forces me to articulate why I want certain changes.
 
-## The Planning Document Approach
+"Hey Claude, could you please help me implement pagination for the invoice list? I'm concerned about performance when users have hundreds of records."
 
-For larger features, I've adopted what I call the "planning session" approach:
+Works better than:
 
-First, I have a discussion with the AI about the feature. Not just "implement X" but a real conversation about the approach, alternatives, trade-offs. Sometimes I'll use a different model (like Gemini Pro) just for these brainstorming sessions.
+"Add pagination to invoice list."
 
-Then I ask it to create a PLANNING.md or TASKS.md document based on our discussion. This document becomes our contract. It lists the phases, the specific tasks, and the acceptance criteria.
+It's like the difference between asking a colleague nicely for help versus dropping a Post-it note on their desk and walking away.
 
-The crucial part? I don't let it run wild through the entire plan. I thoroughly test and course-correct after each phase. Trust me, your nerves will thank you. It's far easier to catch a wrong turn after 30 minutes than after three hours.
+### Consistent Terminology: If It's the Same Thing, Call It the Same Thing
 
-## Review Everything (Yes, Everything)
+Maintaining consistent language is crucial. If I call something an "invoice item" in one prompt and a "line item" in another, I'm practically inviting confusion. This isn't just about AI understanding—it's good practice for maintaining readable code.
 
-I know, I know. The whole point of AI is to save time, right? But here's the thing - reviewing generated code isn't just about catching bugs. It's about:
+I once spent two hours debugging an issue where the AI had created both an `InvoiceItem` and a `LineItem` class with subtly different behaviors. The German word "Doppelgänger" comes to mind.
 
-- Understanding what's actually happening in your codebase
-- Spotting anti-patterns before they multiply
-- Catching duplicate code early
-- Learning new approaches you might not have considered
+### Checkpointing: Git Commits as Safety Nets
 
-Think of code review as your continuing education. Plus, if you don't understand the code AI generated, how are you going to maintain it in six months when that "brilliant" solution has become a cryptic mess?
+Frequent git commits are essential when working with AI-generated code. I treat them as save points in a particularly challenging video game—if something goes catastrophically wrong, I can always return to the last stable version.
 
-## The copilot-instructions.md File: Your AI's North Star
+"Let's see if this refactoring works... and... it deleted half my database schema. Good thing I committed five minutes ago!"
 
-One of my best decisions was creating a `copilot-instructions.md` file that's read on every AI request. This file contains:
+### Incremental Testing: Trust But Verify
 
-- Project structure and conventions
-- Naming standards
-- Architectural decisions
-- Common patterns we use
-- Things to avoid
+Testing every small change immediately has saved me countless headaches. AI can confidently generate completely non-functional code with the same conviction it uses to produce brilliant solutions.
 
-Consistency is critical here. If you mean the same thing, call it the same thing. Don't let AI introduce five different terms for your "invoice item" concept. Your future self will curse your past self for every inconsistent term that makes it into the codebase.
+I once asked for a "simple date picker implementation" and received what appeared to be perfect code—until I ran it and discovered it was picking dates from the ancient Mayan calendar. Always test before moving on.
 
-## Language Matters (The Computer Kind)
+## Guiding the Models: Providing Structure
 
-Here's an interesting observation: It's actually easier to generate code for a constrained environment like a Jetpack Compose application than for an open-ended web application. Why? Because there are fewer ways to do things wrong.
+### Documentation as Guidance
 
-With web development, AI has ten different frameworks and twenty different patterns it might choose from. With Compose, the conventions are more established, the patterns more constrained. The AI has less rope to hang itself with.
+I maintain several special files that help structure AI assistance:
 
-## Testing: AI's Secret Superpower
+- **copilot-instructions.md**: Contains project-specific guidelines that the AI reads on every request
+- **PLANNING.md**: Outlines the overall architectural vision
+- **TASKS.md**: Breaks down specific implementation steps
 
-If there's one thing AI excels at, it's writing tests. Unit tests, integration tests, end-to-end tests - it cranks them out like a well-oiled machine.
+These files act as a compass for the AI, keeping it oriented toward the project's goals rather than whatever solution pattern it most recently learned.
 
-I've embraced this wholeheartedly. Not only does it improve my test coverage (which was... let's say "optimistic" before), but those tests serve as living documentation and catch regressions when I'm refactoring.
+### The Evolution of My Approach
 
-Plus, asking AI to write tests for existing code is a great way to verify it actually understands what that code does.
+My methodology has evolved significantly:
 
-## Model Wars: Claude vs. GPT vs. The Rest
+1. **Initial Phase**: I started with tiny tasks, verifying each step. This was slower but kept the AI on track.
 
-I've primarily used Claude Sonnet 4.5 and GPT-4 (now 5 in some contexts) for this project. Each has its strengths:
+2. **Current Approach**: For larger tasks, I conduct a planning session and let the AI create planning documents based on my description. Then comes the single most important question I've learned to ask: "Do you have any questions about this task?" 
 
-Claude tends to be more verbose in explanations and better at following complex instructions. GPT can be snappier but sometimes needs more hand-holding.
+This simple question has prevented countless misunderstandings. After addressing questions, I let the AI work through tasks sequentially, testing thoroughly after each step. I've learned the hard way that letting AI "run wild" with a plan can lead to days of debugging and refactoring.
 
-The interesting bit? Sometimes switching models helps solve a problem. When one model keeps generating broken code for a specific task, trying the same problem with a different model and fresh context often works. It's like getting a second opinion from another doctor.
+### The "Run Wild" Cautionary Tale
 
-## Context Management: When to Start Fresh
+Once, I let an AI implement a large feature all at once. It took half a day to generate the code and two full days to refactor and debug the result. The AI had created several circular dependencies, invented new terminology halfway through, and implemented three different approaches to the same problem in different parts of the codebase. It was like reading code written by a committee of developers who refused to talk to each other.
 
-Speaking of context - this is subtle but important. AI models have limited context windows, and they can get "confused" if you've been working in the same chat for too long.
+## The Good, The Bad, and The Weird
 
-I've learned to start a new chat session for genuinely new tasks. But if the task builds on previous work and needs that context, keep the session going. It's a judgment call, but generally: new feature = new chat, iterating on existing feature = same chat.
+### Environment Constraints as Helpful Guardrails
 
-## The Politeness Factor
+I've noticed that AI performs better when generating code for a constrained environment like Jetpack Compose applications compared to more open-ended platforms where it has too many implementation options. In constrained environments, the AI has fewer ways to go astray—it's like the difference between asking someone to navigate a hallway versus an open field.
 
-I tend to be polite with AI. "Could you please..." and "Thank you" and such. Does it matter? Probably not to the AI. But it matters to me. It keeps me in the mindset of working with a colleague rather than barking orders at a tool.
+### The Peculiar Inconsistency of AI Intelligence
 
-Plus, I like to explain my motives when I request changes. "I'd like to refactor this because it's getting hard to test" rather than just "refactor this." Sometimes that helps the AI understand the underlying goal. Mostly, though, it helps me clarify my own thinking.
+Sometimes AI is impressively smart, and other times it's "as dumb as a bag of rocks" for seemingly simple tasks. I once watched it implement a complex caching mechanism with proper invalidation logic, only to then struggle with centering a button in a row. It's like having an intern who can solve differential equations but can't make coffee.
 
-## The Occasional Stupidity
+### Model Switching as a Problem-Solving Technique
 
-Fair warning: AI can be brilliant one moment and dumb as a bag of rocks the next. I've had sessions where it elegantly solved a complex state management problem, immediately followed by it repeatedly making the same syntax error because it "forgot" we're using Kotlin, not Java.
+When one model gets stuck on a problem, switching to a different model with a clear context can sometimes provide a solution. It's like getting a second opinion from a colleague with a different specialty.
 
-It's frustrating, but it's also kind of endearing? Like working with a brilliant but occasionally distracted colleague.
+## Becoming a Different Kind of Developer
 
-## Evolution of My Approach
+Working with AI has fundamentally changed my role in the development process:
 
-When I started this project, I was cautious. Small tasks, verify every step, keep AI on a tight leash. It was slower but ensured nothing went sideways.
+1. **From Writer to Reviewer**: I spend less time typing code and more time reviewing, testing, and refactoring.
 
-As I got more comfortable, I tried giving AI more autonomy for larger tasks. That led to the aforementioned half-day of coding followed by two days of cleanup.
+2. **More Architectural Thinking**: I need to provide clearer structures and guidelines to keep the AI on track.
 
-Now I've found a middle ground: plan thoroughly, work in phases, test religiously. The AI can work semi-autonomously within a phase, but I'm the quality gate between phases. This balances speed with sanity.
+3. **Increased Testing Focus**: With AI generating code faster, testing becomes even more critical.
 
-## Writing as Thinking
+The mental shift is substantial—I've become more like a product manager overseeing a junior developer who has encyclopedic knowledge but questionable judgment.
 
-One unexpected benefit of this AI-driven development: I write down my thoughts constantly. Whether it's explaining requirements to the AI or documenting why I chose approach A over approach B, I'm always articulating my reasoning.
+## Lessons That Made the Biggest Difference
 
-This has made me a better developer. Writing forces you to clarify your thinking. It surfaces inconsistencies in your logic. It's like rubber duck debugging, but the duck occasionally talks back with useful suggestions.
+After months of working this way, here are my most valuable takeaways:
 
-## Refactoring: The Never-Ending Story
+1. **Always Ask If The AI Has Questions**: This simple practice has prevented more problems than any other technique.
 
-AI only considers what you put in the prompt. Ask the same question differently, you'll get a different answer. This means you need to constantly review and refactor.
+2. **Small, Incremental Steps**: Even with a comprehensive plan, implement and test in small chunks.
 
-Think of AI like that incredibly knowledgeable child who needs guidance to apply their knowledge appropriately. They know all the facts but need help connecting them to your specific situation.
+3. **Constant Testing**: If you're not testing, you're accumulating technical debt.
 
-I regularly ask AI to review code for quality issues or suggest refactorings. "Look at this module - can you spot any code smells or suggest improvements?" It's surprisingly good at this, though you still need to apply judgment to its suggestions.
+4. **Code Review Is Essential**: Review every line of generated code—this helps you understand what's being built and spot potential issues.
 
-## The Bottom Line
+5. **Regular Refactoring**: Periodically ask the AI to suggest refactorings and quality improvements.
 
-Using AI for development has accelerated this project tremendously. Could I have built [AGYNAMIX Invoicer](https://invoicer.agynamix.de/) without AI? Absolutely. Would it have taken three times as long? Also absolutely.
+These practices have helped me build AGYNAMIX Invoicer more efficiently than I could have done alone, despite the occasional detours and peculiarities of working with AI.
 
-But it's not a silver bullet. You still need to know what you're doing. You still need to understand the code. You still need to test, review, and refactor. AI is a powerful amplifier of developer productivity, not a replacement for developer judgment.
+## Where We Stand Now
 
-The key insights that made this work:
+[AGYNAMIX Invoicer](https://invoicer.agynamix.de) is progressing nicely toward a full release. The application offers comprehensive time tracking, invoice generation, client management, and GoBD compliance—all in a native desktop application that respects your privacy and doesn't require internet connectivity to function.
 
-- **Be specific** in your requests
-- **Ask if AI has questions** - this is huge
-- **Work in baby steps** with frequent testing
-- **Use git commits** as checkpoints
-- **Review everything** the AI generates
-- **Create guidance documents** that establish conventions
-- **Test extensively** - let AI help write tests
-- **Switch models** when stuck
-- **Manage context** appropriately
-- **Treat AI as a peer** (junior) developer
+The development process has been a fascinating journey that's changed how I build software. Working with AI feels like having a talented but somewhat unpredictable pair programmer—one who occasionally has brilliant insights and occasionally tries to use a hammer to insert a screw.
 
-If you're developing software and haven't embraced AI yet, I encourage you to try it. Start small. Be patient with the learning curve. And remember: AI is your assistant, not your autopilot.
+If you're interested in trying AGYNAMIX Invoicer or providing feedback that could earn you a free one-year license, visit [https://invoicer.agynamix.de](https://invoicer.agynamix.de). And if you're a developer thinking about incorporating AI into your workflow, I hope my experiences help you avoid some of the pitfalls and capitalize on the genuine advantages these tools can offer.
 
-Now, if you'll excuse me, I have some invoice templates to finish implementing. With AI's help, naturally. Though I'll be reviewing every line, because that's how this works.
+Just remember: the AI is not the developer—you are. It's a powerful tool, but the vision, judgment, and responsibility remain yours. 
 
-------
-
-*Interested in trying out AGYNAMIX Invoicer? We're in pre-release at special pricing that won't last forever. [Check it out here](https://invoicer.agynamix.de/). And if you provide real feedback (feature requests or bug reports), you'll be eligible for a free one-year license once we go live. Because building good software requires good feedback, and I value yours.*
-
-*Have experiences with AI-assisted development of your own? Drop me a line - I'd love to hear about it!*
+I used Claude 3.7 to transform my bullet notes into something readable. I consider myself not a very fancy writer, so I'm grateful for any help. If you are curious, you can find the prompt I gave to several LLMs  [here](prompt).
