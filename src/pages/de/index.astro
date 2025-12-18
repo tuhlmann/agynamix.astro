@@ -1,0 +1,71 @@
+---
+import RoundLink from "../../components/RoundLink.astro";
+import { LandingInteractiveImage } from "../../components/LandingInteractiveImage.tsx";
+import resumeImg from "../../images/resume.svg";
+import skillsImg from "../../images/skills.svg";
+import clientImg from "../../images/client.svg";
+import PageLayout from "../../layouts/page-layout.astro";
+import { TextLink } from "../../blocks/TextLink.tsx";
+import { config } from "../../data/config";
+---
+
+<PageLayout activePage="index" title="Willkommen bei AGYNAMIX!" lang="de">
+  <div
+    class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-around"
+  >
+    <div class="flex justify-between flex-col sm:flex-row">
+      <LandingInteractiveImage client:visible />
+      <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
+        <div class="px-4 py-8 sm:px-0">
+          <div>
+            <h1 class="h1 my-2">Hallo, ich heiße Torsten.</h1>
+            <p class="landing-p">
+              Ich bin Full-Stack-Softwareentwickler und arbeite mit Scala, Java,
+              Clojure und TypeScript,
+              <TextLink to="/resume#skills">unter anderem</TextLink>.
+            </p>
+            <p class="landing-p">
+              Ich liebe es,
+              <TextLink to="/products">neue Dinge</TextLink> zu entwickeln und
+              mit
+              <TextLink to="/clients">großartigen Teams</TextLink> zu arbeiten;
+              ich habe
+              <TextLink to="/resume#training">Kurse</TextLink> gegeben, auf
+              <TextLink to="/resume#training">Konferenzen</TextLink> gesprochen
+              und ein
+              <TextLink to="/resume#2012-05-01-packt-publishing">Buch</TextLink>
+              geschrieben.
+            </p>
+            <h2 class="h2">Mehr über mich:</h2>
+            <div
+              class="flex justify-between flex-col sm:flex-row sm:items-center lg:pr-8 lg:pl-8"
+            >
+              <RoundLink
+                background={`linear-gradient(45deg, rgba(219, 87, 86, 0.75), rgba(219, 87, 86, 1)), url(${resumeImg.src})`}
+                link="/resume"
+                text="Lebenslauf"
+              />
+              <RoundLink
+                background={`linear-gradient(45deg, rgba(6, 19, 36, 0.75), rgba(6, 19, 36, 1)), url(${skillsImg.src})`}
+                link="/consulting"
+                text="Beratung"
+              />
+              <RoundLink
+                background={`linear-gradient(45deg, rgba(73, 115, 140, 0.75), rgba(73, 115, 140, 1)), url(${clientImg.src})`}
+                link="/clients"
+                text="Meine Kunden"
+              />
+            </div>
+            <div class="my-2">
+              <p class="landing-p">
+                Wenn du einen erfahrenen Software Engineer suchst, bist du hier
+                genau richtig —
+                <TextLink to={`mailto:${config.email}`}>lass uns sprechen!</TextLink>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</PageLayout>

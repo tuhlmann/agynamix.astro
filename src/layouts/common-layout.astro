@@ -5,10 +5,10 @@ import "../styles/global.css";
 import "../styles/fonts.css";
 import { LayoutProps } from "~/types/layout-types";
 
-const { activePage, title = "AGYNAMIX Torsten Uhlmann" } = Astro.props;
+const { activePage, title = "AGYNAMIX Torsten Uhlmann", lang = "en" } = Astro.props as LayoutProps;
 ---
 
-<html class="h-full" lang="en">
+<html class="h-full" lang={lang}>
   <head>
     <meta title={title} />
     <meta charset="utf-8" />
@@ -18,7 +18,7 @@ const { activePage, title = "AGYNAMIX Torsten Uhlmann" } = Astro.props;
   </head>
   <body class="h-full bg-primary-bg font-sans text-base leading-6">
     <main class="min-h-full flex flex-col h-screen justify-between">
-      <Header client:visible activePage={activePage} />
+      <Header client:visible activePage={activePage} lang={lang} />
       <slot />
       <!-- Content goes here -->
       <Footer />
