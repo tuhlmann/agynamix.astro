@@ -1,0 +1,27 @@
+---
+import PageLayout from "../../../layouts/page-layout.astro";
+import PostPreview from "../../../components/PostPreview.astro";
+import authorData from "../../../data/authors.json";
+import type { MarkdownFrontmatter } from "~/utils/prepare-story-data";
+
+const allPosts = Object.values(
+  import.meta.glob("../../blog/**/*.md", { eager: true }),
+) as any[];
+const sortedPosts = allPosts.sort(
+  (a, b) =>
+    new Date(b.frontmatter.date).valueOf() -
+    new Date(a.frontmatter.date).valueOf(),
+);
+
+const title = "AGYNAMIX Torsten Uhlmann | Blog";
+---
+
+<PageLayout activePage="blog" title={title} lang="de">
+  <div class="w-full max-w-[1000px] py-10 pt-0 ml-auto mr-auto mt-0 mb-0">
+    <div class="max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+      {sortedPosts.map((post) => (
+        <PostPreview post={post} author={authorData[post.author]} lang="de" />
+      ))}
+    </div>
+  </div>
+</PageLayout>

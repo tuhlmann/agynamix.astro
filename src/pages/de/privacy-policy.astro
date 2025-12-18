@@ -1,0 +1,16 @@
+---
+import PageLayout from "../../layouts/page-layout.astro";
+import { getEntry, render } from "astro:content";
+
+const privacyPolicy = await getEntry("legal", "privacy-policy");
+if (!privacyPolicy) {
+  throw new Error("Could not find legal/privacy-policy entry in content collection");
+}
+const { Content } = await render(privacyPolicy);
+---
+
+<PageLayout activePage="privacy-policy" title="Datenschutzerklärung" lang="de">
+  <div class="my-prose w-full max-w-[1000px] pl-10 pr-10 pb-10 ml-auto mr-auto mt-0 mb-0">
+    <Content />
+  </div>
+</PageLayout>

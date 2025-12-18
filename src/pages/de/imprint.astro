@@ -1,0 +1,16 @@
+---
+import { getEntry, render } from "astro:content";
+import PageLayout from "../../layouts/page-layout.astro";
+
+const imprint = await getEntry("legal", "imprint");
+if (!imprint) {
+  throw new Error("Could not find legal/imprint entry in content collection");
+}
+const { Content } = await render(imprint);
+---
+
+<PageLayout activePage="imprint" title="Impressum" lang="de">
+  <div class="my-prose w-full max-w-[1000px] pl-10 pr-10 pb-10 ml-auto mr-auto mt-0 mb-0">
+    <Content />
+  </div>
+</PageLayout>

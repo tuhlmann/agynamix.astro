@@ -1,0 +1,115 @@
+---
+import PageLayout from "../../layouts/page-layout.astro";
+import story from "../../data/story.de";
+import StoryRenderer from "../../components/StoryRenderer.tsx";
+import { AllowedCategories } from "../../utils/prepare-story-data";
+import photo from "../../images/torsten_square.jpg";
+import { TextLink } from "../../blocks/TextLink.tsx";
+---
+
+<PageLayout activePage="resume" title="Mein Lebenslauf" lang="de">
+  <div class="my-prose w-full max-w-[1000px] p-3 md:p-10 ml-auto mr-auto mt-0 mb-0">
+    <div class="flex justify-between mb-4 flex-col-reverse sm:flex-row items-center sm:items-start">
+      <div class="text-center sm:text-left">
+        <h1 class="mt-3 sm:mt-0">Lebenslauf von Torsten Uhlmann</h1>
+        <p class="text-left leading-7">
+          Torsten Uhlmann<br />
+          Buchenweg 5<br />
+          09380 Thalheim<br />
+          Deutschland
+        </p>
+      </div>
+      <div>
+        <img alt="Foto von Torsten" class="max-h-[200px] w-auto block mb-1 rounded-md" src={photo.src} />
+      </div>
+    </div>
+
+    <h2 class="my-2 mx-0 text-2xl">Kurzprofil</h2>
+    <div class="bg-white rounded-lg p-3 md:p-10 mb-5">
+      <p>
+        Mein Name ist Torsten Uhlmann. Ich bin Softwareentwickler und liebe es,
+        großartige und nützliche Software zu bauen.
+      </p>
+      <p>
+        Ich bin ein erfahrener Java-Berater mit mehr als 25 Jahren Praxis und
+        erfolgreichen Projekten in C++, Java, Ruby, Groovy, Scala und Go.
+        Mein Schwerpunkt liegt auf Enterprise-Softwareentwicklung und Full-Stack
+        Web-Applikationen mit Technologien wie Scala und Lift, Clojure oder TypeScript.
+      </p>
+      <p>
+        Ich bin Autor des Buches
+        <TextLink to="http://www.packtpub.com/lift-web-applications/book">Lift Web Applications How-to</TextLink>.
+        Auf
+        <TextLink to="https://github.com/tuhlmann">meiner GitHub-Seite</TextLink>
+        findest du zahlreiche Projekte, an denen ich in den letzten Jahren gearbeitet habe.
+      </p>
+      <p>
+        Ich treffe gern neue Menschen und stelle mich gern neuen Herausforderungen.
+        Besonders gut bin ich darin, mich schnell in Teams zu integrieren und mich in das
+        fachliche Thema einzuarbeiten. Wenn du einen erfahrenen Softwareentwickler suchst,
+        freue ich mich von dir zu hören.
+      </p>
+      <p>
+        Technologien verändern sich. Was geblieben ist: meine Neugier auf neue Sprachen
+        und Methoden. Besonders spannend fand ich den Wechsel vom imperativen Programmieren
+        (C++/Java) hin zu funktionaleren Ansätzen mit Scala, Clojure und TypeScript.
+      </p>
+      <p class="m-0 mt-3">Aktuelle Technologien:</p>
+      <ul class="mt-1">
+        <li class="my-1">DB: PostgreSQL, MongoDB</li>
+        <li class="my-1">Sprachen: Scala, JavaScript, TypeScript und etwas Rust</li>
+        <li class="my-1">Web-Frameworks: Liftweb, Angular(JS), React, SolidJS</li>
+      </ul>
+    </div>
+
+    <h2 class="my-2 mx-0 text-2xl">Ausbildung</h2>
+    <StoryRenderer client:visible story={story} lang="de" withDescription categories={[AllowedCategories.Education]} />
+
+    <a class="no-underline" name="skills"><h2 class="my-2 mx-0 text-2xl">Kompetenzen</h2></a>
+    <div class="bg-white rounded-lg p-3 md:p-10 mb-5">
+      <p class="m-0 mt-3">
+        Einige Skills, die ich mir in letzter Zeit angeeignet habe und weiterhin regelmäßig übe, sind:
+      </p>
+      <ul>
+        <li class="m-0">
+          Scala, Java, Go, Clojure, ClojureScript, JavaScript, TypeScript,
+          AngularJS, React, MongoDB
+        </li>
+      </ul>
+
+      <p class="m-0 mt-3">Dinge, mit denen ich viele Jahre gearbeitet habe (und die ich gern erwähne):</p>
+      <ul>
+        <li class="m-0">C++, Java, Oracle, PostgreSQL, MySQL, Eclipse RCP, DocBook</li>
+      </ul>
+
+      <p class="m-0 mt-3">Dinge, die ich für kurze Zeit genutzt habe:</p>
+      <ul>
+        <li class="m-0">Groovy, Ruby, Perl</li>
+      </ul>
+    </div>
+
+    <a class="no-underline" name="training"><h2 class="my-2 mx-0 text-2xl">Training & Veröffentlichungen</h2></a>
+    <StoryRenderer
+      client:visible
+      story={story}
+      lang="de"
+      withDescription
+      categories={[AllowedCategories.Training, AllowedCategories.Publication]}
+    />
+
+    <hr class="mt-2 mb-0" />
+
+    <h2 class="mt-4 mb-2 mx-0 text-2xl">Meine Geschichte</h2>
+    <StoryRenderer
+      client:visible
+      story={story}
+      lang="de"
+      withDescription
+      withImages={false}
+      categories={[AllowedCategories.Resume]}
+      yearsBack={10}
+      more="Moment, da ist noch mehr …"
+      less="Ok, wieder einklappen"
+    />
+  </div>
+</PageLayout>
