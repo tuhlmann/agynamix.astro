@@ -1,0 +1,27 @@
+---
+// Client-side locale redirect for the *root* page.
+// Mirrors the approach used in the studio-website project.
+---
+
+<script>
+  if (typeof window !== "undefined") {
+    // Respect explicit user preference first (set by language switch).
+    var cookie = document.cookie || "";
+    var hasPrefEn = /(?:^|;\s*)(?:preferred-lang|lang)=en(?:;|$)/.test(cookie);
+    var hasPrefDe = /(?:^|;\s*)(?:preferred-lang|lang)=de(?:;|$)/.test(cookie);
+
+    // Only redirect from the root page.
+    if (!hasPrefEn && window.location.pathname === "/") {
+      var navLangs = window.navigator.languages || [window.navigator.language];
+      var hasGerman =
+        hasPrefDe ||
+        (navLangs || []).some(function (l) {
+          return l && l.toLowerCase().indexOf("de") === 0;
+        });
+
+      if (hasGerman) {
+        window.location.replace("/de/");
+      }
+    }
+  }
+</script>

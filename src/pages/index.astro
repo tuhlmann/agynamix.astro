@@ -7,9 +7,11 @@ import clientImg from "../images/client.svg";
 import PageLayout from "../layouts/page-layout.astro";
 import { TextLink } from "../blocks/TextLink.tsx";
 import { config } from "../data/config";
+import LocaleRedirect from "../components/LocaleRedirect.astro";
 ---
 
 <PageLayout activePage="index" title="Welcome to AGYNAMIX!">
+  <LocaleRedirect />
   <div
     class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-around"
   >

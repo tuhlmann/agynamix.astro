@@ -40,7 +40,7 @@ export default function Header(props: Props) {
   const setLangCookie = (lang: Locale) => {
     if (typeof document === "undefined") return
     const secure = typeof window !== "undefined" && window.location.protocol === "https:" ? "; Secure" : ""
-    document.cookie = `lang=${lang}; Path=/; Max-Age=31536000; SameSite=Lax${secure}`
+    document.cookie = `preferred-lang=${lang}; Path=/; Max-Age=31536000; SameSite=Lax${secure}`
   }
 
   const onToggleLanguage: JSX.EventHandlerUnion<HTMLAnchorElement, MouseEvent> = e => {
