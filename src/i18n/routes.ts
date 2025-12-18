@@ -1,6 +1,8 @@
 import type { Locale } from "./types";
 
-const BLOG_PREFIXES = ["/blog", "/tags"]; // blog stays English-only
+// Routes that should *not* be language-prefixed.
+// Blog and tags are localized under /de/blog and /de/tags.
+const NON_LOCALIZED_PREFIXES: string[] = [];
 
 function isExternal(href: string): boolean {
   return /^(https?:)?\/\//.test(href);
@@ -11,7 +13,9 @@ function isSpecialScheme(href: string): boolean {
 }
 
 export function isBlogPath(pathname: string): boolean {
-  return BLOG_PREFIXES.some(p => pathname === p || pathname.startsWith(`${p}/`));
+  const p = stripTrailingSlash(pathname || "/");
+  const normalized = p === "/de" ? "/" : p.startsWith("/de/") ? p.slice(3) : p;
+  return NON_LOCALIZED_PREFIXES.some(prefix => normalized === prefix || normalized.startsWith(`${prefix}/`));
 }
 
 export function stripTrailingSlash(pathname: string): string {
@@ -50,9 +54,24 @@ const DE_ALLOWLIST = new Set<string>([
 export function toggleLocalePath(currentPathname: string): { href: string; lang: Locale } {
   const pathname = stripTrailingSlash(currentPathname || "/");
 
-  // Blog/tags never switch to /de
-  if (isBlogPath(pathname)) {
-    return { href: pathname === "" ? "/" : pathname, lang: "en" };
+  const isContentRoute =
+    pathname === "/blog" ||
+    pathname.startsWith("/blog/") ||
+    pathname === "/tags" ||
+    pathname.startsWith("/tags/") ||
+    pathname === "/de/blog" ||
+    pathname.startsWith("/de/blog/") ||
+    pathname === "/de/tags" ||
+    pathname.startsWith("/de/tags/");
+
+  if (isContentRoute) {
+    const isDe = pathname === "/de" || pathname.startsWith("/de/");
+    if (isDe) {
+      const english = pathname === "/de" ? "/" : pathname.slice(3) || "/";
+      return { href: english === "" ? "/" : english, lang: "en" };
+    }
+    const german = pathname === "/" ? "/de/" : `/de${pathname}`;
+    return { href: german, lang: "de" };
   }
 
   const isDe = pathname === "/de" || pathname.startsWith("/de/");

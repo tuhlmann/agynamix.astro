@@ -1,8 +1,11 @@
 import { createSignal, Show } from "solid-js"
+import type { JSX } from "solid-js"
 import classNames from "classnames"
 import type { Locale } from "../i18n/types"
 import { t } from "../i18n/t"
 import { toggleLocalePath, withLangPrefix } from "../i18n/routes"
+import FlagDE from "../blocks/FlagDE"
+import FlagUS from "../blocks/FlagUS"
 
 interface Props {
   activePage: string
@@ -63,21 +66,9 @@ export default function Header(props: Props) {
       >
         <span class="sr-only">{label}</span>
         {isDe ? (
-          // US (minimal monochrome)
-          <svg width="22" height="14" viewBox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="0.75" y="0.75" width="20.5" height="12.5" rx="2" stroke="currentColor" stroke-width="1.5" />
-            <rect x="0.75" y="0.75" width="9" height="6.5" rx="2" stroke="currentColor" stroke-width="1.5" />
-            <path d="M1.75 4.5H21" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
-            <path d="M1.75 7H21" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
-            <path d="M1.75 9.5H21" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
-          </svg>
+          <FlagUS aria-hidden="true" />
         ) : (
-          // DE (minimal monochrome)
-          <svg width="22" height="14" viewBox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="0.75" y="0.75" width="20.5" height="12.5" rx="2" stroke="currentColor" stroke-width="1.5" />
-            <path d="M1.5 4.6667H20.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-            <path d="M1.5 9.3333H20.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-          </svg>
+          <FlagDE aria-hidden="true" />
         )}
       </a>
     )
@@ -124,7 +115,7 @@ export default function Header(props: Props) {
               </a>
 
               <a
-                href="/blog"
+                href={navHref("/blog")}
                 class={classNames(
                   "inline-flex items-center px-1 pt-1 border-b-2",
                   props.activePage === "blog" ? activeCls : inactiveCls,
@@ -218,7 +209,7 @@ export default function Header(props: Props) {
             </a>
 
             <a
-              href="/blog"
+              href={navHref("/blog")}
               class={classNames(
                 "block pl-3 pr-4 py-2 border-l-4",
                 props.activePage === "blog" ? activeMobCls : inactiveMobCls,

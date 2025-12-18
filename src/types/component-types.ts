@@ -1,6 +1,7 @@
 export interface PostPreviewProps {
 	post: any;
 	author: string;
+  lang?: "en" | "de";
 }
 
 export interface RoundLinkProps {

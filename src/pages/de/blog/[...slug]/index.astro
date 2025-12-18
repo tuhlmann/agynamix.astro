@@ -1,0 +1,24 @@
+---
+import type { MarkdownFrontmatter } from "~/utils/prepare-story-data";
+
+export async function getStaticPaths() {
+  const allPosts = Object.values(
+    import.meta.glob("../../../blog/**/*.md", { eager: true }),
+  ) as any[];
+
+  return allPosts
+    .filter((p) => (p.url ?? "").startsWith("/blog/"))
+    .map((p) => {
+      const normalized = (p.url ?? "").replace(/\/$/, "");
+      const slug = normalized.slice("/blog/".length);
+      return {
+        params: { slug },
+        props: { post: p },
+      };
+    });
+}
+
+const { post } = Astro.props as { post: any };
+---
+
+<post.Content />

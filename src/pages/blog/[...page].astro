@@ -5,7 +5,9 @@ import authorData from "../../data/authors.json";
 import { MarkdownFrontmatter } from "~/utils/prepare-story-data";
 
 export async function getStaticPaths({ paginate, rss }) {
-  const allPosts = await Astro.glob<MarkdownFrontmatter>("../blog/**/*.md");
+  const allPosts = Object.values(
+    import.meta.glob("../blog/**/*.md", { eager: true }),
+  ) as any[];
   const sortedPosts = allPosts.sort(
     (a, b) =>
       new Date(b.frontmatter.date).valueOf() -

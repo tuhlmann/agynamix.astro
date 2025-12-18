@@ -5,7 +5,9 @@ import { kebabCase } from "../../utils/kebab-case"
 import { TextLink } from "../../blocks/TextLink.tsx"
 
 export async function getStaticPaths() {
-	const allPosts = await Astro.glob<MarkdownFrontmatter>('../blog/**/*.md');
+  const allPosts = Object.values(
+    import.meta.glob('../blog/**/*.md', { eager: true }),
+  ) as any[];
   const allTagsUnique = [...new Set(allPosts.flatMap(p => p.frontmatter.tags))].map(t => kebabCase(t)).sort()
 
 	const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());

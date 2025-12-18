@@ -1,0 +1,92 @@
+---
+import PageLayout from "../../../layouts/page-layout.astro";
+import { kebabCase } from "../../../utils/kebab-case";
+import { TextLink } from "../../../blocks/TextLink.tsx";
+import type { MarkdownFrontmatter } from "../../../utils/prepare-story-data";
+
+export async function getStaticPaths() {
+  const allPosts = Object.values(
+    import.meta.glob("../../blog/**/*.md", { eager: true }),
+  ) as any[];
+  const allTagsUnique = [...new Set(allPosts.flatMap((p) => p.frontmatter.tags))]
+    .map((t) => kebabCase(t))
+    .sort();
+
+  const sortedPosts = allPosts.sort(
+    (a, b) =>
+      new Date(b.frontmatter.date).valueOf() -
+      new Date(a.frontmatter.date).valueOf(),
+  );
+
+  const postsPerTag = allTagsUnique.map((tag) => {
+    const posts = sortedPosts.filter((p) =>
+      p.frontmatter.tags?.map((t) => kebabCase(t)).includes(tag),
+    );
+
+    return {
+      posts,
+      tag,
+      count: posts.length,
+    };
+  });
+
+  return [
+    {
+      params: { tag: "all" },
+      props: {
+        tag: "all",
+        allTags: postsPerTag.map((t) => ({ name: t.tag, count: t.count })),
+      },
+    },
+    ...allTagsUnique.map((tag) => ({
+      params: { tag },
+      props: {
+        tag,
+        allPosts: postsPerTag.find((p) => p.tag === tag)?.posts,
+      },
+    })),
+  ];
+}
+
+const { allPosts, allTags, tag } = Astro.props as any;
+
+const totalCount = allPosts?.length;
+const tagHeader = `${totalCount} post${totalCount === 1 ? "" : "s"} tagged with "${tag}"`;
+
+function toDeBlogUrl(url: string): string {
+  const normalized = (url || "").replace(/\/$/, "");
+  return normalized.startsWith("/blog/") ? `/de${normalized}` : normalized;
+}
+---
+
+<PageLayout activePage="tags" title="Tags" lang="de">
+  <div class="my-prose w-full max-w-[1000px] p-10 pt-0 ml-auto mr-auto mt-0 mb-0">
+    {allPosts ? (
+      <>
+        <h1>
+          {tagHeader} / <TextLink to="/de/tags/all">All Tags</TextLink>
+        </h1>
+        <ul>
+          {allPosts.map((post: any) => (
+            <li>
+              <TextLink to={toDeBlogUrl(post.url)}>{post.frontmatter.title}</TextLink>
+            </li>
+          ))}
+        </ul>
+      </>
+    ) : (
+      <>
+        <h1>All Available Tags</h1>
+        <ul>
+          {allTags.map((t: any) => (
+            <li>
+              <TextLink to={`/de/tags/${kebabCase(t.name)}/`}>
+                {t.name} ({t.count})
+              </TextLink>
+            </li>
+          ))}
+        </ul>
+      </>
+    )}
+  </div>
+</PageLayout>

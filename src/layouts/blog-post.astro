@@ -6,7 +6,11 @@ import { formatDate } from "../utils/prepare-story-data";
 import CommonLayout from "./common-layout.astro";
 import { LayoutProps } from "~/types/layout-types";
 
-const { activePage, content } = Astro.props;
+const inferredLang = Astro.url.pathname.startsWith("/de") ? "de" : "en";
+const { activePage, content, lang } = Astro.props as LayoutProps & { content: any; lang?: "en" | "de" };
+
+const resolvedLang = lang ?? inferredLang;
+const resolvedActivePage = activePage ?? "blog";
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 let blogDir = canonicalURL.pathname;
@@ -23,7 +27,7 @@ if (content.banner) {
 }
 ---
 
-<CommonLayout activePage={activePage} title={content.title}>
+<CommonLayout activePage={resolvedActivePage} title={content.title} lang={resolvedLang}>
   <div class="py-0">
     <article
       class="my-prose w-full max-w-[1000px] p-3 md:p-10 xl:p-20 ml-auto mr-auto mt-0 mb-0"
@@ -71,7 +75,12 @@ if (content.banner) {
         {
           content.tags && (
             <div class="mt-1">
-              <Tags tags={content.tags} withLink invertBackground />
+              <Tags
+                tags={content.tags}
+                withLink
+                invertBackground
+                hrefBase={resolvedLang === "de" ? "/de/tags" : "/tags"}
+              />
             </div>
           )
         }
