@@ -554,12 +554,11 @@ This software manages garden tenants, readings, documents, a shared calendar and
       logo: "/images/clients/LiftWebAppsHowTo.png",
       start: "2012-05-01",
       end: "2013-01-31",
-      link: "https://www.packtpub.com/web-development/instant-lift-web-applications-how-instant",
       tags: ["Scala", "Authoring"],
       categories: [AllowedCategories.Publication],
       description: `
       Together with Pack Publishing I authored a small book about Lift,
-      the ['Lift Web Applications HowTo'](https://www.packtpub.com/web-development/instant-lift-web-applications-how-instant).
+      the 'Lift Web Applications HowTo'.
     `,
     },
     {

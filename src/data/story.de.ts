@@ -536,12 +536,11 @@ Die Software verwaltet Pächter, Zählerstände, Dokumente, einen gemeinsamen Ka
       logo: "/images/clients/LiftWebAppsHowTo.png",
       start: "2012-05-01",
       end: "2013-01-31",
-      link: "https://www.packtpub.com/web-development/instant-lift-web-applications-how-instant",
       tags: ["Scala", "Authoring"],
       categories: [AllowedCategories.Publication],
       description: `
-      Zusammen mit Packt Publishing schrieb ich ein kleines Buch über Lift:
-      das ['Lift Web Applications HowTo'](https://www.packtpub.com/web-development/instant-lift-web-applications-how-instant).
+      Zusammen mit Packt Publishing habe ich ein kleines Buch über Lift geschrieben:
+      das 'Lift Web Applications HowTo'.
     `,
     },
     {
