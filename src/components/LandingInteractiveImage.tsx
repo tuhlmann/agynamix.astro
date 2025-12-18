@@ -1,9 +1,13 @@
 import { createSignal, Show } from "solid-js"
 import PlayIcon from "../blocks/PlayIcon"
 import { SimpleModal } from "./SimpleModal"
+import type { Locale } from "../i18n/types"
+import { t } from "../i18n/t"
 
-export function LandingInteractiveImage() {
+export function LandingInteractiveImage(props: { lang?: Locale }) {
   const [showModal, setShowModal] = createSignal(false)
+
+  const lang: Locale = props.lang ?? "en"
 
   const handlePlayClicked = (): void => {
     setShowModal(v => !v)
@@ -20,7 +24,7 @@ export function LandingInteractiveImage() {
           <div class="p-0">
             <video class="block max-w-full h-auto" controls autoplay>
               <source src="/media/Intro_Torsten_Uhlmann.mp4" type="video/mp4" />
-              Sorry, your browser doesn't support embedded videos.
+              {t(lang, "video.unsupported")}
             </video>
           </div>
         </SimpleModal>

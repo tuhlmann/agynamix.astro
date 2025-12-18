@@ -9,10 +9,15 @@ import Twitter from "../blocks/Twitter.astro";
 import LinkedIn from "../blocks/LinkedIn.astro";
 import Github from "../blocks/Github.astro";
 import { config } from "../data/config";
+import type { Locale } from "../i18n/types";
+import { t } from "../i18n/t";
+import { withLangPrefix } from "../i18n/routes";
+
+const { lang = "en" } = Astro.props as { lang?: Locale };
 ---
 
 <footer class="bg-gray-800" aria-labelledby="footer-heading">
-  <h2 id="footer-heading" class="sr-only">Footer</h2>
+  <h2 id="footer-heading" class="sr-only">{t(lang, "footer.footer")}</h2>
   <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:py-6 lg:px-8">
     <div class="xl:grid xl:grid-cols-2 xl:gap-8">
       <div class="grid grid-cols-2 gap-8 xl:col-span-2">
@@ -75,13 +80,13 @@ import { config } from "../data/config";
                 </div>
                 <div>
                   <span class="text-sm text-gray-300">
-                    <FooterLink to="/imprint">Imprint</FooterLink> / <FooterLink
-                      to="/privacy-policy">Privacy Policy</FooterLink
+                    <FooterLink to={withLangPrefix(lang, "/imprint")}>{t(lang, "footer.imprint")}</FooterLink> / <FooterLink
+                      to={withLangPrefix(lang, "/privacy-policy")}>{t(lang, "footer.privacy")}</FooterLink
                     >
                   </span>
                   <div class="text-sm text-gray-300">
-                    © 2022 by Torsten Uhlmann.<br />
-                    Built with <span>❤</span> in Thalheim.
+                    {t(lang, "footer.copyright")}<br />
+                    {t(lang, "footer.builtWith")}
                   </div>
                 </div>
               </li>

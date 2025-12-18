@@ -4,8 +4,14 @@ import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 import "../styles/fonts.css";
 import { LayoutProps } from "~/types/layout-types";
+import { localeAlternates } from "../i18n/routes";
 
 const { activePage, title = "AGYNAMIX Torsten Uhlmann", lang = "en" } = Astro.props as LayoutProps;
+
+const site = Astro.site?.toString().replace(/\/$/, "") ?? "";
+const pathname = Astro.url.pathname;
+const canonicalHref = site ? `${site}${pathname}` : Astro.url.toString();
+const alternates = localeAlternates(pathname);
 ---
 
 <html class="h-full" lang={lang}>
@@ -15,13 +21,21 @@ const { activePage, title = "AGYNAMIX Torsten Uhlmann", lang = "en" } = Astro.pr
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/x-icon" href="/favicons/favicon.ico" />
     <title>{title}</title>
+    <link rel="canonical" href={canonicalHref} />
+    {alternates && (
+      <>
+        <link rel="alternate" hreflang="en" href={`${site}${alternates.enPath}`} />
+        <link rel="alternate" hreflang="de" href={`${site}${alternates.dePath}`} />
+        <link rel="alternate" hreflang="x-default" href={`${site}${alternates.enPath}`} />
+      </>
+    )}
   </head>
   <body class="h-full bg-primary-bg font-sans text-base leading-6">
     <main class="min-h-full flex flex-col h-screen justify-between">
       <Header client:visible activePage={activePage} lang={lang} />
       <slot />
       <!-- Content goes here -->
-      <Footer />
+      <Footer lang={lang} />
     </main>
   </body>
   <link rel="stylesheet" type="text/css" href="/lib/cookieconsent.min.css" />

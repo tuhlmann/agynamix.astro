@@ -1,5 +1,8 @@
 import { createSignal, Show } from "solid-js"
 import classNames from "classnames"
+import type { Locale } from "../i18n/types"
+import { t } from "../i18n/t"
+import { toggleLocalePath, withLangPrefix } from "../i18n/routes"
 
 interface Props {
   activePage: string
@@ -20,11 +23,18 @@ const inactiveMobCls = "border-transparent text-gray-200 hover:bg-gray-50 hover:
 export default function Header(props: Props) {
   const [mmOpen, setMmOpen] = createSignal(false)
 
-  const currentLang = () => props.lang ?? "en"
-  const targetHref = () => (currentLang() === "de" ? "/" : "/de/")
-  const targetLang = () => (currentLang() === "de" ? "en" : "de")
+  const currentLang = (): Locale => props.lang ?? "en"
 
-  const setLangCookie = (lang: "en" | "de") => {
+  const navHref = (href: string) => withLangPrefix(currentLang(), href)
+
+  const computeToggle = (): { href: string; lang: Locale } => {
+    if (typeof window === "undefined") {
+      return { href: currentLang() === "de" ? "/" : "/de/", lang: currentLang() === "de" ? "en" : "de" }
+    }
+    return toggleLocalePath(window.location.pathname)
+  }
+
+  const setLangCookie = (lang: Locale) => {
     if (typeof document === "undefined") return
     const secure = typeof window !== "undefined" && window.location.protocol === "https:" ? "; Secure" : ""
     document.cookie = `lang=${lang}; Path=/; Max-Age=31536000; SameSite=Lax${secure}`
@@ -32,18 +42,20 @@ export default function Header(props: Props) {
 
   const onToggleLanguage: JSX.EventHandlerUnion<HTMLAnchorElement, MouseEvent> = e => {
     e.preventDefault()
-    setLangCookie(targetLang())
+    const next = computeToggle()
+    setLangCookie(next.lang)
     if (typeof window !== "undefined") {
-      window.location.assign(targetHref())
+      window.location.assign(next.href)
     }
   }
 
   const Flag = () => {
     const isDe = currentLang() === "de"
-    const label = isDe ? "Switch to English" : "Zur deutschen Version wechseln"
+    const label = isDe ? t("de", "a11y.switchToEnglish") : t("en", "a11y.switchToGerman")
+    const href = typeof window === "undefined" ? (isDe ? "/" : "/de/") : computeToggle().href
     return (
       <a
-        href={targetHref()}
+        href={href}
         class="inline-flex items-center justify-center rounded-md border border-transparent text-gray-500 hover:text-gray-700 hover:border-[color:var(--hover-light)] px-2 py-1"
         aria-label={label}
         title={label}
@@ -75,43 +87,40 @@ export default function Header(props: Props) {
     <nav class="pt-7">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
-          <a class="flex-shrink-0 flex items-center" href="/">
+          <a class="flex-shrink-0 flex items-center" href={navHref("/")}>
             <img class="max-w-[200px] h-auto" src="/images/logo.png" alt="AGYNAMIX Torsten Uhlmann" />
           </a>
           <div class={classNames("flex", props.activePage)}>
             <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8 text-sm md:text-base font-medium">
               <a
-                href="/consulting"
+                href={navHref("/consulting")}
                 class={classNames(
                   "inline-flex items-center px-1 pt-1 border-b-2",
                   props.activePage === "consulting" ? activeCls : inactiveCls,
                 )}
                 aria-current="page"
               >
-                {" "}
-                Consulting{" "}
+                {t(currentLang(), "nav.consulting")}
               </a>
 
               <a
-                href="/clients"
+                href={navHref("/clients")}
                 class={classNames(
                   "inline-flex items-center px-1 pt-1 border-b-2",
                   props.activePage === "clients" ? activeCls : inactiveCls,
                 )}
               >
-                {" "}
-                Clients{" "}
+                {t(currentLang(), "nav.clients")}
               </a>
 
               <a
-                href="/products"
+                href={navHref("/products")}
                 class={classNames(
                   "inline-flex items-center px-1 pt-1 border-b-2",
                   props.activePage === "products" ? activeCls : inactiveCls,
                 )}
               >
-                {" "}
-                Products{" "}
+                {t(currentLang(), "nav.products")}
               </a>
 
               <a
@@ -121,19 +130,17 @@ export default function Header(props: Props) {
                   props.activePage === "blog" ? activeCls : inactiveCls,
                 )}
               >
-                {" "}
-                Blog{" "}
+                {t(currentLang(), "nav.blog")}
               </a>
 
               <a
-                href="/about"
+                href={navHref("/about")}
                 class={classNames(
                   "inline-flex items-center px-1 pt-1 border-b-2",
                   props.activePage === "about" ? activeCls : inactiveCls,
                 )}
               >
-                {" "}
-                About{" "}
+                {t(currentLang(), "nav.about")}
               </a>
             </div>
           </div>
@@ -151,7 +158,7 @@ export default function Header(props: Props) {
                 aria-expanded="false"
                 onClick={() => setMmOpen(v => !v)}
               >
-                <span class="sr-only">Open main menu</span>
+                <span class="sr-only">{t(currentLang(), "a11y.openMainMenu")}</span>
                 <svg
                   class="h-6 w-6"
                   xmlns="http://www.w3.org/2000/svg"
@@ -180,34 +187,34 @@ export default function Header(props: Props) {
         >
           <div class="pt-2 pb-3 space-y-1 text-xl font-medium">
             <a
-              href="/consulting"
+              href={navHref("/consulting")}
               class={classNames(
                 "block pl-3 pr-4 py-2 border-l-4",
                 props.activePage === "consulting" ? activeMobCls : inactiveMobCls,
               )}
               aria-current="page"
             >
-              Consulting
+              {t(currentLang(), "nav.consulting")}
             </a>
 
             <a
-              href="/clients"
+              href={navHref("/clients")}
               class={classNames(
                 "block pl-3 pr-4 py-2 border-l-4",
                 props.activePage === "clients" ? activeMobCls : inactiveMobCls,
               )}
             >
-              Clients
+              {t(currentLang(), "nav.clients")}
             </a>
 
             <a
-              href="/products"
+              href={navHref("/products")}
               class={classNames(
                 "block pl-3 pr-4 py-2 border-l-4",
                 props.activePage === "products" ? activeMobCls : inactiveMobCls,
               )}
             >
-              Products
+              {t(currentLang(), "nav.products")}
             </a>
 
             <a
@@ -217,17 +224,17 @@ export default function Header(props: Props) {
                 props.activePage === "blog" ? activeMobCls : inactiveMobCls,
               )}
             >
-              Blog
+              {t(currentLang(), "nav.blog")}
             </a>
 
             <a
-              href="/about"
+              href={navHref("/about")}
               class={classNames(
                 "block pl-3 pr-4 py-2 border-l-4",
                 props.activePage === "about" ? activeMobCls : inactiveMobCls,
               )}
             >
-              About
+              {t(currentLang(), "nav.about")}
             </a>
           </div>
         </div>

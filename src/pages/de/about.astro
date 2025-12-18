@@ -1,0 +1,118 @@
+---
+import PageLayout from "../../layouts/page-layout.astro";
+import { TextLink } from "../../blocks/TextLink.tsx";
+
+import photo from "../../images/torsten_square.jpg";
+import bread from "../../images/about/sourdough_bread.jpg";
+import translating from "../../images/about/translating.jpg";
+import espresso from "../../images/about/cup_o_beans.jpg";
+import { config } from "../../data/config";
+---
+
+<PageLayout title="Über Torsten Uhlmann" activePage="about" lang="de">
+  <div class="my-prose w-full max-w-[1000px] p-3 md:p-10 ml-auto mr-auto mt-0 mb-0">
+    <div class="flex justify-between mb-4 flex-col-reverse sm:flex-row items-center sm:items-start gap-4">
+      <div>
+        <h1 class="h1 mt-3 sm:mt-0 mb-0 pt-0 pb-0">Hallo! Ich bin Torsten</h1>
+        <p>
+          Ich bin im wunderschönen Erzgebirge aufgewachsen, wo ich bis heute lebe.
+          Ich bin mit meiner Frau Silvia verheiratet; wir haben zwei Kinder.
+        </p>
+      </div>
+      <div>
+        <img class="m-0 mb-1 rounded-md block max-h-[200px]" alt="Foto von Torsten" src={photo.src} />
+      </div>
+    </div>
+
+    <div>
+      <p>
+        In der achten Klasse bekam ich einen programmierbaren BASIC‑Taschenrechner
+        (eine Sprache für alle, die in diesem Jahrtausend geboren wurden) mit einem
+        Speicher von 1024 Byte (also 1024 ASCII‑Zeichen). Er war sehr begrenzt,
+        aber ich konnte damit nützliche Lösungen für die Schule erstellen – und
+        meine Hausaufgaben deutlich reduzieren.
+      </p>
+      <p>
+        Nach der EOS wurde ich zum Informatik‑Studium an der Technischen Universität
+        Chemnitz zugelassen. Das ist insofern bemerkenswert, als mir im letzten
+        Schuljahr (1988 in der DDR) gesagt wurde, ich dürfte als Christ niemals
+        studieren. Nur ein Jahr später hatte sich die Geschichte unseres Landes
+        komplett verändert – und ich konnte zwischen drei Universitäten wählen.
+      </p>
+      <p>
+        Ich schloss mein Studium 1996 ab und arbeitete anschließend bis 2004 bei
+        einem großen IT‑Dienstleister in verschiedenen Projekten – bis ich dann
+        meine <TextLink to="/de/consulting">Freelance‑Tätigkeit</TextLink>
+        begann.
+      </p>
+    </div>
+
+    <div class="flex justify-between mb-6 mt-5">
+      <div>
+        Über viele Jahre habe ich (und tue das gelegentlich noch) als Übersetzer
+        für internationale Gäste unserer Kirche geholfen.
+      </div>
+      <div class="ml-5">
+        <img
+          class="m-0 mb-1 rounded-md block max-h-[450px]"
+          alt="Dolmetschen für Michael Kimuli"
+          src={translating.src}
+        />
+      </div>
+    </div>
+
+    <div class="flex justify-between mb-6 mt-5">
+      <div class="mr-5">
+        <img
+          alt="Kaffeebohnen vor dem Mahlen"
+          class="m-0 mb-1 rounded-md block max-h-[250px]"
+          src={espresso.src}
+        />
+      </div>
+      <div>
+        <p>Ich bin ein Kaffee‑Enthusiast und genieße eine gute Tasse Espresso.</p>
+        <p>
+          Ob mehr als zehn Jahre Java‑Programmierung diese Gewohnheit gefördert
+          haben?
+        </p>
+      </div>
+    </div>
+
+    <div class="flex justify-between mb-6 mt-5">
+      <div>
+        <p>
+          Vor ein paar Jahren begann mein Brotback‑Abenteuer. Nachdem ich im TV
+          ein Interview mit einem lokalen Bäcker‑Coach gesehen hatte, züchtete ich
+          meinen eigenen Sauerteig und legte los. Nach einigen Missgeschicken und
+          vielen Fehlversuchen mahlen wir heute unser eigenes Mehl und backen unser
+          eigenes Brot.
+        </p>
+        <p>
+          Abgesehen davon, dass es gesünder ist, holt mich der Prozess auch wieder
+          „auf den Boden“ – gerade wenn vieles, mit dem ich arbeite, rein virtuell
+          ist.
+        </p>
+      </div>
+      <div class="ml-5">
+        <img
+          alt="Sie waren schnell weg!"
+          class="m-0 mb-1 rounded-md block max-h-[750px]"
+          src={bread.src}
+        />
+      </div>
+    </div>
+
+    <div>
+      <p>
+        Das war ein bisschen Privates über mich. Schau gern auf meiner
+        <TextLink to="/de/consulting">Beratungs</TextLink>‑Seite oder meinem
+        <TextLink to="/de/resume">Lebenslauf</TextLink> vorbei, um mehr über
+        meinen beruflichen Werdegang zu erfahren.
+      </p>
+      <p>
+        Danach schreib mir einfach eine
+        <TextLink to={`mailto:${config.email}`}>E‑Mail</TextLink>.
+      </p>
+    </div>
+  </div>
+</PageLayout>

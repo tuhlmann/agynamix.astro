@@ -1,0 +1,99 @@
+---
+import PageLayout from "../../layouts/page-layout.astro";
+
+import { TextLink } from "../../blocks/TextLink.tsx";
+
+import torstenProfileImg from "../../images/torsten_square.jpg";
+import contactMe from "../../images/consulting/undraw_contact_us_15o2.svg";
+
+import { config } from "../../data/config";
+---
+
+<PageLayout title="Beratung" activePage="consulting" lang="de">
+  <div class="my-prose w-full max-w-[1000px] p-10 pt-0 ml-auto mr-auto mt-0 mb-0">
+    <div class="flex justify-between mb-6 flex-col-reverse sm:flex-row items-center">
+      <div class="mt-3 sm:mt-0">
+        <h1 class="mt-0 mb-0">Zusammenarbeit mit mir</h1>
+      </div>
+      <div>
+        <img
+          class="m-0 mb-1 rounded-md max-w-[150px]"
+          alt="AGYNAMIX"
+          src={torstenProfileImg.src}
+        />
+      </div>
+    </div>
+
+    <div>
+      <p>
+        Ich bin Full‑Stack‑Softwareentwickler mit mehr als 25 Jahren Erfahrung in
+        zahlreichen Branchen und mit vielen Programmiersprachen.
+      </p>
+      <p>
+        Ich entwickle Software mein ganzes Berufsleben lang – und sogar schon
+        <TextLink to="/de/about">davor</TextLink>. Technologien ändern sich,
+        Rollen ändern sich, aber der Wunsch, etwas Nützliches zu schaffen,
+        bleibt.
+      </p>
+      <p>
+        Ich lerne gern Neues und treffe gern neue Menschen. Über die Jahre habe
+        ich mit einer Vielzahl von Sprachen gearbeitet – u. a. Cobol, C++, Java,
+        Groovy, Ruby und Perl.
+      </p>
+      <p>
+        Seit 2009 habe ich meinen Schwerpunkt auf Scala, JavaScript, TypeScript
+        und Rust verlagert – mit einer Prise Go.
+      </p>
+      <p>
+        Ich habe mit vielen Web‑Frameworks gearbeitet, darunter Lift, AngularJS,
+        Angular, MarkoJS, VueJS – und meinem Favoriten React.
+      </p>
+      <p>
+        Die Daten meiner Anwendungen speichere ich typischerweise in SQL‑Datenbanken
+        wie PostgreSQL oder in NoSQL‑Stores wie MongoDB.
+      </p>
+      <p>
+        Ich habe mehrere Anwendungen entwickelt und verkauft; einige davon sind
+        auf meinem
+        <TextLink to="https://github.com/tuhlmann">GitHub‑Account</TextLink>
+        verfügbar.
+      </p>
+      <p>
+        Im Laufe der Jahre habe ich mit vielen
+        <TextLink to="/de/clients">Kunden</TextLink> gearbeitet, unter anderem:
+      </p>
+      <p>
+        <ul>
+          <li>Deutsche Telekom</li>
+          <li>1822direkt / Frankfurter Sparkasse</li>
+          <li>das soziale Netzwerk sgrouples (heute mewe.com)</li>
+          <li>Underscore Consulting</li>
+          <li>Ascendant, Inc.</li>
+          <li>Scaled Agile, Inc.</li>
+          <li>TXODDS, Ltd.</li>
+        </ul>
+      </p>
+    </div>
+
+    <div class="flex justify-between mb-6 mt-5">
+      <div>
+        <div class="h-full flex flex-col justify-between">
+          <p class="justify-self-start">
+            Wenn du denkst, dass ich gut zu deinem Team passe, freue ich mich,
+            <TextLink to={`mailto:${config.email}`}><strong>von dir zu hören</strong></TextLink>!
+          </p>
+          <h4 class="justify-self-end">Torsten.</h4>
+        </div>
+      </div>
+      <div class="ml-5">
+        <a href={`mailto:${config.email}`}>
+          <img
+            alt="Schreib mir!"
+            class="max-h-[300px] block mb-1 rounded-md"
+            src={contactMe.src}
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</PageLayout>

@@ -5,6 +5,8 @@ import { compareAsc, parseISO, subYears } from "date-fns"
 import { mergeProps, For, createSignal, createMemo } from "solid-js"
 // import SolidMarkdown from "solid-markdown"
 import Converter from "showdown"
+import type { Locale } from "../i18n/types"
+import { t } from "../i18n/t"
 import {
   Alignment,
   AllowedCategories,
@@ -25,6 +27,7 @@ interface Props {
   yearsBack?: number
   more?: string
   less?: string
+  lang?: Locale
 }
 
 function renderClientImage(url?: string, img?: string) {
@@ -70,7 +73,7 @@ function renderRecommendation(converter: Converter.Converter, recommendation: Re
   )
 }
 
-function renderRecommendations(converter: Converter.Converter, recommendations?: Recommendation[]) {
+function renderRecommendations(converter: Converter.Converter, recommendations: Recommendation[] | undefined, lang: Locale) {
   {
     if (!recommendations?.length) {
       return null
@@ -78,7 +81,7 @@ function renderRecommendations(converter: Converter.Converter, recommendations?:
 
     return (
       <div class="mt-5 text-base">
-        <h4 class="m-0 uppercase opacity-60 text-sm leading-9 tracking-wide">Recommendations</h4>
+        <h4 class="m-0 uppercase opacity-60 text-sm leading-9 tracking-wide">{t(lang, "story.recommendations")}</h4>
         <ul class="list-none m-0 p-0">
           <For each={recommendations}>
             {r => (
@@ -140,7 +143,7 @@ function renderImages(converter: Converter.Converter, images?: ImageElement[]) {
 export default function StoryRenderer(p: Props) {
   const converter = new Converter.Converter()
 
-  const props = mergeProps({ withDescription: false, withImages: true, yearsBack: 100 }, p)
+  const props = mergeProps({ withDescription: false, withImages: true, yearsBack: 100, lang: "en" as Locale }, p)
 
   const [renderAll, setRenderAll] = createSignal(false)
 
@@ -215,7 +218,7 @@ export default function StoryRenderer(p: Props) {
                   </>
                 )
               )}
-              {renderRecommendations(converter, recommendations)}
+              {renderRecommendations(converter, recommendations, props.lang)}
               {props.withImages && renderImages(converter, images)}
 
               {/* {!isEmpty(deliveries) && <h4>Presentations</h4>}
@@ -261,7 +264,7 @@ export default function StoryRenderer(p: Props) {
             type="button"
             onClick={() => setRenderAll(true)}
           >
-            {props.more || "Show More"}
+            {props.more || t(props.lang, "story.showMore")}
           </button>
         </div>
       )}
@@ -272,7 +275,7 @@ export default function StoryRenderer(p: Props) {
             type="button"
             onClick={() => setRenderAll(false)}
           >
-            {props.less || "Show Less"}
+            {props.less || t(props.lang, "story.showLess")}
           </button>
         </div>
       )}
