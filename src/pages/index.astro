@@ -6,6 +6,7 @@ import skillsImg from "../images/skills.svg";
 import clientImg from "../images/client.svg";
 import PageLayout from "../layouts/page-layout.astro";
 import { TextLink } from "../blocks/TextLink.tsx";
+import LightbulbIcon from "../blocks/LightbulbIcon.astro";
 import { config } from "../data/config";
 import LocaleRedirect from "../components/LocaleRedirect.astro";
 ---
@@ -15,6 +16,22 @@ import LocaleRedirect from "../components/LocaleRedirect.astro";
   <div
     class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-around"
   >
+    <div class="-mt-12 mb-10 rounded-lg border border-gray-200 bg-white px-6 py-5 sm:px-8">
+      <div class="flex items-start gap-3">
+        <div class="mt-1">
+          <LightbulbIcon class="w-7 h-7 text-gray-500" />
+        </div>
+        <p class="text-base sm:text-lg leading-relaxed text-gray-900">
+          I build <TextLink to="https://invoicer.agynamix.de" target="_blank" rel="noopener noreferrer"><strong>AGYNAMIX Invoicer</strong></TextLink> — a desktop application for creating and sending invoices.
+          <span class="ml-1">
+            <TextLink to="https://invoicer.agynamix.de" target="_blank" rel="noopener noreferrer">
+              Try it free at invoicer.agynamix.de
+            </TextLink>
+            .
+          </span>
+        </p>
+      </div>
+    </div>
     <div class="flex justify-between flex-col sm:flex-row">
       <LandingInteractiveImage client:visible lang="en" />
       <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
