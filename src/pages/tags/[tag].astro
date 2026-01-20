@@ -1,16 +1,17 @@
 ---
-import PageLayout from "../../layouts/page-layout.astro"
-import { MarkdownFrontmatter } from "../../utils/prepare-story-data"
-import { kebabCase } from "../../utils/kebab-case"
-import { TextLink } from "../../blocks/TextLink.tsx"
+import PageLayout from "../../layouts/page-layout.astro";
+import PostPreview from "../../components/PostPreview.astro";
+import authorData from "../../data/authors.json";
+import { kebabCase } from "../../utils/kebab-case";
+import { TextLink } from "../../blocks/TextLink.tsx";
 
 export async function getStaticPaths() {
   const allPosts = Object.values(
-    import.meta.glob('../blog/**/*.md', { eager: true }),
+    import.meta.glob('../blog/**/index.md', { eager: true }),
   ) as any[];
   const allTagsUnique = [...new Set(allPosts.flatMap(p => p.frontmatter.tags))].map(t => kebabCase(t)).sort()
 
-	const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
+  const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
 
   const postsPerTag = allTagsUnique.map(tag => {
     const posts = sortedPosts.filter(p => p.frontmatter.tags?.map(t => kebabCase(t)).includes(tag))
@@ -23,52 +24,35 @@ export async function getStaticPaths() {
   })
 
 
-	return [{
-      params: { tag: "all" }, 
-      props: { 
-        tag: "all", 
-        allTags: postsPerTag.map(t => ({name: t.tag, count: t.count}))
-      }
-    }, 
-    ...allTagsUnique.map(tag => (
-    { 
-      params: { tag }, 
-      props: { 
-        tag, 
-        allPosts: postsPerTag.find(p => p.tag === tag)?.posts
-      }
+	return allTagsUnique.map(tag => ({
+    params: { tag },
+    props: {
+      tag,
+      allPosts: postsPerTag.find(p => p.tag === tag)?.posts
     }
-  ))]
+  }))
 }
 
+const { allPosts, tag } = Astro.props as any;
 
-const { allPosts, allTags, tag } = Astro.props
-
-const totalCount = allPosts?.length
-const tagHeader = `${totalCount} post${totalCount === 1 ? "" : "s"} tagged with "${tag}"`
+const totalCount = allPosts?.length ?? 0;
+const tagHeader = `${totalCount} post${totalCount === 1 ? "" : "s"} tagged with "${tag}"`;
 ---
 <PageLayout activePage="tags" title="Tags">
-  <div class="my-prose w-full max-w-[1000px] p-10 pt-0 ml-auto mr-auto mt-0 mb-0">
-    {allPosts ? (
-      <h1>{tagHeader} / <TextLink to="/tags/all">All Tags</TextLink></h1>
-      <ul>
-        {allPosts.map((post: any) => (
-          <li>
-            <TextLink to={post.url}>{post.frontmatter.title}</TextLink>
-          </li>
-        ))}
-      </ul>    
-    ) : (
-      <h1>All Available Tags</h1>
-      <ul>
-        {allTags.map((tag: any) => (
-          <li>
-            <TextLink to={`/tags/${kebabCase(tag.name)}/`}>
-              {tag.name} ({tag.count})
-            </TextLink>
-          </li>
-        ))}
-      </ul>
-    )}
+  <div class="w-full max-w-[1000px] py-10 pt-0 ml-auto mr-auto mt-0 mb-0">
+    <div class="max-w-[1000px] mx-auto mb-6 px-2 sm:px-0">
+      <h1 class="text-2xl font-bold tracking-tight text-gray-900">
+        {tagHeader}
+      </h1>
+      <div class="mt-2 text-gray-600">
+        <TextLink to="/tags/">All Tags</TextLink>
+      </div>
+    </div>
+
+    <div class="max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+      {allPosts?.map((post: any) => (
+        <PostPreview post={post} author={authorData[post.author]} />
+      ))}
+    </div>
   </div>
 </PageLayout>

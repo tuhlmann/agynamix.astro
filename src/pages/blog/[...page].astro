@@ -6,7 +6,7 @@ import { MarkdownFrontmatter } from "~/utils/prepare-story-data";
 
 export async function getStaticPaths({ paginate, rss }) {
   const allPosts = Object.values(
-    import.meta.glob("../blog/**/*.md", { eager: true }),
+    import.meta.glob("../blog/**/index.md", { eager: true }),
   ) as any[];
   const sortedPosts = allPosts.sort(
     (a, b) =>
@@ -41,7 +41,8 @@ let title = "AGYNAMIX Torsten Uhlmann | Blog";
 let description =
   "Torsten's thoughts and adventures through the realm of programming";
 
-const { page } = Astro.props;
+const { page } = Astro.props as any;
+
 ---
 
 <PageLayout activePage="blog" title={title}>

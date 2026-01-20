@@ -1,0 +1,39 @@
+---
+import PageLayout from "../../layouts/page-layout.astro";
+import { kebabCase } from "../../utils/kebab-case";
+import { TextLink } from "../../blocks/TextLink.tsx";
+
+const allPosts = Object.values(
+  import.meta.glob("../blog/**/index.md", { eager: true }),
+) as any[];
+
+const tagCounts = new Map<string, { label: string; count: number }>();
+for (const post of allPosts) {
+  for (const rawTag of post.frontmatter?.tags ?? []) {
+    const slug = kebabCase(rawTag);
+    const existing = tagCounts.get(slug);
+    if (existing) {
+      existing.count += 1;
+    } else {
+      tagCounts.set(slug, { label: rawTag, count: 1 });
+    }
+  }
+}
+
+const tags = [...tagCounts.entries()]
+  .map(([slug, v]) => ({ slug, label: v.label, count: v.count }))
+  .sort((a, b) => a.slug.localeCompare(b.slug));
+---
+
+<PageLayout activePage="tags" title="Tags">
+  <div class="my-prose w-full max-w-[1000px] p-10 pt-0 ml-auto mr-auto mt-0 mb-0">
+    <h1>All Available Tags</h1>
+    <ul>
+      {tags.map((t) => (
+        <li>
+          <TextLink to={`/tags/${t.slug}/`}>{t.label} ({t.count})</TextLink>
+        </li>
+      ))}
+    </ul>
+  </div>
+</PageLayout>
