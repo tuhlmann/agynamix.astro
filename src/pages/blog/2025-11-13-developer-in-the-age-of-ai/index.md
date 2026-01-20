@@ -3,7 +3,10 @@ slug: developer-in-the-age-of-ai
 date: 2025-11-13T00:00:00.000Z
 title: Being a Developer in the Age of AI
 author: Torsten Uhlmann
-tags: []
+tags:
+  - E-Invoice
+  - Kotlin
+  - AI
 categories: []
 description: null
 banner: /assets/blog/2025-11-13-developer-in-the-age-of-ai/banner.jpg

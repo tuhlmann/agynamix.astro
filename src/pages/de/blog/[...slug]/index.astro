@@ -3,7 +3,7 @@ import type { MarkdownFrontmatter } from "~/utils/prepare-story-data";
 
 export async function getStaticPaths() {
   const allPosts = Object.values(
-    import.meta.glob("../../../blog/**/*.md", { eager: true }),
+    import.meta.glob("../../../blog/**/index.md", { eager: true }),
   ) as any[];
 
   return allPosts

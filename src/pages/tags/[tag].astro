@@ -6,7 +6,7 @@ import { TextLink } from "../../blocks/TextLink.tsx"
 
 export async function getStaticPaths() {
   const allPosts = Object.values(
-    import.meta.glob('../blog/**/*.md', { eager: true }),
+    import.meta.glob('../blog/**/index.md', { eager: true }),
   ) as any[];
   const allTagsUnique = [...new Set(allPosts.flatMap(p => p.frontmatter.tags))].map(t => kebabCase(t)).sort()
 
@@ -61,7 +61,7 @@ const tagHeader = `${totalCount} post${totalCount === 1 ? "" : "s"} tagged with 
     ) : (
       <h1>All Available Tags</h1>
       <ul>
-        {allTags.map((tag: any) => (
+        {(allTags ?? []).map((tag: any) => (
           <li>
             <TextLink to={`/tags/${kebabCase(tag.name)}/`}>
               {tag.name} ({tag.count})
