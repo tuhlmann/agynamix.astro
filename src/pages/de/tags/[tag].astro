@@ -1,5 +1,7 @@
 ---
 import PageLayout from "../../../layouts/page-layout.astro";
+import PostPreview from "../../../components/PostPreview.astro";
+import authorData from "../../../data/authors.json";
 import { kebabCase } from "../../../utils/kebab-case";
 import { TextLink } from "../../../blocks/TextLink.tsx";
 import type { MarkdownFrontmatter } from "../../../utils/prepare-story-data";
@@ -41,7 +43,7 @@ export async function getStaticPaths() {
   ];
 }
 
-const { allPosts, allTags, tag } = Astro.props as any;
+const { allPosts, tag } = Astro.props as any;
 
 const totalCount = allPosts?.length;
 const tagHeader = `${totalCount} post${totalCount === 1 ? "" : "s"} tagged with "${tag}"`;
@@ -53,33 +55,20 @@ function toDeBlogUrl(url: string): string {
 ---
 
 <PageLayout activePage="tags" title="Tags" lang="de">
-  <div class="my-prose w-full max-w-[1000px] p-10 pt-0 ml-auto mr-auto mt-0 mb-0">
-    {allPosts ? (
-      <>
-        <h1>
-          {tagHeader} / <TextLink to="/de/tags/">All Tags</TextLink>
-        </h1>
-        <ul>
-          {allPosts.map((post: any) => (
-            <li>
-              <TextLink to={toDeBlogUrl(post.url)}>{post.frontmatter.title}</TextLink>
-            </li>
-          ))}
-        </ul>
-      </>
-    ) : (
-      <>
-        <h1>All Available Tags</h1>
-        <ul>
-          {allTags.map((t: any) => (
-            <li>
-              <TextLink to={`/de/tags/${kebabCase(t.name)}/`}>
-                {t.name} ({t.count})
-              </TextLink>
-            </li>
-          ))}
-        </ul>
-      </>
-    )}
+  <div class="w-full max-w-[1000px] py-10 pt-0 ml-auto mr-auto mt-0 mb-0">
+    <div class="max-w-[1000px] mx-auto mb-6 px-2 sm:px-0">
+      <h1 class="text-2xl font-bold tracking-tight text-gray-900">
+        {tagHeader}
+      </h1>
+      <div class="mt-2 text-gray-600">
+        <TextLink to="/de/tags/">All Tags</TextLink>
+      </div>
+    </div>
+
+    <div class="max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+      {allPosts?.map((post: any) => (
+        <PostPreview post={post} author={authorData[post.author]} lang="de" />
+      ))}
+    </div>
   </div>
 </PageLayout>
