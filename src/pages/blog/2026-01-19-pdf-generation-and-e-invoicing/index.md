@@ -22,15 +22,15 @@ I develop [AGYNAMIX Invoicer](https://invoicer.agynamix.de), a cross-platform in
 
 When I started building the Invoicer application, I knew I needed to generate PDFs that could contain both human-readable content and machine-readable invoice data. The goal was to create documents that would be valid PDF/A-3U files, which are the standard for long-term archival. However, the path to get there turned out to be more complex than I initially anticipated.
 
-The Mustang e-invoice library, which I chose for embedding XML data into PDFs, requires PDF/A-1B containers to create combined PDF/XML documents that would validate as PDF/A-3U. While Mustang can ignore container errors, the resulting document wouldn't validate properly, even though it would contain the XML data. This was a critical requirement for compliance with European e-invoicing standards, particularly the XRechnung profile.
+The [Mustang e-invoice library](https://www.mustangproject.org/), which I chose for embedding XML data into PDFs, requires PDF/A-1B containers to create combined PDF/XML documents that would validate as PDF/A-3U. While Mustang can ignore container errors, the resulting document wouldn't validate properly, even though it would contain the XML data. This was a critical requirement for compliance with European e-invoicing standards, particularly the XRechnung profile.
 
 ## The Flying Saucer and OpenPDF Combination
 
-I needed a solution that could generate PDF/A-1B compliant documents. After some research, I decided to use a combination of Flying Saucer (version 10) and OpenPDF (version 3). Flying Saucer is excellent for converting XHTML to PDF, and OpenPDF provides the necessary PDF manipulation capabilities.
+I needed a solution that could generate PDF/A-1B compliant documents. After some research, I decided to use a combination of [Flying Saucer](https://github.com/flyingsaucerproject/flyingsaucer) (version 10) and [OpenPDF](https://github.com/LibrePDF/OpenPDF) (version 3). Flying Saucer is excellent for converting XHTML to PDF, and OpenPDF provides the necessary PDF manipulation capabilities.
 
 ### Font Embedding
 
-One of the key requirements for PDF/A-1B compliance is embedding all fonts used in the document. I started by extracting IBM Plex Sans font variants from the application resources. The font family includes regular, bold, italic, and bold-italic variants, as well as additional weights like ExtraLight, Light, Medium, SemiBold, and Thin.
+One of the key requirements for PDF/A-1B compliance is embedding all fonts used in the document. I started by extracting [IBM Plex Sans](https://github.com/IBM/plex) font variants from the application resources. The font family includes regular, bold, italic, and bold-italic variants, as well as additional weights like ExtraLight, Light, Medium, SemiBold, and Thin.
 
 The code to embed these fonts into the PDF was straightforward but required careful handling:
 
@@ -85,7 +85,7 @@ class PdfA1bCreationListener : DefaultPDFCreationListener() {
 }
 ```
 
-The color profile used was `sRGB2014.icc`, which I extracted from the application resources. This profile ensures consistent color representation across different devices and platforms.
+The color profile used was [`sRGB2014.icc`](https://registry.color.org/rgb-registry/srgbprofiles), which I extracted from the application resources. This profile ensures consistent color representation across different devices and platforms.
 
 ### Image Handling
 
@@ -155,10 +155,6 @@ This hybrid format provides several advantages:
 
 ## Lessons Learned
 
-### The Importance of Standards Compliance
-
-One of the key lessons I learned was the importance of standards compliance. PDF/A-1B and PDF/A-3U are not just technical specifications; they are critical for legal and regulatory compliance. Ensuring that the generated PDFs meet these standards was essential for the application's success.
-
 ### The Complexity of PDF Generation
 
 PDF generation is more complex than it appears. While Flying Saucer and OpenPDF provide powerful tools for creating PDFs, achieving compliance with specific standards requires a deep understanding of the underlying specifications. The process of embedding fonts, setting color profiles, and handling images was more involved than I initially anticipated.
@@ -173,9 +169,7 @@ Testing and validation are essential steps in the development process. Ensuring 
 
 ## Conclusion
 
-Building the Invoicer application was a challenging but rewarding experience. The process of generating PDF/A-1B compliant documents and integrating them with the Mustang library to create archival PDFs was complex and required a deep understanding of the underlying technologies and standards. However, the result is a robust and compliant solution that meets the needs of modern e-invoicing requirements.
-
-The journey highlighted the importance of standards compliance, the complexity of PDF generation, the value of open source libraries, and the need for thorough testing and validation. These lessons will be invaluable as I continue to develop and improve the Invoicer application and other projects in the future.
+Building the Invoicer application has been a challenging but rewarding experience. The process of generating PDF/A-1B compliant documents and integrating them with the Mustang library to create archival PDFs was complex and required a deep understanding of the underlying technologies and standards. However, the result is a robust and compliant solution that meets the needs of modern e-invoicing requirements.
 
 ---
 
