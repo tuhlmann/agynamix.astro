@@ -31,13 +31,6 @@ export async function getStaticPaths() {
   });
 
   return [
-    {
-      params: { tag: "all" },
-      props: {
-        tag: "all",
-        allTags: postsPerTag.map((t) => ({ name: t.tag, count: t.count })),
-      },
-    },
     ...allTagsUnique.map((tag) => ({
       params: { tag },
       props: {
@@ -64,7 +57,7 @@ function toDeBlogUrl(url: string): string {
     {allPosts ? (
       <>
         <h1>
-          {tagHeader} / <TextLink to="/de/tags/all">All Tags</TextLink>
+          {tagHeader} / <TextLink to="/de/tags/">All Tags</TextLink>
         </h1>
         <ul>
           {allPosts.map((post: any) => (
