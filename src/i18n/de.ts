@@ -20,6 +20,7 @@ export const de: Record<string, string> = {
   "footer.footer": "Fußbereich",
   "footer.imprint": "Impressum",
   "footer.privacy": "Datenschutzerklärung",
+  "footer.cookieSettings": "Cookie-Einstellungen",
   "footer.copyright": "© 2022 by Torsten Uhlmann.",
   "footer.builtWith": "Mit ❤ in Thalheim gebaut.",
 };

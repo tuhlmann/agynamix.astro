@@ -35,6 +35,13 @@ const { lang = "en" } = Astro.props as { lang?: Locale };
                       >{config.email}</FooterLink
                     >
                   </span>
+                  <button
+                    type="button"
+                    data-cc="show-preferencesModal"
+                    class="mt-2 text-sm text-gray-300 hover:text-white bg-transparent border-0 p-0 cursor-pointer"
+                  >
+                    {t(lang, "footer.cookieSettings")}
+                  </button>
                 </div>
               </li>
             </ul>
@@ -80,8 +87,12 @@ const { lang = "en" } = Astro.props as { lang?: Locale };
                 </div>
                 <div>
                   <span class="text-sm text-gray-300">
-                    <FooterLink to={withLangPrefix(lang, "/imprint")}>{t(lang, "footer.imprint")}</FooterLink> / <FooterLink
-                      to={withLangPrefix(lang, "/privacy-policy")}>{t(lang, "footer.privacy")}</FooterLink
+                    <FooterLink to={withLangPrefix(lang, "/imprint")}
+                      >{t(lang, "footer.imprint")}</FooterLink
+                    >
+                    {" / "}
+                    <FooterLink to={withLangPrefix(lang, "/privacy-policy")}
+                      >{t(lang, "footer.privacy")}</FooterLink
                     >
                   </span>
                   <div class="text-sm text-gray-300">

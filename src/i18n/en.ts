@@ -20,6 +20,7 @@ export const en: Record<string, string> = {
   "footer.footer": "Footer",
   "footer.imprint": "Imprint",
   "footer.privacy": "Privacy Policy",
+  "footer.cookieSettings": "Cookie settings",
   "footer.copyright": "© 2022 by Torsten Uhlmann.",
   "footer.builtWith": "Built with ❤ in Thalheim.",
 };
