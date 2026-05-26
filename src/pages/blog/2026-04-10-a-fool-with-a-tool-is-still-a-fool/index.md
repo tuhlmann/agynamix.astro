@@ -16,6 +16,8 @@ bannerCredit: Image created with AI
 layout: ../../../layouts/blog-post.astro
 ---
 
+I develop [AGYNAMIX Invoicer](https://invoicer.agynamix.de), a cross-platform invoicing application for freelancers and small businesses. It is currently in pre release. Download for free and check it out.
+
 Many years ago, a fellow developer dropped this phrase on me. I can't remember the exact occasion, but I remember being instantly offended. I took it personally instead of pausing to ask what exactly he meant. (Though, to be fair, surrounding yourself with developers smarter than you is always a solid strategy—it forces you to keep learning.)
 
 Once you set the bruised ego aside, the phrase is actually profound. Having access to the best tools on the market doesn't automatically make you a master craftsman. You need years to learn your trade. The wisdom, intuition, and scars you gather along the way are invaluable, and they dictate your success far more than the tools in your belt.
@@ -41,6 +43,8 @@ Because AI is such a multifaceted tool—with different LLMs offering distinct c
 Failing is part of the process. If you avoid failure, you will eventually avoid mastery. So don't be afraid to smash your nose against a brick wall hallucinated by your favorite LLM.
 
 Keep honing your skills, improve your craft, and embrace the new tools. But always stay in charge of the process.
+
+I develop [AGYNAMIX Invoicer](https://invoicer.agynamix.de), a cross-platform invoicing application for freelancers and small businesses. It is currently in pre release. Download for free and check it out.
 
 ---
 
