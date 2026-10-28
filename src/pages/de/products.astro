@@ -1,18 +1,13 @@
 ---
 import PageLayout from "../../layouts/page-layout.astro";
-import story from "../../data/story.de";
-import StoryRenderer from "../../components/StoryRenderer.tsx";
-import { AllowedCategories } from "../../utils/prepare-story-data";
+import ProductsPage from "../../components/ProductsPage.astro";
 ---
 
-<PageLayout activePage="products" title="Meine Produkte" lang="de">
-  <div class="my-prose w-full max-w-[1000px] p-3 md:p-10 ml-auto mr-auto mt-0 mb-0">
-    <StoryRenderer
-      client:visible
-      story={story}
-      lang="de"
-      withDescription
-      categories={[AllowedCategories.Product]}
-    />
-  </div>
+<PageLayout
+  activePage="products"
+  title="AGYNAMIX Invoicer & weitere Produkte"
+  description="AGYNAMIX Invoicer: lokale Rechnungssoftware für Windows, macOS und Linux. Deine Daten, kein Pflichtabo. Jetzt 30 Tage kostenlos testen."
+  lang="de"
+>
+  <ProductsPage lang="de" />
 </PageLayout>

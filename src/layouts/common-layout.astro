@@ -7,7 +7,12 @@ import "../styles/fonts.css";
 import { LayoutProps } from "~/types/layout-types";
 import { localeAlternates } from "../i18n/routes";
 
-const { activePage, title = "AGYNAMIX Torsten Uhlmann", lang = "en" } = Astro.props as LayoutProps;
+const {
+  activePage,
+  description,
+  title = "AGYNAMIX Torsten Uhlmann",
+  lang = "en",
+} = Astro.props as LayoutProps;
 
 const site = Astro.site?.toString().replace(/\/$/, "") ?? "";
 const pathname = Astro.url.pathname;
@@ -17,19 +22,33 @@ const alternates = localeAlternates(pathname);
 
 <html class="h-full" lang={lang}>
   <head>
-    <meta title={title} />
+    {description && <meta name="description" content={description} />}
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/x-icon" href="/favicons/favicon.ico" />
     <title>{title}</title>
     <link rel="canonical" href={canonicalHref} />
-    {alternates && (
-      <>
-        <link rel="alternate" hreflang="en" href={`${site}${alternates.enPath}`} />
-        <link rel="alternate" hreflang="de" href={`${site}${alternates.dePath}`} />
-        <link rel="alternate" hreflang="x-default" href={`${site}${alternates.enPath}`} />
-      </>
-    )}
+    {
+      alternates && (
+        <>
+          <link
+            rel="alternate"
+            hreflang="en"
+            href={`${site}${alternates.enPath}`}
+          />
+          <link
+            rel="alternate"
+            hreflang="de"
+            href={`${site}${alternates.dePath}`}
+          />
+          <link
+            rel="alternate"
+            hreflang="x-default"
+            href={`${site}${alternates.enPath}`}
+          />
+        </>
+      )
+    }
 
     <CookieConsentInit lang={lang} />
   </head>

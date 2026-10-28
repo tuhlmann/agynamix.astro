@@ -2,10 +2,20 @@
 import CommonLayout from "./common-layout.astro";
 import { LayoutProps } from "~/types/layout-types";
 
-const { activePage, title = "AGYNAMIX Torsten Uhlmann", lang = "en" } = Astro.props as LayoutProps;
+const {
+  activePage,
+  description,
+  title = "AGYNAMIX Torsten Uhlmann",
+  lang = "en",
+} = Astro.props as LayoutProps;
 ---
 
-<CommonLayout activePage={activePage} title={title} lang={lang}>
+<CommonLayout
+  activePage={activePage}
+  title={title}
+  description={description}
+  lang={lang}
+>
   <div class="py-20">
     <slot />
     <!-- Content goes here -->

@@ -1,5 +1,6 @@
 export interface LayoutProps {
-	activePage: string
-	title?: string
-	lang?: "en" | "de"
+  activePage: string;
+  title?: string;
+  description?: string;
+  lang?: "en" | "de";
 }
